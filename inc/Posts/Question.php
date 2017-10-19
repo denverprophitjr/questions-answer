@@ -139,7 +139,7 @@ class DWQA_Posts_Question extends DWQA_Posts_Base {
 	}
 
 	public function set_supports() {
-		return array( 'title', 'editor', 'comments', 'author', 'page-attributes' );
+		return array( 'title', 'editor', 'comments', 'author', 'thumbnail', 'page-attributes' );
 	}
 
 	public function set_rewrite() {
@@ -243,6 +243,12 @@ class DWQA_Posts_Question extends DWQA_Posts_Base {
 			'choose_from_most_used'      => __( 'Choose from the most used question tags', 'dwqa' ),
 			'not_found'                  => __( 'No question tags found.', 'dwqa' ),
 			'menu_name'                  => __( 'Question Tags', 'dwqa' ),
+			'featured_image'             => __( 'Featured Image', 'dwqa' ) . $names['singular'],
+			'set_featured_image'         => __( 'Set featured image', 'dwqa' ) . $names['singular'],
+			'remove_featured_image'      => __( 'Remove featured image', 'dwqa' ) . $names['singular'],
+			'set_featured_image'         => __( 'Set featured image', 'dwqa' ) . $names['singular'],
+			'insert_into_item'           => __( 'Insert into item', 'dwqa' ) . $names['singular'],
+			'uploaded_to_this_item'      => __( 'Uploaded to this item', 'dwqa' ) . $names['singular'],
 		);
 
 		$args = array(
