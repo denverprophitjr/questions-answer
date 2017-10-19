@@ -7,7 +7,8 @@
  */
 ?>
 <div class="<?php echo dwqa_post_class() ?>"
-     itemprop="suggestedAnswer<?php if ( dwqa_is_the_best_answer() ) : ?> acceptedAnswer<?php endif; ?>">
+     itemprop="suggestedAnswer<?php if ( dwqa_is_the_best_answer() ) : ?> acceptedAnswer<?php endif; ?>" itemscope
+     itemtype="http://schema.org/Answer">
     <aside class="dwqa-answer-vote" data-nonce="<?php echo wp_create_nonce( '_dwqa_answer_vote_nonce' ) ?>"
            data-post="<?php the_ID(); ?>">
 
@@ -37,9 +38,10 @@
 		<?php endif; ?>
         <span class="dwqa-answer-actions"><?php dwqa_answer_button_action(); ?></span>
     </div>
-    <span class="dwqa-answer-content"><?php the_content(); ?>
+    <span class="dwqa-answer-content" itemprop="text"><?php the_content(); ?>
 </span>
 </div>
 <?php do_action( 'dwqa_after_show_content_answer', get_the_ID() ); ?>
 <?php comments_template(); ?>
 </div>
+<!-- TODO Add parentItem schema attribute -->
