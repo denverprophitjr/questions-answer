@@ -8,7 +8,7 @@
 ?>
 <div class="dwqa-questions-archive">
 	<?php do_action( 'dwqa_before_questions_archive' ) ?>
-
+    <h1><?php echo single_cat_title( "", false ); ?></h1>
     <div class="dwqa-questions-list">
 		<?php do_action( 'dwqa_before_questions_list' ) ?>
 		<?php if ( dwqa_has_question() ) : ?>

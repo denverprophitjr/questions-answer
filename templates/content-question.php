@@ -8,8 +8,10 @@
 
 ?>
 <div class="<?php echo dwqa_post_class(); ?>" itemscope itemtype="https://schema.org/Question">
-    <div><h1 class="dwqa-question-title"><a href="<?php the_permalink(); ?>"><span
-                        itemprop="name headline"><?php the_title(); ?></span></a></h1></div>
+    <div>
+        <h1 class="dwqa-question-title"><a href="<?php the_permalink(); ?>"><span
+                        itemprop="name headline"><?php the_title(); ?></span></a></h1>
+    </div>
     <div class="dwqa-question-meta">
 		<?php dwqa_question_print_status() ?>
 		<?php
@@ -42,4 +44,5 @@
 			<?php printf( __( '<span style="border: none;" itemprop="upvoteCount"><strong>%1$s</strong></span> votes', 'dwqa' ), $vote_count ); ?>
 		</span>
     </div>
+    <meta itemprop="url" content="<?php the_permalink(); ?>"/>
 </div>

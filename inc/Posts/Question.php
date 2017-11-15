@@ -139,7 +139,7 @@ class DWQA_Posts_Question extends DWQA_Posts_Base {
 	}
 
 	public function set_supports() {
-		return array( 'title', 'editor', 'comments', 'author', 'thumbnail', 'page-attributes' );
+		return array( 'title', 'editor', 'comments', 'author', 'thumbnail', 'page-attributes', 'trackbacks' );
 	}
 
 	public function set_rewrite() {

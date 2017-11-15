@@ -10,7 +10,7 @@ global $dwqa_general_settings;
 $sort   = isset( $_GET['sort'] ) ? esc_html( $_GET['sort'] ) : '';
 $filter = isset( $_GET['filter'] ) ? esc_html( $_GET['filter'] ) : 'all';
 ?>
-<div class="dwqa-question-filter">
+<aside class="dwqa-question-filter">
     <span><?php _e( 'Filter:', 'dwqa' ); ?></span>
 	<?php if ( ! isset( $_GET['user'] ) ) : ?>
         <a href="<?php echo esc_url( add_query_arg( array( 'filter' => 'all' ) ) ) ?>"
@@ -29,7 +29,7 @@ $filter = isset( $_GET['filter'] ) ? esc_html( $_GET['filter'] ) : 'all';
             <a href="<?php echo esc_url( add_query_arg( array( 'filter' => 'my-questions' ) ) ) ?>"
                class="<?php echo 'my-questions' == $filter ? 'active' : '' ?>"><?php _e( 'My questions', 'dwqa' ); ?></a>
             <a href="<?php echo esc_url( add_query_arg( array( 'filter' => 'my-subscribes' ) ) ) ?>"
-               class="<?php echo 'my-subscribes' == $filter ? 'active' : '' ?>"><?php _e( 'My subscribes', 'dwqa' ); ?></a>
+               class="<?php echo 'my-subscribes' == $filter ? 'active' : '' ?>"><?php _e( 'My subscriptions', 'dwqa' ); ?></a>
 		<?php endif; ?>
 	<?php else : ?>
         <a href="<?php echo esc_url( add_query_arg( array( 'filter' => 'all' ) ) ) ?>"
@@ -47,4 +47,4 @@ $filter = isset( $_GET['filter'] ) ? esc_html( $_GET['filter'] ) : 'all';
         <option <?php selected( $sort, 'votes' ) ?>
                 value="<?php echo esc_url( add_query_arg( array( 'sort' => 'votes' ) ) ) ?>"><?php _e( 'Votes', 'dwqa' ) ?></option>
     </select>
-</div>
+</aside>

@@ -87,6 +87,7 @@
 .dwqa-question-item .dwqa-question-title a {
     border: none !important;
     text-decoration: none !important;
+    font-size: 21px !important;
 }
 
 .dwqa-question-item .dwqa-status {
@@ -662,8 +663,8 @@
 
     .dwqa-questions-list .dwqa-question-item .avatar {
         position: static;
-        width: 14px;
-        height: 14px;
+        width: 47px;
+        height: 47px;
         margin-right: 5px;
     }
 

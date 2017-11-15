@@ -44,4 +44,7 @@
 <?php do_action( 'dwqa_after_show_content_answer', get_the_ID() ); ?>
 <?php comments_template(); ?>
 </div>
+<div class="well">
+    [bookly-form category_id="3" service_id="11" staff_member_id="1" hide="categories,services,quantity,staff_members"]
+</div>
 <!-- TODO Add parentItem schema attribute -->
