@@ -27,9 +27,6 @@ class DWQA_Rewrite {
 			add_permastruct( 'dwqa-question_category', "{$question_list_page->post_name}/{$rewrite_category}/%dwqa-question_category%", array( 'with_front' => false ) );
 			add_permastruct( 'dwqa-question_tag', "{$question_list_page->post_name}/{$rewrite_tag}/%dwqa-question_tag%", array( 'with_front' => false ) );
 		}
-		function get_the_ID() {
-			$post = get_post();
-		}
 	}
 }
 
