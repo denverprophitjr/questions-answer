@@ -5,7 +5,7 @@
  */
 function dwqa_breadcrumb() {
 	if ( function_exists( 'yoast_breadcrumb' ) ) :
-		$post_types = array( 'dwqa-question', 'question-archive' );
+		$post_types = array( 'dwqa-question' );
 		if ( is_post_type_archive( $post_types ) ):
 			?>
             <div class="breadcrumbs">
