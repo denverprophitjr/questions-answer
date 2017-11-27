@@ -18,22 +18,22 @@
 </div>
 <article itemid="#dwqa-question-item" id="dwqa-question-item" class="dwqa-question-item" itemscope
          itemtype="https://schema.org/Question">
-    <meta itemprop="name headline" content="<?php post_type_archive_title(); ?>"/>
+    <h1 itemprop="name headline"><?php the_title(); ?></h1>
     <meta itemprop="url" content="<?php the_permalink(); ?>"/>
-    <div class="dwqa-question-vote" data-nonce="<?php echo wp_create_nonce( '_dwqa_question_vote_nonce' ) ?>"
-         data-post="<?php the_ID(); ?>">
+    <aside class="dwqa-question-vote" data-nonce="<?php echo wp_create_nonce( '_dwqa_question_vote_nonce' ) ?>"
+           data-post="<?php the_ID(); ?>">
         <span class="dwqa-vote-count" itemprop="upvoteCount"><?php echo dwqa_vote_count() ?></span>
         <a class="dwqa-vote dwqa-vote-up" href="#"><?php _e( 'Vote Up', 'dwqa' ); ?></a>
         <a class="dwqa-vote dwqa-vote-down" href="#"><?php _e( 'Vote Down', 'dwqa' ); ?></a>
-    </div>
-    <div class="dwqa-question-meta">
+    </aside>
+    <aside class="dwqa-question-meta">
 		<?php $user_id = get_post_field( 'post_author', get_the_ID() ) ? get_post_field( 'post_author', get_the_ID() ) : false ?>
-	    <?php printf( __( '<span><a href="%s"><span itemid="#agent" itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">%s%s</span></span></a> %s asked %s ago</span>', 'dwqa' ), dwqa_get_author_link( $user_id ), get_avatar( $user_id, 48 ), get_the_author(), dwqa_print_user_badge( $user_id ), human_time_diff( get_post_time( 'U', true ) ) ) ?>
+		<?php printf( __( '<span><a href="%s"><span itemid="#agent" itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">%s%s</span></span></a> %s asked %s ago</span>', 'dwqa' ), dwqa_get_author_link( $user_id ), get_avatar( $user_id, 48 ), get_the_author(), dwqa_print_user_badge( $user_id ), human_time_diff( get_post_time( 'U', true ) ) ) ?>
         <span class="dwqa-question-actions"><?php dwqa_question_button_action() ?></span>
-    </div>
+    </aside>
     <div class="dwqa-question-content" itemprop="text"><?php the_content(); ?></div>
 	<?php do_action( 'dwqa_after_show_content_question', get_the_ID() ); ?>
-    <div class="dwqa-question-footer">
+    <footer class="dwqa-question-footer">
         <div class="dwqa-question-meta">
 			<?php echo get_the_term_list( get_the_ID(), 'dwqa-question_tag', '<span class="dwqa-question-tag">' . __( 'Question Tags: ', 'dwqa' ), ', ', '</span>' ); ?>
 			<?php if ( dwqa_current_user_can( 'edit_question', get_the_ID() ) ) : ?>
@@ -56,9 +56,10 @@
 				<?php endif; ?>
 			<?php endif; ?>
         </div>
-    </div>
+    </footer>
 	<?php do_action( 'dwqa_before_single_question_comment' ) ?>
 	<?php comments_template(); ?>
 	<?php do_action( 'dwqa_after_single_question_comment' ) ?>
 
 	<?php do_action( 'dwqa_after_single_question_content' ); ?>
+    <!--TODO Line 16 Audience Type from category title-->

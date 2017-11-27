@@ -21,8 +21,4 @@ jQuery(document).ready(function ($) {
     $('#dwqa_options_dwqa_disable_question_status').on('change', function () {
         hide_item(this, '#dwqa_options_enable_show_status_icon');
     });
-
-    $('#dwqa-message').on('click', function (e) {
-        document.cookie = "qa-pro-notice=off";
-    });
 });

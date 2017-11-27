@@ -1,4 +1,4 @@
-<?php
+<?php  
 // Exit if accessed directly
 // Upgrade functions
 if ( ! defined( 'ABSPATH' ) ) {
@@ -117,18 +117,15 @@ class DWQA_Upgrades {
 				}
 				$cursor += $step;
 				update_option( 'dwqa_upgrades_step', $cursor );
-
 				return $cursor;
 			} else {
 				// Go Next
 				delete_option( 'dwqa_upgrades_step' );
-
 				return 0;
 			}
 		} else {
 			// Go Next
 			delete_option( 'dwqa_upgrades_step' );
-
 			return 0;
 		}
 	}
@@ -177,12 +174,11 @@ class DWQA_Upgrades {
 				wp_send_json_success( array(
 					'start'   => $start,
 					'finish'  => 1,
-					'message' => __( 'Upgrade process is done', 'dwqa' )
+					'message' => __( 'Upgrade process is done', 'dwqa')
 				) );
 				break;
 		}
 	}
 }
-
 DWQA_Upgrades::init();
 ?>

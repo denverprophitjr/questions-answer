@@ -1,4 +1,4 @@
-<?php
+<?php  
 
 class DWQA_PointerHelper {
 	public function __construct() {
@@ -9,9 +9,8 @@ class DWQA_PointerHelper {
 	public function pointer_load( $hook_suffix ) {
 
 		// Don't run on WP < 3.3
-		if ( get_bloginfo( 'version' ) < '3.3' ) {
+		if ( get_bloginfo( 'version' ) < '3.3' )
 			return;
-		}
 
 		$screen    = get_current_screen();
 		$screen_id = $screen->id;
@@ -19,9 +18,8 @@ class DWQA_PointerHelper {
 		// Get pointers for this screen
 		$pointers = apply_filters( 'dwqa_admin_pointers-' . $screen_id, array() );
 
-		if ( ! $pointers || ! is_array( $pointers ) ) {
+		if ( ! $pointers || ! is_array( $pointers ) )
 			return;
-		}
 
 		// Get dismissed pointers
 		$dismissed      = get_user_option( 'dismissed_wp_pointers', get_current_user_id() );
@@ -31,9 +29,8 @@ class DWQA_PointerHelper {
 		// Check pointers and remove dismissed ones.
 		foreach ( $pointers as $pointer_id => $pointer ) {
 			// Sanity check
-			if ( in_array( $pointer_id, $dismissed ) || empty( $pointer ) || empty( $pointer_id ) || empty( $pointer['target'] ) || empty( $pointer['options'] ) ) {
+			if ( in_array( $pointer_id, $dismissed ) || empty( $pointer ) || empty( $pointer_id ) || empty( $pointer['target'] ) || empty( $pointer['options'] ) )
 				continue;
-			}
 
 			$pointer['pointer_id'] = $pointer_id;
 
@@ -42,9 +39,8 @@ class DWQA_PointerHelper {
 		}
 
 		// No valid pointers? Stop here.
-		if ( empty( $valid_pointers ) ) {
+		if ( empty( $valid_pointers ) )
 			return;
-		}
 
 		// Add pointers style to queue.
 		wp_enqueue_style( 'wp-pointer' );
@@ -54,7 +50,7 @@ class DWQA_PointerHelper {
 			'jquery',
 			'wp-pointer'
 		) );
-
+	 
 		// Add pointer options to script.
 		wp_localize_script( 'dwqa-pointer', 'dwqaPointer', $valid_pointers );
 	}
@@ -80,7 +76,6 @@ class DWQA_PointerHelper {
 				'position' => array( 'edge' => 'left', 'align' => 'middle' )
 			)
 		);
-
 		return $p;
 	}
 }

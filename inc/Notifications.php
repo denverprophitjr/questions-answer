@@ -1,7 +1,10 @@
-<?php
+<?php  
 
 class DWQA_Notifications {
 
+	private $time_delay = 120;
+
+	// private $time_delay = 0;
 	public function __construct() {
 		// add_action( 'dwqa_add_question', array( $this, 'new_question_notify' ), 10, 2 );
 		// add_action( 'wp_insert_comment', array( $this, 'new_comment_notify' ), 10, 2 );
@@ -15,24 +18,32 @@ class DWQA_Notifications {
 		add_action( 'dwqa_add_answer', array( $this, 'dwqa_queue_add_answer' ), 10, 2 );
 		add_action( 'wp_insert_comment', array( $this, 'dwqa_queue_insert_comment' ), 10, 2 );
 
-
 		// add_action( 'dwqa_add_question', array( $this, 'new_activity' ) );
 		// add_action( 'dwqa_add_answer', array( $this, 'new_activity' ) );
 		// add_action( 'dwqa_add_comment', array( $this, 'new_activity' ) );
 	}
 
 	public function dwqa_queue_add_question( $question_id, $user_id ) {
-		wp_schedule_single_event( time() + 120, 'dwqa_new_question_notify', array( $question_id, $user_id ) );
+		wp_schedule_single_event( time() + $this->time_delay, 'dwqa_new_question_notify', array(
+			$question_id,
+			$user_id
+		) );
 	}
 
 	public function dwqa_queue_add_answer( $answer_id, $question_id ) {
-		wp_schedule_single_event( time() + 120, 'dwqa_new_answer_notify', array( $answer_id, $question_id ) );
+		wp_schedule_single_event( time() + $this->time_delay, 'dwqa_new_answer_notify', array(
+			$answer_id,
+			$question_id
+		) );
 	}
 
 	public function dwqa_queue_insert_comment( $comment_id, $comment ) {
-		wp_schedule_single_event( time() + 120, 'dwqa_new_comment_notify', array( $comment_id, $comment ) );
+		wp_schedule_single_event( time() + $this->time_delay, 'dwqa_new_comment_notify', array(
+			$comment_id,
+			$comment
+		) );
 	}
-
+	
 	public function new_question_notify( $question_id, $user_id ) {
 		// receivers
 		$admin_email = $this->get_admin_email();
@@ -81,7 +92,7 @@ class DWQA_Notifications {
 		$message = str_replace( '{site_description}', get_bloginfo( 'description' ), $message );
 		$message = str_replace( '{site_url}', site_url(), $message );
 
-		$headers = array(
+		$headers = array( 
 			"From: {$this->get_from_name()} <{$this->get_from_address()}>",
 			"Reply-To: {$this->get_from_address()}",
 			"Content-Type: {$this->get_content_type()}; charset=utf-8"
@@ -89,9 +100,8 @@ class DWQA_Notifications {
 
 		// start send out email
 		foreach ( $admin_email as $to ) {
-			if ( is_email( $to ) ) {
+			if ( is_email( $to ) )
 				$sended = $this->send( sanitize_email( $to ), $subject, $message, $headers );
-			}
 		}
 	}
 
@@ -172,9 +182,8 @@ class DWQA_Notifications {
 					$followers_email[] = get_the_author_meta( 'user_email', $follower );
 				} else {
 					// prevent send to question author and answer author
-					if ( sanitize_email( $user_answer_email ) == sanitize_email( $follower ) || sanitize_email( $user_question_email ) == sanitize_email( $follower ) ) {
+					if ( sanitize_email( $user_answer_email ) == sanitize_email( $follower ) || sanitize_email( $user_question_email ) == sanitize_email( $follower ) )
 						continue;
-					}
 					// get anonymous email
 					$followers_email[] = sanitize_email( $follower );
 				}
@@ -215,7 +224,7 @@ class DWQA_Notifications {
 			// make sure it is not duplicate email
 			$followers_email = array_unique( $followers_email );
 
-			$headers = array(
+			$headers = array( 
 				"From: {$this->get_from_name()} <{$this->get_from_address()}>",
 				"Content-Type: {$this->get_content_type()}; charset=utf-8"
 			);
@@ -261,7 +270,7 @@ class DWQA_Notifications {
 			$message = str_replace( '{site_description}', esc_html( $site_description ), $message );
 			$message = str_replace( '{site_url}', esc_url( $site_url ), $message );
 
-			$headers = array(
+			$headers = array( 
 				"From: {$this->get_from_name()} <{$this->get_from_address()}>",
 				"Content-Type: {$this->get_content_type()}; charset=utf-8"
 			);
@@ -283,10 +292,10 @@ class DWQA_Notifications {
 		$admin_email      = get_bloginfo( 'admin_email' );
 		$enable_send_copy = get_option( 'dwqa_subscrible_send_copy_to_admin' );
 
-		if ( 1 == $comment->comment_approved && ( 'dwqa-question' == $parent || 'dwqa-answer' == $parent ) ) {
+		if ( 1 == $comment->comment_approved && ( 'dwqa-question' == $parent || 'dwqa-answer' == $parent ) ) { 
 			if ( $parent == 'dwqa-question' ) {
 				$enabled     = get_option( 'dwqa_subscrible_enable_new_comment_question_notification', 1 );
-				$admin_email = $this->get_admin_email( 'comment-question' );
+				$admin_email = $this->get_admin_email( 'comment-question' );      
 			} elseif ( $parent == 'dwqa-answer' ) {
 				$enabled     = get_option( 'dwqa_subscrible_enable_new_comment_answer_notification', 1 );
 				$admin_email = $this->get_admin_email( 'comment-answer' );
@@ -316,7 +325,7 @@ class DWQA_Notifications {
 			}
 
 			// To send HTML mail, the Content-type header must be set
-			$headers = array(
+			$headers = array( 
 				"From: {$this->get_from_name()} <{$this->get_from_address()}>",
 				"Content-Type: {$this->get_content_type()}; charset=utf-8"
 			);
@@ -424,11 +433,10 @@ class DWQA_Notifications {
 		}
 	}
 
-	public function get_admin_email( $type = 'question' ) {
+	public function get_admin_email( $type = 'question' ){
 		$admin_email = get_option( 'dwqa_subscrible_sendto_address', '' );
 		$emails      = explode( PHP_EOL, $admin_email );
 		$emails      = array_merge( $emails, array( get_bloginfo( 'admin_email' ) ) );
-
 		return $emails;
 	}
 
@@ -514,7 +522,6 @@ class DWQA_Notifications {
 		remove_filter( 'wp_mail_from', array( $this, 'get_from_address' ) );
 		remove_filter( 'wp_mail_from_name', array( $this, 'get_from_name' ) );
 		remove_filter( 'wp_mail_content_type', array( $this, 'get_content_type' ) );
-
 		return $sended;
 	}
 }

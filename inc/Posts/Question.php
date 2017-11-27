@@ -3,7 +3,7 @@
 /**
  * Get related questions            [description]
  */
-function dwqa_related_question( $question_id = false, $number = 5, $echo = true ) {
+function dwqa_related_question( $question_id = false, $number = 5, $echo = true, $hide_user = false, $hide_date = false ) {
 	if ( ! $question_id ) {
 		$question_id = get_the_ID();
 	}
@@ -54,8 +54,13 @@ function dwqa_related_question( $question_id = false, $number = 5, $echo = true 
 			echo '<ul>';
 			while ( $related_questions->have_posts() ) {
 				$related_questions->the_post();
-				echo '<li><a href="' . get_permalink() . '" class="question-title">' . get_the_title() . '</a> ' . __( 'asked by', 'dwqa' ) . ' ';
-				the_author_posts_link();
+				echo '<li><a href="' . get_permalink() . '" class="question-title">' . get_the_title() . '</a>';
+				if ( ! $hide_user ) {
+					echo __( ' asked by', 'dwqa' ) . ' ' . get_the_author_posts_link();
+				}
+				if ( ! $hide_date ) {
+					echo ', ' . human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) . __( ' ago', 'dwqa' );
+				}
 				echo '</li>';
 			}
 			echo '</ul>';
@@ -63,15 +68,100 @@ function dwqa_related_question( $question_id = false, $number = 5, $echo = true 
 	}
 	$posts = $related_questions->posts;
 	wp_reset_postdata();
-
 	return $posts;
+}
+
+function dwqa_get_latest_activity_info( $question_id ) {
+	if ( 'dwqa-question' !== get_post_type( $question_id ) ) {
+		return false;;
+	}
+
+	$latest_activity = get_post_meta( $question_id, '_latest_activity', true );
+	$latest_answer   = dwqa_get_latest_answer( $question_id );
+	if ( $latest_activity && isset( $latest_activity['act_id'] ) && isset( $latest_activity['user_id'] ) ) {
+		$user_id = absint( $latest_activity['user_id'] );
+		$act_id  = absint( $latest_activity['act_id'] );
+		$text    = esc_html( dwqa_get_latest_activity_text( $latest_activity['text'] ) );
+
+		// is answer
+		if ( $latest_activity['text'] == 'answered' ) {
+			$is_anonymous = dwqa_is_anonymous( $act_id );
+			$time         = human_time_diff( get_post_time( 'U', false, $act_id ), current_time( 'timestamp' ) );
+			if ( $is_anonymous ) {
+				$username   = get_post_meta( $act_id, '_dwqa_anonymous_name', true );
+				$username   = $username ? esc_html( $username ) : __( 'Anonymous', 'dwqa' );
+				$user_email = get_post_meta( $act_id, '_dwqa_anonymous_email', true );
+				$user_email = $user_email ? sanitize_email( $user_email ) : false;
+				$avatar     = $user_email ? get_avatar( $user_email, 48 ) : get_avatar( 0, 48 );
+				$link       = '#';
+			} else {
+				$username = get_the_author_meta( 'display_name', $user_id );
+				$avatar   = get_avatar( $user_id, 48 );
+				$link     = dwqa_get_author_link( $user_id );
+			}
+		}
+
+		// is comment
+		if ( $latest_activity['text'] == 'commented' ) {
+			$comment    = get_comment( $act_id );
+			$username   = get_comment_author( $act_id );
+			$user_email = get_comment_author_email( $act_id );
+			if ( $comment->user_id ) {
+				$user_email = get_the_author_meta( 'user_email', $comment->user_id );
+			} else {
+				$user_email = $comment->comment_author_email;
+			}
+			$avatar = get_avatar( $user_email, 48 );
+			$link   = dwqa_get_author_link( $comment->user_id );
+			$time   = human_time_diff( get_comment_date( 'U', $act_id ), current_time( 'timestamp' ) );
+		}
+	} else if ( $latest_answer ) {
+		$is_anonymous = dwqa_is_anonymous( $latest_answer->ID );
+		$text         = esc_html( dwqa_get_latest_activity_text( 'answered' ) );
+		$time         = human_time_diff( get_post_time( 'U', false, $latest_answer->ID ), current_time( 'timestamp' ) );
+		if ( $is_anonymous ) {
+			$username   = get_post_meta( $latest_answer->ID, '_dwqa_anonymous_name', true );
+			$username   = $username ? esc_html( $username ) : __( 'Anonymous', 'dwqa' );
+			$user_email = get_post_meta( $latest_answer->ID, '_dwqa_anonymous_email', true );
+			$user_email = $user_email ? sanitize_email( $user_email ) : false;
+			$avatar     = $user_email ? get_avatar( $user_email, 48 ) : get_avatar( 0, 48 );
+			$link       = '#';
+		} else {
+			$username = get_the_author_meta( 'display_name', $latest_answer->post_author );
+			$avatar   = get_avatar( $latest_answer->post_author, 48 );
+			$link     = dwqa_get_author_link( $latest_answer->post_author );
+		}
+	} else {
+		$is_anonymous = dwqa_is_anonymous( $question_id );
+		$user_id      = get_post_field( 'post_author', $question_id );
+		$text         = __( 'asked', 'dwqa' );
+		$time         = human_time_diff( get_post_time( 'U', false, $question_id ), current_time( 'timestamp' ) );
+		if ( $is_anonymous ) {
+			$username   = get_post_meta( $question_id, '_dwqa_anonymous_name', true );
+			$username   = $username ? esc_html( $username ) : __( 'Anonymous', 'dwqa' );
+			$user_email = get_post_meta( $question_id, '_dwqa_anonymous_email', true );
+			$user_email = $user_email ? sanitize_email( $user_email ) : false;
+			$avatar     = $user_email ? get_avatar( $user_email, 48 ) : get_avatar( 0, 48 );
+			$link       = '#';
+		} else {
+			$username = get_the_author_meta( 'display_name', $user_id );
+			$avatar   = get_avatar( $user_id, 48 );
+			$link     = dwqa_get_author_link( $user_id );
+		}
+	}
+
+	return array(
+		'username'   => $username,
+		'userlink'   => $link,
+		'useravatar' => $avatar,
+		'time'       => $time,
+		'text'       => $text
+	);
 }
 
 /**
  * Count number of views for a questions
- *
  * @param  int $question_id Question Post ID
- *
  * @return int Number of views
  */
 function dwqa_question_views_count( $question_id = null ) {
@@ -134,10 +224,6 @@ class DWQA_Posts_Question extends DWQA_Posts_Base {
 		add_filter( 'dwqa_prepare_update_question', array( $this, 'pre_content_filter' ), 20 );
 	}
 
-	public function init() {
-		$this->register_taxonomy();
-	}
-
 	public function set_supports() {
 		return array( 'title', 'editor', 'comments', 'author', 'thumbnail', 'page-attributes', 'trackbacks' );
 	}
@@ -150,7 +236,6 @@ class DWQA_Posts_Question extends DWQA_Posts_Base {
 				'with_front' => false,
 			);
 		}
-
 		return array(
 			'slug'       => 'question',
 			'with_front' => false,
@@ -243,12 +328,11 @@ class DWQA_Posts_Question extends DWQA_Posts_Base {
 			'choose_from_most_used'      => __( 'Choose from the most used question tags', 'dwqa' ),
 			'not_found'                  => __( 'No question tags found.', 'dwqa' ),
 			'menu_name'                  => __( 'Question Tags', 'dwqa' ),
-			'featured_image'             => __( 'Featured Image', 'dwqa' ) . $names['singular'],
-			'set_featured_image'         => __( 'Set featured image', 'dwqa' ) . $names['singular'],
-			'remove_featured_image'      => __( 'Remove featured image', 'dwqa' ) . $names['singular'],
-			'set_featured_image'         => __( 'Set featured image', 'dwqa' ) . $names['singular'],
-			'insert_into_item'           => __( 'Insert into item', 'dwqa' ) . $names['singular'],
-			'uploaded_to_this_item'      => __( 'Uploaded to this item', 'dwqa' ) . $names['singular'],
+			'featured_image'             => __( 'Featured Image', 'dwqa', 'dwqa' ),
+			'set_featured_image'         => __( 'Set featured image', 'dwqa', 'dwqa' ),
+			'remove_featured_image'      => __( 'Remove featured image', 'dwqa', 'dwqa' ),
+			'insert_int_item'            => __( 'Insert into item', 'dwqa' ),
+			'uploaded_to_this_item'      => __( 'Uploaded to this item', 'dwqa' )
 		);
 
 		$args = array(
@@ -277,8 +361,8 @@ class DWQA_Posts_Question extends DWQA_Posts_Base {
 			wp_insert_term( __( 'Questions', 'dwqa' ), $this->get_slug() . '_category' );
 		}
 
-		// global $dwqa;
-		// $dwqa->rewrite->update_term_rewrite_rules();
+		global $dwqa;
+		$dwqa->rewrite->update_term_rewrite_rules();
 	}
 
 	// ADD NEW COLUMN
@@ -290,7 +374,6 @@ class DWQA_Posts_Question extends DWQA_Posts_Base {
 				'question-tag'      => 'Tags'
 			), 1 );
 		}
-
 		return $defaults;
 	}
 
@@ -328,6 +411,25 @@ class DWQA_Posts_Question extends DWQA_Posts_Base {
 		}
 	}
 
+	public function get_edit_link( $args, $label, $class = '' ) {
+		$url = add_query_arg( $args, 'edit.php' );
+
+		$class_html = '';
+		if ( ! empty( $class ) ) {
+			$class_html = sprintf(
+				' class="%s"',
+				esc_attr( $class )
+			);
+		}
+
+		return sprintf(
+			'<a href="%s"%s>%s</a>',
+			esc_url( $url ),
+			$class_html,
+			$label
+		);
+	}
+	
 	/**
 	 * Init or increase views count for single question
 	 * @return void
@@ -480,7 +582,6 @@ class DWQA_Posts_Question extends DWQA_Posts_Base {
 				$query->query_vars['post__in'] = $sticky_questions;
 			}
 		}
-
 		return $query;
 	}
 
@@ -502,7 +603,7 @@ class DWQA_Posts_Question extends DWQA_Posts_Base {
 
 		$question = get_post( sanitize_text_field( $_POST['question'] ) );
 		global $current_user;
-		if ( dwqa_current_user_can( 'delete_question', $question->ID ) ) {
+		if ( dwqa_current_user_can( 'delete_question', $question->ID ) || dwqa_current_user_can( 'manage_question' ) ) {
 			//Get all answers that is tired with this question
 			do_action( 'before_delete_post', $question->ID );
 

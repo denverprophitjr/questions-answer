@@ -1,6 +1,5 @@
 jQuery(document).ready(function ($) {
     dwqa_open_pointer(0);
-
     function dwqa_open_pointer(i) {
         pointer = dwqaPointer.pointers[i];
         options = $.extend(pointer.options, {

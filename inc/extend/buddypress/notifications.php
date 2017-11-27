@@ -10,11 +10,9 @@ function custom_filter_notifications_get_registered_components( $component_names
 
 	return $component_names;
 }
-
 add_filter( 'bp_notifications_get_registered_components', 'custom_filter_notifications_get_registered_components' );
 
 function bp_dwqa_format_buddypress_notifications( $action, $item_id, $secondary_item_id, $total_items, $format = 'string', $component_action_name, $component_name ) {
-
 	if ( 'dwqa_new_answer_reply' !== $component_action_name ) {
 		return $action;
 	}
@@ -22,6 +20,9 @@ function bp_dwqa_format_buddypress_notifications( $action, $item_id, $secondary_
 	// New answer notifications
 	if ( 'dwqa_new_answer_reply' === $component_action_name ) {
 		$answer = get_post( $item_id );
+		if ( ! ( $answer ) ) {
+			return __( 'Post not found!', 'dwqa' );
+		}
 		$author = get_user_by( 'id', $answer->post_author );
 
 		$dwqa_notif_title      = get_the_title( $answer->post_parent );
@@ -31,17 +32,17 @@ function bp_dwqa_format_buddypress_notifications( $action, $item_id, $secondary_
 			'answer_id'   => $answer->ID
 		), get_permalink( $answer->post_parent ) ), 'bp_dwqa_mark_answer_' . $answer->ID );
 		$dwqa_notif_title_attr = __( 'Question Replies', 'dwqa' );
-
+		
 		if ( (int) $total_items > 1 ) {
 			$text   = sprintf( __( 'DWQA: ', 'dwqa' ) . __( 'You have %d new replies', 'dwqa' ), (int) $total_items );
 			$filter = 'bp_dwqa_multiple_new_subscription_notification';
 		} else {
 			if ( ! empty( $secondary_item_id ) ) {
 				$text = sprintf( __( 'DWQA: ', 'dwqa' ) . __( 'You have %d new reply to %2$s from %3$s', 'dwqa' ), (int) $total_items, $dwqa_notif_title, bp_core_get_user_displayname( $secondary_item_id ) );
-
+				
 			} else {
 				$text = sprintf( __( 'DWQA: ', 'dwqa' ) . __( 'You have %d new reply to %s', 'dwqa' ), (int) $total_items, $dwqa_notif_title );
-
+				
 			}
 			$filter = 'bp_dwqa_single_new_subscription_notification';
 		}
@@ -63,7 +64,6 @@ function bp_dwqa_format_buddypress_notifications( $action, $item_id, $secondary_
 		return $return;
 	}
 }
-
 add_filter( 'bp_notifications_get_notifications_for_user', 'bp_dwqa_format_buddypress_notifications', 11, 7 );
 
 
@@ -83,7 +83,6 @@ function bp_dwqa_add_answer_notification( $answer_id, $question_id ) {
 		) );
 	}
 }
-
 add_action( 'dwqa_add_answer', 'bp_dwqa_add_answer_notification', 99, 2 );
 
 function bp_dwqa_buddypress_mark_notifications() {
@@ -121,5 +120,4 @@ function bp_dwqa_buddypress_mark_notifications() {
 		exit();
 	}
 }
-
 add_action( 'init', 'bp_dwqa_buddypress_mark_notifications', 10 );

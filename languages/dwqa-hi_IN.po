@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DW Question Answer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-17 16:31+0700\n"
-"PO-Revision-Date: 2016-08-17 16:31+0700\n"
+"POT-Creation-Date: 2016-09-12 10:33+0700\n"
+"PO-Revision-Date: 2016-09-12 10:33+0700\n"
 "Last-Translator: DesignWall <webmaster@designwall.com>\n"
 "Language-Team: DesignWall <webmaster@designwall.com>\n"
 "Language: hi_IN\n"
@@ -17,132 +17,225 @@ msgstr ""
 "X-Poedit-SearchPath-0: ..\n"
 
 #: dw-question-answer.php:147
+msgid "Next"
+msgstr "अगला"
+
+#: dw-question-answer.php:148
+msgid "Prev"
+msgstr "पिछला"
+
+#: dw-question-answer.php:150
+msgid "Please enter your question"
+msgstr "कृपया अपना प्रश्न प्रविष्ट करें"
+
+#: dw-question-answer.php:151
+msgid "Your question must be at least 2 characters in length"
+msgstr "आपका प्रश्न कम से कम दो अक्षरों का होना चाहिए"
+
+#: dw-question-answer.php:152
+msgid "Enter a valid email address"
+msgstr "एक वैध ईमेल पता प्रविष्ट करें"
+
+#: dw-question-answer.php:153
+msgid "Enter a question title"
+msgstr "प्रश्न का शीर्षक प्रविष्ट करें"
+
+#: dw-question-answer.php:154
+msgid "Please add your name"
+msgstr "कृपया अपना नाम जोड़े "
+
+#: dw-question-answer.php:155
+msgid "Please enter your answer"
+msgstr "कृपया अपना उत्तर प्रविष्ट करें"
+
+#: dw-question-answer.php:156 inc/Handle.php:241
+msgid "Please enter your comment content"
+msgstr "कृपया अपनें विचार लिखें"
+
+#: dw-question-answer.php:157
+msgid "Comment must have more than 2 characters"
+msgstr "कमेंट कम से कम दो अक्षरों का होना चाहिए"
+
+#: dw-question-answer.php:158
+msgid "Not found! Try another keyword."
+msgstr "कुछ नहीं मिला! एक नया कीवर्ड तलाशें"
+
+#: dw-question-answer.php:159
+msgid "Or press <strong>ENTER</strong> to get more questions"
+msgstr "या ज्यादा प्रश्नों हेतु <strong>प्रविष्ट</strong> दबाये"
+
+#: dw-question-answer.php:160
+msgid "Update"
+msgstr "अपडेट"
+
+#: dw-question-answer.php:161 inc/Posts/Answer.php:317 inc/Posts/Base.php:320
+#: inc/Settings.php:402 inc/Settings.php:441 inc/Settings.php:480 inc/Template.php:58
+#: inc/Template.php:172 inc/Template.php:189 templates/content-comment.php:19
+msgid "Edit"
+msgstr "सम्पादन"
+
+#: dw-question-answer.php:162
+msgid "Cancel"
+msgstr "छोड़ें"
+
+#: dw-question-answer.php:163
+msgid "Do you want to delete this comment?"
+msgstr "क्या आप इस कमेंट को नष्ट करना चाहते हैं?"
+
+#: dw-question-answer.php:164
+msgid "Do you want to delete this answer?"
+msgstr "क्या आप इस उत्तर को नष्ट करना चाहते हैं?"
+
+#: dw-question-answer.php:165
+#, fuzzy
+msgid "Do you want to update this answer?"
+msgstr "क्या आप इस उत्तर को अपडेट करना चाहते हैं?"
+
+#: dw-question-answer.php:166
+#, fuzzy
+msgid "Do you want to report this answer?"
+msgstr "क्या आप इस उत्तर को रिपोर्ट करना चाहते हैं?"
+
+#: dw-question-answer.php:168
+msgid "Report"
+msgstr "रिपोर्ट"
+
+#: dw-question-answer.php:169
+msgid "Undo"
+msgstr "एक कदम पीछे"
+
+#: dw-question-answer.php:170
+msgid "This answer will be marked as spam and hidden. Do you want to flag it?"
+msgstr "यह उत्तर स्पैम के रूप में चिन्हित होगा और छिप जायेगा. क्या आप इससे चिन्हित करना चाहते हैं?"
+
+#: dw-question-answer.php:171
+msgid "This answer was flagged as spam. Do you want to show it"
+msgstr "यह उत्तर स्पैम के रूप में चिन्हित हुआ. क्या आप इसे दिखाना चाहते हैं"
+
+#: dw-question-answer.php:172
+msgid "This answer was flagged as spam"
+msgstr "यह उत्तर स्पैम के रूप में चिन्हित किया गया"
+
+#: dw-question-answer.php:173
+msgid "hide"
+msgstr "छिपाएं"
+
+#: dw-question-answer.php:174
+msgid "show"
+msgstr "दिखाएं"
+
+#: dw-question-answer.php:176
+msgid "Follow This Question"
+msgstr "इस प्रश्न को फॉलो करें"
+
+#: dw-question-answer.php:177
+msgid "Unfollow This Question"
+msgstr "इस प्रश्न को अन -फॉलो करें"
+
+#: dw-question-answer.php:178
+#, fuzzy
+msgid "Pin this question to top"
+msgstr "इस प्रश्न को मुख्यपृष्ठ पर स्थापित करें"
+
+#: dw-question-answer.php:179
+#, fuzzy
+msgid "Unpin this question from top"
+msgstr "इस प्रश्न को मुख्यपृष्ठ से विस्थापित करें"
+
+#: dw-question-answer.php:182
+msgid "Do you want to delete this question?"
+msgstr "क्या आप इस प्रश्न को डिलीट करना चाहते हैं?"
+
+#: dw-question-answer.php:204
 msgid "DWQA Questions"
 msgstr "DWQA प्रश्न"
 
-#: dw-question-answer.php:164
+#: dw-question-answer.php:221
 msgid "DWQA Ask Question"
 msgstr "DWQA प्रश्न पूछिए"
 
-#: inc/Admin/Extensions.php:13
-msgid "DWQA Markdown"
+#: inc/Admin/Notice.php:41
+msgid "Action failed. Please refresh the page and retry."
 msgstr ""
 
-#: inc/Admin/Extensions.php:19
-msgid "DWQA Leaderboard"
+#: inc/Admin/Upgrade.php:12
+msgid "DWQA Upgrades"
 msgstr ""
 
-#: inc/Admin/Extensions.php:25
-msgid "DWQA Captcha"
-msgstr ""
-
-#: inc/Admin/Extensions.php:31
-msgid "DWQA Embed Question"
-msgstr ""
-
-#: inc/Admin/Extensions.php:37
-msgid "DWQA Widgets"
-msgstr ""
-
-#: inc/Admin/Extensions.php:47
-msgid "Extensions"
-msgstr ""
-
-#: inc/Admin/Extensions.php:75
-msgid "Get It Now!"
-msgstr ""
-
-#: inc/Admin/Welcome.php:27 inc/Admin/Welcome.php:28
-msgid "Welcome to DW Question & Answer"
-msgstr ""
-
-#: inc/Admin/Welcome.php:35 inc/Admin/Welcome.php:36
-msgid "DW Question & Answer Changelog"
-msgstr ""
-
-#: inc/Admin/Welcome.php:43 inc/Admin/Welcome.php:44
-msgid "DW Question & Answer Credits"
-msgstr ""
-
-#: inc/Admin/Welcome.php:60
-#, php-format
-msgid "Welcome to DW Question & Answer %s"
-msgstr ""
-
-#: inc/Admin/Welcome.php:61
+#: inc/Admin/Upgrade.php:20 upgrades/upgrades.php:40
 msgid ""
-"Thank you for installing our WordPress plugin. If you have any question about this plugin, "
-"please submit to our <a target=\"_blank\" href=\"https://www.designwall.com/question/\">Q&A "
-"section</a>."
+"The upgrade process has started, please be patient. This could take several minutes. You "
+"will be automatically redirected when the upgrade is finished..."
 msgstr ""
 
-#: inc/Admin/Welcome.php:69
-msgid "What&#8217;s New"
+#: inc/Admin/Upgrade.php:52
+msgid ""
+"<strong>DW Question & Answer Data Update Required</strong> &#8211; We just need to update "
+"your install to the latest version"
 msgstr ""
 
-#: inc/Admin/Welcome.php:70
-msgid "Changelog"
+#: inc/Admin/Upgrade.php:53
+msgid "Run the updater"
 msgstr ""
 
-#: inc/Admin/Welcome.php:71
-msgid "Credits"
+#: inc/Admin/Upgrade.php:57
+msgid ""
+"It is strongly recommended that you backup your database before proceeding. Are you sure you "
+"wish to run the updater now?"
 msgstr ""
 
-#: inc/Admin/Welcome.php:199
-msgid "Contributors"
+#: inc/Admin/Upgrade.php:66
+msgid "You do not have permission to do upgrade."
 msgstr ""
 
-#: inc/Admin/Welcome.php:218
-msgid "No valid changelog was found."
-msgstr ""
-
-#: inc/Ajax.php:29 inc/Ajax.php:47 inc/Ajax.php:83 inc/Ajax.php:113 inc/Ajax.php:132
-#: inc/Ajax.php:150 inc/Ajax.php:215 inc/Handle.php:256 inc/Handle.php:455
-#: inc/Permission.php:286 inc/Status.php:319
+#: inc/Ajax.php:29 inc/Ajax.php:50 inc/Ajax.php:92 inc/Ajax.php:125 inc/Ajax.php:144
+#: inc/Ajax.php:162 inc/Ajax.php:229 inc/Handle.php:336 inc/Handle.php:493
+#: inc/Permission.php:327 inc/Status.php:317
 msgid "Are you cheating huh?"
 msgstr "क्या आप धोखा दे रहे हैं हुह?"
 
-#: inc/Ajax.php:33 inc/Handle.php:260
-msgid "You do not have permission to edit comment."
-msgstr ""
-
-#: inc/Ajax.php:37
+#: inc/Ajax.php:35
 #, fuzzy
 msgid "Comment ID must be showed."
 msgstr "कमेंट ID दिखना चाहिए."
 
-#: inc/Ajax.php:51 inc/Handle.php:154
+#: inc/Ajax.php:40 inc/Handle.php:340
+msgid "You do not have permission to edit comment."
+msgstr ""
+
+#: inc/Ajax.php:56 inc/Handle.php:194
 msgid "Answer is missing."
 msgstr ""
 
-#: inc/Ajax.php:55 inc/Handle.php:158
+#: inc/Ajax.php:60 inc/Handle.php:198
 msgid "This post is not answer."
 msgstr ""
 
-#: inc/Ajax.php:59 inc/Ajax.php:162
+#: inc/Ajax.php:64 inc/Ajax.php:176
 msgid "You do not have permission to delete this post."
 msgstr ""
 
-#: inc/Ajax.php:86
+#: inc/Ajax.php:98
 msgid "Missing id of answer"
 msgstr "उत्तर की ID विलुप्त है"
 
-#: inc/Ajax.php:154 inc/Handle.php:477
+#: inc/Ajax.php:168 inc/Handle.php:514
 msgid "Question is missing."
 msgstr ""
 
-#: inc/Ajax.php:158 inc/Handle.php:481
+#: inc/Ajax.php:172 inc/Handle.php:518
 msgid "This post is not question."
 msgstr ""
 
-#: inc/Ajax.php:206
+#: inc/Ajax.php:220
 #, fuzzy
 msgid "You do not have permission to edit question status"
 msgstr "आपको प्रश्न देखने की अनुमति नहीं है"
 
-#: inc/Ajax.php:223 inc/Ajax.php:273
-msgid "Not Found!!!"
-msgstr ""
+#: inc/Ajax.php:237 inc/Ajax.php:291
+#, fuzzy
+msgid "Search query is empty"
+msgstr "सर्च क्वेरी रिक्त हैं"
 
 #: inc/Answer_List_Table.php:81 inc/Posts/Answer.php:271 inc/Template.php:48
 msgid "Author"
@@ -152,9 +245,10 @@ msgstr "लेखक"
 msgid "Detail"
 msgstr "जानकारी"
 
-#: inc/Answer_List_Table.php:92 inc/Notifications.php:116 inc/Notifications.php:214
-#: inc/Notifications.php:233 inc/Posts/Base.php:230 inc/Posts/Comment.php:102
-#: inc/Settings.php:419 inc/Settings.php:455 inc/Settings.php:490 inc/User.php:155
+#: inc/Answer_List_Table.php:92 inc/Notifications.php:104 inc/Notifications.php:124
+#: inc/Posts/Base.php:230 inc/Posts/Comment.php:102 inc/Posts/Question.php:86
+#: inc/Posts/Question.php:113 inc/Posts/Question.php:130 inc/Settings.php:421
+#: inc/Settings.php:460 inc/Settings.php:498 inc/User.php:155 inc/helper/akismet.php:36
 msgid "Anonymous"
 msgstr "बेनाम"
 
@@ -162,115 +256,102 @@ msgstr "बेनाम"
 msgid "Answered on "
 msgstr "उत्तरित"
 
-#: inc/Answer_List_Table.php:112 inc/Helptab.php:153
+#: inc/Answer_List_Table.php:112 inc/Helptab.php:149
 msgid "Read more"
 msgstr "और पढ़े"
 
-#: inc/Handle.php:29
+#: inc/Handle.php:26
+msgid "You do not have permission to submit answer."
+msgstr "आपको उत्तर देने की अनुमति नहीं है."
+
+#: inc/Handle.php:35
 msgid "&quot;Helllo&quot;, Are you cheating huh?."
 msgstr ""
 
-#: inc/Handle.php:32
+#: inc/Handle.php:38
 msgid "Delete draft"
 msgstr "ड्राफ्ट डिलीट करें"
 
-#: inc/Handle.php:39
+#: inc/Handle.php:45
 msgid "Answer content is empty"
 msgstr ""
 
-#: inc/Handle.php:42
+#: inc/Handle.php:49
 msgid "Question is empty"
 msgstr ""
 
-#: inc/Handle.php:46 inc/Handle.php:432
-msgid "You do not have permission to submit question."
-msgstr "आपको प्रश्न पूछने की अनुमति नहीं है."
-
-#: inc/Handle.php:50 inc/Handle.php:218 inc/Handle.php:300
+#: inc/Handle.php:53 inc/Handle.php:256 inc/Handle.php:388
 #, fuzzy
 msgid "Missing email information"
 msgstr "ईमेल सूचना विलुप्त है"
 
-#: inc/Handle.php:54 inc/Handle.php:222 inc/Handle.php:305
+#: inc/Handle.php:57 inc/Handle.php:260 inc/Handle.php:393
 #, fuzzy
 msgid "Missing name information"
 msgstr "नाम सूचना विलुप्त है"
 
-#: inc/Handle.php:58 inc/Handle.php:451
+#: inc/Handle.php:61 inc/Handle.php:489
 msgid "Captcha is not correct"
 msgstr "काप्तचा सही नहीं है"
 
-#: inc/Handle.php:77
+#: inc/Handle.php:82
 msgid "Answer for "
 msgstr "इसके लिए उत्तर"
 
-#: inc/Handle.php:139
+#: inc/Handle.php:181
 msgid "You do not have permission to edit answer."
 msgstr ""
 
-#: inc/Handle.php:143 inc/Handle.php:520 inc/Posts/Question.php:473
+#: inc/Handle.php:185 inc/Handle.php:557 inc/Posts/Question.php:552
 msgid "Hello, Are you cheating huh?"
 msgstr "सुनिए, क्या आप धोखा दे रहे हैं, हा ?"
 
-#: inc/Handle.php:148
+#: inc/Handle.php:190
 msgid "You must enter a valid answer content."
 msgstr ""
 
-#: inc/Handle.php:194
+#: inc/Handle.php:232
 msgid "You can't post comment"
 msgstr "आप कमेंट नहीं कर सकते हैं."
 
-#: inc/Handle.php:197
+#: inc/Handle.php:235
 msgid "Missing post id."
 msgstr ""
 
-#: inc/Handle.php:203
-msgid "Please enter your comment content"
-msgstr "कृपया अपनें विचार लिखें"
-
-#: inc/Handle.php:249
+#: inc/Handle.php:329
 msgid "Comment is missing"
 msgstr ""
 
-#: inc/Handle.php:264
+#: inc/Handle.php:344
 msgid "Comment content must not be empty."
 msgstr "कमेंट हिस्सा खाली नहीं रहना चाहिए."
 
-#: inc/Handle.php:294 inc/Handle.php:471
+#: inc/Handle.php:374 inc/Handle.php:510
 msgid "You must enter a valid question title."
 msgstr ""
 
-#: inc/Handle.php:384
-msgid "User Registration was disabled."
-msgstr "प्रयोक्ता रजिस्ट्रेशन बंद हो गया"
+#: inc/Handle.php:467
+msgid "You do not have permission to submit question."
+msgstr "आपको प्रश्न पूछने की अनुमति नहीं है."
 
-#: inc/Handle.php:387
-msgid "This email is already registered, please choose another one."
-msgstr "यह ईमेल पहले ही रजिस्टर हो चूका है, कृपया दूसरा चुने."
-
-#: inc/Handle.php:390
-#, fuzzy
-msgid "This username is already registered. Please use another one."
-msgstr "यह प्रयोक्ता-नाम पहले ही रजिस्टर हो चूका है, कृपया दूसरा चुने."
-
-#: inc/Handle.php:444
+#: inc/Handle.php:482
 msgid "Your question is waiting moderator."
 msgstr ""
 
-#: inc/Handle.php:466 inc/Status.php:347
+#: inc/Handle.php:505 inc/Status.php:345
 #, fuzzy
 msgid "You do not have permission to edit question"
 msgstr "आपको प्रश्न पूछने की अनुमति नहीं है."
 
-#: inc/Helptab.php:47
+#: inc/Helptab.php:43
 msgid "Overview"
 msgstr "एक नजर"
 
-#: inc/Helptab.php:48
+#: inc/Helptab.php:44
 msgid "DW Question Answer Plugin"
 msgstr "DW प्रश्नोतरी प्लग-इन"
 
-#: inc/Helptab.php:49
+#: inc/Helptab.php:45
 msgid ""
 "DW Question Answer is a WordPress Plugin which helps you build a Question & Answer system on "
 "your WordPress sites. The plugin is easy to install and set up. Let start building up your "
@@ -280,66 +361,70 @@ msgstr ""
 "मदद करती है. यह प्लग-इन इंस्टाल एवं चालु करने में सरल है. आईये इस वर्डप्रेस प्रश्नोत्तर व्यवस्था के साथ आपकी "
 "कम्युनिटी बनाना शुरू करें."
 
-#: inc/Helptab.php:52
+#: inc/Helptab.php:48
 msgid "Setup Question List Page"
 msgstr "प्रश्न सूची हेतु पन्ना तय करें"
 
-#: inc/Helptab.php:56
+#: inc/Helptab.php:52
 msgid "Setup Ask Question Page"
 msgstr "प्रश्न पूछने हेतु पन्ना तय करें"
 
-#: inc/Helptab.php:60
+#: inc/Helptab.php:56
 msgid "Shortcode"
 msgstr "शार्टकोड"
 
-#: inc/Helptab.php:64
+#: inc/Helptab.php:60
 msgid "Style integration"
 msgstr "स्टाइल समन्वयन"
 
-#: inc/Helptab.php:173
+#: inc/Helptab.php:169
 msgid "For more information:"
 msgstr "अधिक जानकारी हेतु:"
 
-#: inc/Helptab.php:174
+#: inc/Helptab.php:170
 msgid "DW Question Answer Guide"
 msgstr "DW प्रश्नोतरी गाइड"
 
-#: inc/Helptab.php:175
+#: inc/Helptab.php:171
 msgid "Community"
 msgstr "कम्युनिटी"
 
-#: inc/Helptab.php:176
+#: inc/Helptab.php:172
 msgid "DesignWall Wordpress Themes"
 msgstr "डिजाईनवाल की वर्डप्रेस थीम्स"
 
-#: inc/Helptab.php:177
+#: inc/Helptab.php:173
 msgid "DesignWall Wordpress Plugins"
 msgstr "डिजाईनवाल के वर्डप्रेस प्लग-इन्स"
 
+#: inc/Log.php:12
+msgid "Logs"
+msgstr ""
+
 #: inc/Metaboxes.php:13 templates/content-single-question.php:31
-#: templates/question-submit-form.php:22
+#: templates/question-submit-form.php:23
 msgid "Status"
 msgstr "स्थिति"
 
-#: inc/Metaboxes.php:15 inc/Status.php:304 templates/archive-question-filter.php:18
+#: inc/Metaboxes.php:15 inc/Status.php:302 templates/archive-question-filter.php:18
 #: templates/content-single-question.php:32
 msgid "Open"
 msgstr "खुला"
 
-#: inc/Metaboxes.php:16 inc/Status.php:287
+#: inc/Metaboxes.php:16 inc/Status.php:285
 msgid "Pending"
 msgstr "लंबित"
 
-#: inc/Metaboxes.php:17 inc/Status.php:284 templates/archive-question-filter.php:19
+#: inc/Metaboxes.php:17 inc/Status.php:282 templates/archive-question-filter.php:19
 #: templates/content-single-question.php:34
 msgid "Resolved"
 msgstr "हल हो चुका"
 
-#: inc/Metaboxes.php:18 inc/Status.php:290
+#: inc/Metaboxes.php:18 inc/Status.php:288
 msgid "Re-Open"
 msgstr "फिर से खोले"
 
-#: inc/Metaboxes.php:19 inc/Status.php:293 templates/archive-question-filter.php:20
+#: inc/Metaboxes.php:19 inc/Status.php:291 templates/archive-question-filter.php:20
 #: templates/content-single-question.php:33
 msgid "Closed"
 msgstr "बंद"
@@ -353,7 +438,7 @@ msgstr "स्थापित"
 msgid "Pin question to top of archive page."
 msgstr "स्थापित प्रश्न संग्रह-पृष्ठ के शीर्ष पर"
 
-#: inc/Metaboxes.php:45 inc/Posts/Answer.php:225 inc/Posts/Answer.php:227 inc/Settings.php:431
+#: inc/Metaboxes.php:45 inc/Posts/Answer.php:225 inc/Posts/Answer.php:227 inc/Settings.php:434
 #: templates/archive-question-filter.php:34
 msgid "Answers"
 msgstr "उत्तर"
@@ -362,26 +447,37 @@ msgstr "उत्तर"
 msgid "Question Meta Data"
 msgstr "प्रश्न के बारे में"
 
-#: inc/Notifications.php:29
+#: inc/Notifications.php:30
 msgid "A new question was posted on {site_name}"
 msgstr "{site_name} पर एक नया प्रश्न पूछा गया"
 
-#: inc/Notifications.php:132
-#, fuzzy
-msgid "You have a new answer for your followed question"
-msgstr "आपके followed प्रश्न हेतु एक नया उत्तर मिला है"
+#: inc/Notifications.php:161 inc/Settings.php:202
+msgid "[{site_name}] You have a new answer for your followed question"
+msgstr ""
 
-#: inc/Notifications.php:250
-msgid "A new answer for \"{question_title}\" was posted on {site_name}"
-msgstr "{site_name} पर \"{question_title}\" हेतु एक नया उत्तर डाला गया"
+#: inc/Notifications.php:213
+msgid "[{site_name}] A new answer for \"{question_title}\" was posted on {site_name}"
+msgstr ""
 
-#: inc/Notifications.php:334 inc/Notifications.php:380
+#: inc/Notifications.php:300 inc/Notifications.php:346
 msgid "[{site_name}] You have a new comment for question {question_title}"
 msgstr "[{site_name}] पर {question_title} हेतु आपके लिए एक नया कमेंट है"
 
-#: inc/Notifications.php:339 inc/Notifications.php:385
+#: inc/Notifications.php:305 inc/Notifications.php:351
 msgid "[{site_name}] You have a new comment for answer"
 msgstr "[{site_name}] उत्तर हेतु आपके लिए एक नया कमेंट है"
+
+#: inc/Notifications.php:428
+msgid "New Comment in: "
+msgstr ""
+
+#: inc/Notifications.php:436
+msgid "New Answer in: "
+msgstr ""
+
+#: inc/Notifications.php:442
+msgid "New Question: "
+msgstr ""
 
 #: inc/PointerHelper.php:60
 msgid "How to use DW Question Answer"
@@ -408,13 +504,8 @@ msgstr "उत्तर"
 msgid "In Response To"
 msgstr "इसके जवाब में"
 
-#: inc/Posts/Answer.php:317 inc/Posts/Base.php:320 inc/Settings.php:402 inc/Template.php:58
-#: inc/Template.php:163 inc/Template.php:180 templates/content-comment.php:19
-msgid "Edit"
-msgstr "सम्पादन"
-
-#: inc/Posts/Answer.php:318 inc/Settings.php:403 inc/Template.php:168 inc/Template.php:185
-#: templates/content-comment.php:22
+#: inc/Posts/Answer.php:318 inc/Settings.php:403 inc/Settings.php:442 inc/Settings.php:481
+#: inc/Template.php:177 inc/Template.php:194 templates/content-comment.php:22
 msgid "Delete"
 msgstr "डिलीट"
 
@@ -483,7 +574,7 @@ msgstr ""
 msgid "Add New"
 msgstr "नया जोड़े"
 
-#: inc/Posts/Base.php:321 inc/Status.php:296
+#: inc/Posts/Base.php:321 inc/Status.php:294
 msgid "New"
 msgstr "नया"
 
@@ -503,157 +594,161 @@ msgstr ""
 msgid "Parent:"
 msgstr ""
 
-#: inc/Posts/Question.php:56 inc/Shortcode.php:138 inc/widgets/Closed_Question.php:49
-#: inc/widgets/Latest_Question.php:42 inc/widgets/Popular_Question.php:43
+#: inc/Posts/Question.php:56 inc/Shortcode.php:130 inc/widgets/Closed_Question.php:49
+#: inc/widgets/Latest_Question.php:39 inc/widgets/Popular_Question.php:43
 msgid "asked by"
 msgstr "प्रश्नक"
 
-#: inc/Posts/Question.php:100 inc/Posts/Question.php:102 inc/Posts/Question.php:266
+#: inc/Posts/Question.php:126
+msgid "asked"
+msgstr "पूछा गया"
+
+#: inc/Posts/Question.php:183 inc/Posts/Question.php:185 inc/Posts/Question.php:345
 #: inc/Settings.php:395 templates/archive-question-filter.php:28
 msgid "Questions"
 msgstr ""
 
-#: inc/Posts/Question.php:101
+#: inc/Posts/Question.php:184
 msgid "Question"
 msgstr "प्रश्न"
 
-#: inc/Posts/Question.php:196
+#: inc/Posts/Question.php:275
 msgctxt "taxonomy general name"
 msgid "Question Categories"
 msgstr ""
 
-#: inc/Posts/Question.php:197
+#: inc/Posts/Question.php:276
 msgctxt "taxonomy singular name"
 msgid "Question Category"
 msgstr ""
 
-#: inc/Posts/Question.php:198
+#: inc/Posts/Question.php:277
 msgid "Search Question Categories"
 msgstr ""
 
-#: inc/Posts/Question.php:199
+#: inc/Posts/Question.php:278
 msgid "All Question Categories"
 msgstr ""
 
-#: inc/Posts/Question.php:200
+#: inc/Posts/Question.php:279
 msgid "Parent Question Category"
 msgstr ""
 
-#: inc/Posts/Question.php:201
+#: inc/Posts/Question.php:280
 msgid "Parent Question Category:"
 msgstr ""
 
-#: inc/Posts/Question.php:202
+#: inc/Posts/Question.php:281
 msgid "Edit Question Category"
 msgstr ""
 
-#: inc/Posts/Question.php:203
+#: inc/Posts/Question.php:282
 msgid "Update Question Category"
 msgstr ""
 
-#: inc/Posts/Question.php:204
+#: inc/Posts/Question.php:283
 msgid "Add New Question Category"
 msgstr ""
 
-#: inc/Posts/Question.php:205
+#: inc/Posts/Question.php:284
 msgid "New Question Category Name"
 msgstr ""
 
-#: inc/Posts/Question.php:206
+#: inc/Posts/Question.php:285
 msgid "Question Category"
 msgstr "प्रश्न वर्ग"
 
-#: inc/Posts/Question.php:225
+#: inc/Posts/Question.php:304
 msgctxt "taxonomy general name"
 msgid "Question Tags"
 msgstr ""
 
-#: inc/Posts/Question.php:226
+#: inc/Posts/Question.php:305
 msgctxt "taxonomy singular name"
 msgid "Question Tag"
 msgstr ""
 
-#: inc/Posts/Question.php:227
+#: inc/Posts/Question.php:306
 msgid "Search Question Tags"
 msgstr ""
 
-#: inc/Posts/Question.php:228
+#: inc/Posts/Question.php:307
 msgid "Popular Question Tags"
 msgstr ""
 
-#: inc/Posts/Question.php:229
+#: inc/Posts/Question.php:308
 msgid "All Question Tags"
 msgstr ""
 
-#: inc/Posts/Question.php:232
+#: inc/Posts/Question.php:311
 msgid "Edit Question Tag"
 msgstr ""
 
-#: inc/Posts/Question.php:233
+#: inc/Posts/Question.php:312
 msgid "Update Question Tag"
 msgstr ""
 
-#: inc/Posts/Question.php:234
+#: inc/Posts/Question.php:313
 msgid "Add New Question Tag"
 msgstr ""
 
-#: inc/Posts/Question.php:235
+#: inc/Posts/Question.php:314
 msgid "New Question Tag Name"
 msgstr ""
 
-#: inc/Posts/Question.php:236
+#: inc/Posts/Question.php:315
 msgid "Separate question tags with commas"
 msgstr ""
 
-#: inc/Posts/Question.php:237
+#: inc/Posts/Question.php:316
 msgid "Add or remove question tags"
 msgstr ""
 
-#: inc/Posts/Question.php:238
+#: inc/Posts/Question.php:317
 msgid "Choose from the most used question tags"
 msgstr ""
 
-#: inc/Posts/Question.php:239
+#: inc/Posts/Question.php:318
 msgid "No question tags found."
 msgstr ""
 
-#: inc/Posts/Question.php:240
+#: inc/Posts/Question.php:319
 msgid "Question Tags"
 msgstr "प्रश्न विषय"
 
-#: inc/Posts/Question.php:276
+#: inc/Posts/Question.php:355
 msgid "Info"
 msgstr "सूचना"
 
-#: inc/Posts/Question.php:287 templates/content-question.php:22
+#: inc/Posts/Question.php:366 inc/helper/functions.php:362
 msgid "answered"
 msgstr "उत्तरित"
 
-#: inc/Posts/Question.php:288
+#: inc/Posts/Question.php:367
 msgid "voted"
 msgstr "वोट किया"
 
-#: inc/Posts/Question.php:289
+#: inc/Posts/Question.php:368
 msgid "views"
 msgstr "दर्शक"
 
-#: inc/Posts/Question.php:410 inc/User.php:266
+#: inc/Posts/Question.php:489 inc/User.php:266
 msgid "Invalid Post"
 msgstr "अमान्य पोस्ट"
 
-#: inc/Posts/Question.php:445
+#: inc/Posts/Question.php:524
 msgid "Sticky Questions"
 msgstr "स्थापित प्रश्न"
 
-#: inc/Posts/Question.php:479
+#: inc/Posts/Question.php:558
 msgid "Question is not valid"
 msgstr "प्रश्न वैध नहीं है"
 
-#: inc/Posts/Question.php:500
+#: inc/Posts/Question.php:579
 msgid "Delete Action was failed"
 msgstr "डिलीट प्रक्रिया फेल हो गयी"
 
-#: inc/Posts/Question.php:505
+#: inc/Posts/Question.php:584
 msgid "You do not have permission to delete this question"
 msgstr "आपको यह प्रश्न डिलीट करने की अनुमति नहीं है"
 
@@ -758,73 +853,89 @@ msgstr ""
 msgid "Enable notification for new comment of answer."
 msgstr ""
 
-#: inc/Settings.php:400
+#: inc/Settings.php:400 inc/Settings.php:439 inc/Settings.php:478
 msgid "Read"
 msgstr "पढ़े"
 
-#: inc/Settings.php:401
+#: inc/Settings.php:401 inc/Settings.php:440 inc/Settings.php:479
 msgid "Post"
 msgstr "पोस्ट"
 
-#: inc/Settings.php:429 inc/Settings.php:465 inc/Settings.php:500
+#: inc/Settings.php:404 inc/Settings.php:443 inc/Settings.php:482
+msgid "Manage"
+msgstr ""
+
+#: inc/Settings.php:432 inc/Settings.php:471 inc/Settings.php:509
 msgid "Reset Default"
 msgstr "प्रारंभिक अवस्था"
 
-#: inc/Settings.php:467
+#: inc/Settings.php:473
 msgid "Comments"
 msgstr ""
 
-#: inc/Settings.php:509
+#: inc/Settings.php:518
 msgid "Enable captcha on submit question page."
 msgstr ""
 
-#: inc/Settings.php:515
+#: inc/Settings.php:524
 msgid "Enable captcha on single question page."
 msgstr ""
 
-#: inc/Settings.php:533
+#: inc/Settings.php:543
 msgid "Default"
 msgstr ""
 
-#: inc/Settings.php:546
+#: inc/Settings.php:544
+msgid "Google reCaptcha v2"
+msgstr ""
+
+#: inc/Settings.php:545
+msgid "FunCaptcha"
+msgstr ""
+
+#: inc/Settings.php:577
 msgid "questions."
 msgstr ""
 
-#: inc/Settings.php:552
+#: inc/Settings.php:583
 msgid "answers."
 msgstr ""
 
-#: inc/Settings.php:558
+#: inc/Settings.php:589
 msgid "Allow members to post private question."
 msgstr ""
 
-#: inc/Settings.php:564
+#: inc/Settings.php:595
 msgid "Question must be manually approved."
 msgstr ""
 
-#: inc/Settings.php:570
+#: inc/Settings.php:601
 msgid "Display status icon on the left side."
 msgstr ""
 
-#: inc/Settings.php:576
+#: inc/Settings.php:607
 msgid "Disable question status feature."
 msgstr ""
 
-#: inc/Settings.php:582
+#: inc/Settings.php:613
 msgid "Show all answers on single question page."
 msgstr ""
 
-#: inc/Settings.php:593
+#: inc/Settings.php:624
 #, fuzzy
 msgid "Select template for Single Quesiton page"
 msgstr "प्रश्न संग्रह पृष्ठ चुने"
 
-#: inc/Settings.php:599
+#: inc/Settings.php:630
 msgid ""
 "By default, your single.php template file will be used if you do not choose any template"
 msgstr ""
 
-#: inc/Settings.php:607
+#: inc/Settings.php:644
+msgid "Enable"
+msgstr ""
+
+#: inc/Settings.php:649
 #, php-format
 msgid ""
 "If you like, you may enter custom structure for your single question, question category and "
@@ -833,236 +944,263 @@ msgid ""
 "used."
 msgstr ""
 
-#: inc/Settings.php:732
+#: inc/Settings.php:774
 msgid "Plugin Settings"
 msgstr "प्लग-इन सेटिंग्स"
 
-#: inc/Settings.php:732
+#: inc/Settings.php:774
 msgid "Settings"
 msgstr "सेटिंग्स"
 
-#: inc/Settings.php:768
+#: inc/Settings.php:810
 msgid "Email Settings"
 msgstr ""
 
-#: inc/Settings.php:769
+#: inc/Settings.php:811
 msgid "New Question Notifications"
 msgstr ""
 
-#: inc/Settings.php:770
+#: inc/Settings.php:812
 msgid "New Answer Notifications"
 msgstr ""
 
-#: inc/Settings.php:771
+#: inc/Settings.php:813
 msgid "New Comment Notifications"
 msgstr ""
 
-#: inc/Settings.php:784
+#: inc/Settings.php:826
 msgid "Page Settings"
 msgstr ""
 
-#: inc/Settings.php:791
+#: inc/Settings.php:833
 msgid "Question List Page"
 msgstr "प्रश्न सूची पृष्ठ"
 
-#: inc/Settings.php:799 inc/Settings.php:930
+#: inc/Settings.php:841 inc/Settings.php:972
 msgid "Ask Question Page"
 msgstr "प्रश्न पूछने हेतु पृष्ठ "
 
-#: inc/Settings.php:842
+#: inc/Settings.php:884
 msgid "Question Settings"
 msgstr ""
 
-#: inc/Settings.php:849
+#: inc/Settings.php:891
 msgid "Archive Page Show At Most"
 msgstr ""
 
-#: inc/Settings.php:857
+#: inc/Settings.php:899
 msgid "Before A Question Appears"
 msgstr ""
 
-#: inc/Settings.php:865
+#: inc/Settings.php:907
 msgid "Other Question Settings"
 msgstr ""
 
-#: inc/Settings.php:890
+#: inc/Settings.php:932
 msgid "Answer Settings"
 msgstr ""
 
-#: inc/Settings.php:897
+#: inc/Settings.php:939
 msgid "Answer Listing"
 msgstr ""
 
-#: inc/Settings.php:915
+#: inc/Settings.php:957
 msgid "Captcha Settings"
 msgstr ""
 
-#: inc/Settings.php:922
+#: inc/Settings.php:964
 msgid "Type"
 msgstr ""
 
-#: inc/Settings.php:938
+#: inc/Settings.php:980
 msgid "Single Question Page"
 msgstr ""
 
-#: inc/Settings.php:950
+#: inc/Settings.php:988
+msgid "Google ReCaptcha Public Key"
+msgstr ""
+
+#: inc/Settings.php:996
+msgid "Google ReCaptcha Private Key"
+msgstr ""
+
+#: inc/Settings.php:1004
+msgid "Funcaptcha Public Key"
+msgstr ""
+
+#: inc/Settings.php:1012
+msgid "FunCaptcha Private Key"
+msgstr ""
+
+#: inc/Settings.php:1023
+msgid "Other Settings"
+msgstr ""
+
+#: inc/Settings.php:1030
+msgid "Markdown Editor"
+msgstr ""
+
+#: inc/Settings.php:1040
 msgid "Permalink Settings"
 msgstr "पर्मालिंक सेटिंग्स"
 
-#: inc/Settings.php:957
+#: inc/Settings.php:1047
 msgid "Question Base"
 msgstr ""
 
-#: inc/Settings.php:965
+#: inc/Settings.php:1055
 msgid "Question Category Base"
 msgstr ""
 
-#: inc/Settings.php:973
+#: inc/Settings.php:1063
 msgid "Question Tag Base"
 msgstr ""
 
-#: inc/Settings.php:1042
+#: inc/Settings.php:1132
 msgid "From Email"
 msgstr "ईमेल से"
 
-#: inc/Settings.php:1110 inc/Settings.php:1117
+#: inc/Settings.php:1141
+msgid "From name"
+msgstr ""
+
+#: inc/Settings.php:1209 inc/Settings.php:1216
 msgid "Group Permission"
 msgstr "समूह अनुमति"
 
-#: inc/Settings.php:1145
+#: inc/Settings.php:1244
 msgid "DWQA Settings"
 msgstr "DWप्रश्नोत्तरी सेटिंग्स"
 
-#: inc/Settings.php:1149
+#: inc/Settings.php:1248
 msgid "General"
 msgstr "सामान्य"
 
-#: inc/Settings.php:1150
+#: inc/Settings.php:1249
 msgid "Emails"
 msgstr ""
 
-#: inc/Settings.php:1151
+#: inc/Settings.php:1250
 msgid "Permissions"
 msgstr ""
 
-#: inc/Settings.php:1152
-msgid "Licenses"
+#: inc/Settings.php:1252
+msgid "Envato API"
 msgstr ""
 
-#: inc/Settings.php:1166
+#: inc/Settings.php:1267
 msgid "Email settings"
 msgstr ""
 
-#: inc/Settings.php:1168
+#: inc/Settings.php:1269
 msgid "Email Logo"
 msgstr "ईमेल लोगो"
 
-#: inc/Settings.php:1182
+#: inc/Settings.php:1286
 msgid "New Question Notifications (to Admin)"
 msgstr ""
 
-#: inc/Settings.php:1206
+#: inc/Settings.php:1307
 msgid "New Answer Notifications (to Followers)"
 msgstr ""
 
-#: inc/Settings.php:1222
-msgid "New Answer Notifications (to Admin)"
+#: inc/Settings.php:1323
+msgid "New Answer Notifications (to Author)"
 msgstr ""
 
-#: inc/Settings.php:1242
+#: inc/Settings.php:1340
 msgid "New Comment to Question Notifications (to Followers)"
 msgstr ""
 
-#: inc/Settings.php:1259
-msgid "New Comment to Question Notifications (to Admin)"
+#: inc/Settings.php:1357
+msgid "New Comment to Question Notifications (to Author)"
 msgstr ""
 
-#: inc/Settings.php:1279
+#: inc/Settings.php:1374
 msgid "New Comment to Answer Notifications (to Followers)"
 msgstr ""
 
-#: inc/Settings.php:1296
-msgid "New Comment to Answer Notifications (to Admin)"
+#: inc/Settings.php:1391
+msgid "New Comment to Answer Notifications (to Author)"
 msgstr ""
 
-#: inc/Settings.php:1314
+#: inc/Settings.php:1406
 msgid "Save all changes"
 msgstr "सारे परिवर्तन सुरक्षित करें"
 
-#: inc/Settings.php:1328
-#, php-format
-msgid "Manage <a href=\"%s\">DWQA Extensions</a> license keys"
-msgstr ""
-
-#: inc/Settings.php:1346 inc/Settings.php:1351 inc/Settings.php:1356 inc/Settings.php:1361
+#: inc/Settings.php:1437 inc/Settings.php:1442 inc/Settings.php:1447 inc/Settings.php:1452
 msgid "Forward to"
 msgstr ""
 
-#: inc/Settings.php:1366
+#: inc/Settings.php:1457
 msgid "Cc"
 msgstr "Cc"
 
-#: inc/Settings.php:1371
+#: inc/Settings.php:1462
 msgid "Bcc"
 msgstr "Bcc"
 
-#: inc/Settings.php:1376
+#: inc/Settings.php:1467
 msgid "This address will be used as the sender of the outgoing emails."
 msgstr "यह पता जाने वाले ईमेल के प्रेषक के रूप में प्रयोग होगा"
 
-#: inc/Settings.php:1382
+#: inc/Settings.php:1471
+msgid "This address will be used as the sender of the outgoing name."
+msgstr ""
+
+#: inc/Settings.php:1477
 msgid "Send a copy of every email to admin."
 msgstr ""
 
-#: inc/Shortcode.php:115 inc/widgets/Popular_Question.php:21
+#: inc/Shortcode.php:107 inc/widgets/Popular_Question.php:21
 msgid "Popular Questions"
 msgstr "प्रचलित प्रश्न"
 
-#: inc/Shortcode.php:152
+#: inc/Shortcode.php:144
 msgid "Latest Answers"
 msgstr "नवीनतम प्रश्न"
 
-#: inc/Shortcode.php:178
+#: inc/Shortcode.php:170
 msgid "Answer at"
 msgstr "उत्तरित"
 
-#: inc/Shortcode.php:178
+#: inc/Shortcode.php:170
 msgid "Link to"
 msgstr "लिंक"
 
-#: inc/Shortcode.php:206
+#: inc/Shortcode.php:198
 #, php-format
 msgid "%d person who is following this question"
 msgid_plural "%d people who are following this question"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/Shortcode.php:236
+#: inc/Shortcode.php:228
 msgid "Question List"
 msgstr ""
 
-#: inc/Status.php:300
+#: inc/Status.php:298
 msgid "Answered"
 msgstr "उत्तरित"
 
-#: inc/Status.php:324
+#: inc/Status.php:322
 msgid "Missing post ID"
 msgstr "पोस्ट ID विलुप्त"
 
-#: inc/Status.php:337
+#: inc/Status.php:335
 msgid "Post does not exist"
 msgstr "पोस्ट का कोई अस्तित्व नहीं है"
 
-#: inc/Status.php:342
+#: inc/Status.php:340
 msgid "Invalid post status"
 msgstr "अमान्य पोस्ट स्थिति"
 
-#: inc/Template.php:15 templates/content-edit.php:44 templates/question-submit-form.php:46
+#: inc/Template.php:15 templates/content-edit.php:46 templates/question-submit-form.php:47
 msgid "Tag"
 msgstr ""
 
-#: inc/Template.php:15 inc/Template.php:20 templates/content-edit.php:29
-#: templates/question-submit-form.php:32
+#: inc/Template.php:15 inc/Template.php:20 templates/content-edit.php:31
+#: templates/question-submit-form.php:33
 msgid "Category"
 msgstr "वर्ग"
 
@@ -1074,29 +1212,29 @@ msgstr ""
 msgid "What do you want to know?"
 msgstr ""
 
-#: inc/Template.php:157
+#: inc/Template.php:166
 msgid "Subscribe"
 msgstr ""
 
-#: inc/Template.php:445
+#: inc/Template.php:466
 msgid "Email"
 msgstr "ईमेल"
 
-#: inc/Template.php:447
+#: inc/Template.php:468
 msgid "Name"
 msgstr "नाम"
 
-#: inc/Template.php:449
+#: inc/Template.php:470
 #, php-format
 msgid "Required fields are marked %s"
 msgstr "आवश्यक खाने %s द्वारा चिन्हित हैं"
 
-#: inc/Template.php:461
+#: inc/Template.php:482
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr "कमेंट करने के लिए <a href=\"%s\">लॉग इन</a> होना जरुरी है."
 
-#: inc/Template.php:464
+#: inc/Template.php:485
 #, php-format
 msgid ""
 "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags and attributes: "
@@ -1104,37 +1242,37 @@ msgid ""
 msgstr ""
 "आप <abbr title=\"HyperText Markup Language\">HTML</abbr>टैग एवं एट्रिब्यूट प्रयुक्त कर सकते हैं: %s"
 
-#: inc/Template.php:467
+#: inc/Template.php:488
 msgid "Leave a Reply"
 msgstr "एक जवाब छोड़े"
 
-#: inc/Template.php:468
+#: inc/Template.php:489
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr "%s को एक जवाब छोड़े"
 
-#: inc/Template.php:469
+#: inc/Template.php:490
 msgid "Cancel reply"
 msgstr "जवाब रद्द करें"
 
-#: inc/Template.php:470
+#: inc/Template.php:491
 msgid "Post Comment"
 msgstr "कमेंट पोस्ट करें"
 
-#: inc/Template.php:645
+#: inc/Template.php:666
 msgid "Sticky Question"
 msgstr "स्थापित प्रश्न"
 
-#: inc/Template.php:659
+#: inc/Template.php:680
 msgid "Ask a question"
 msgstr "प्रश्न पूछें"
 
-#: inc/Template.php:661
+#: inc/Template.php:682
 #, fuzzy
 msgid "Login to ask a question"
 msgstr "प्रश्न पूछने हेतु लॉग इन करें"
 
-#: inc/Template.php:1128
+#: inc/Template.php:1141
 #, fuzzy
 msgid "Choose as the best answer"
 msgstr "इसे सर्वश्रेष्ठ उत्तर चुने"
@@ -1165,6 +1303,60 @@ msgstr "%s के अंतर्गत समस्त पोस्ट दे�
 msgid "Feed for all posts filed under %s"
 msgstr "%s के अंतर्गत समस्त पोस्ट की फीड"
 
+#: inc/helper/functions.php:363
+msgid "commented"
+msgstr ""
+
+#: inc/widgets/Ask_Form.php:5
+msgid "Show ask question form in sidebar."
+msgstr ""
+
+#: inc/widgets/Ask_Form.php:6
+msgid "DWQA Ask Form"
+msgstr ""
+
+#: inc/widgets/Ask_Form.php:36 inc/widgets/Category_Question.php:69
+#: inc/widgets/Leaderboard.php:58 templates/content-edit.php:23
+#: templates/question-submit-form.php:14
+msgid "Title"
+msgstr ""
+
+#: inc/widgets/Category_Question.php:5
+msgid "Show a list of categories or tags."
+msgstr ""
+
+#: inc/widgets/Category_Question.php:6
+msgid "DWQA Categories/Tags"
+msgstr ""
+
+#: inc/widgets/Category_Question.php:10
+msgid "DWQA Categories"
+msgstr ""
+
+#: inc/widgets/Category_Question.php:75
+msgid "Taxonomy"
+msgstr ""
+
+#: inc/widgets/Category_Question.php:77
+msgid "Categories"
+msgstr ""
+
+#: inc/widgets/Category_Question.php:78
+msgid "Tags"
+msgstr ""
+
+#: inc/widgets/Category_Question.php:85
+msgid "Show count"
+msgstr ""
+
+#: inc/widgets/Category_Question.php:91
+msgid "Hide Empty Categories/Tags"
+msgstr ""
+
+#: inc/widgets/Category_Question.php:97
+msgid "Display as dropdown"
+msgstr ""
+
 #: inc/widgets/Closed_Question.php:11
 msgid "Show a list of questions marked as closed."
 msgstr ""
@@ -1179,12 +1371,12 @@ msgstr "DWप्रश्नोत्तरी सम्बंधित प्�
 msgid "Closed Questions"
 msgstr "समस्त प्रश्न"
 
-#: inc/widgets/Closed_Question.php:72 inc/widgets/Latest_Question.php:71
+#: inc/widgets/Closed_Question.php:72 inc/widgets/Latest_Question.php:63
 #: inc/widgets/Popular_Question.php:66 inc/widgets/Related_Question.php:48
 msgid "Widget title"
 msgstr "विजेट का शीर्षक"
 
-#: inc/widgets/Closed_Question.php:75 inc/widgets/Latest_Question.php:74
+#: inc/widgets/Closed_Question.php:75 inc/widgets/Latest_Question.php:66
 #: inc/widgets/Popular_Question.php:69 inc/widgets/Related_Question.php:51
 msgid "Number of posts"
 msgstr "पोस्ट्स की संख्या"
@@ -1203,12 +1395,48 @@ msgstr "DWप्रश्नोत्तरी सम्बंधित प्�
 msgid "Latest Questions"
 msgstr "निजी प्रश्न"
 
-#: inc/widgets/Latest_Question.php:44
-msgid "ago"
+#: inc/widgets/Leaderboard.php:9
+msgid "DWQA Leaderboard"
 msgstr ""
 
-#: inc/widgets/Latest_Question.php:79
-msgid "Show question date"
+#: inc/widgets/Leaderboard.php:15 inc/widgets/Leaderboard.php:52
+msgid "Leaderboard"
+msgstr ""
+
+#: inc/widgets/Leaderboard.php:38
+msgid "questions"
+msgstr "प्रश्न"
+
+#: inc/widgets/Leaderboard.php:39
+msgid "answers"
+msgstr ""
+
+#: inc/widgets/Leaderboard.php:65
+msgid "Number of top users/members"
+msgstr ""
+
+#: inc/widgets/Leaderboard.php:72
+msgid "Time"
+msgstr ""
+
+#: inc/widgets/Leaderboard.php:74
+msgid "All the time"
+msgstr ""
+
+#: inc/widgets/Leaderboard.php:75
+msgid "This month"
+msgstr ""
+
+#: inc/widgets/Leaderboard.php:76
+msgid "Last month"
+msgstr ""
+
+#: inc/widgets/Leaderboard.php:77
+msgid "This week"
+msgstr ""
+
+#: inc/widgets/Leaderboard.php:78
+msgid "Last week"
 msgstr ""
 
 #: inc/widgets/Popular_Question.php:13
@@ -1227,59 +1455,42 @@ msgstr "उन प्रश्नों की सूची दिखाएं �
 msgid "DWQA Related Questions"
 msgstr "DWप्रश्नोत्तरी सम्बंधित प्रश्न"
 
-#: lib/easy-digital-downloads/EDD_SL_Plugin_Updater.php:181
-#, php-format
-msgid ""
-"There is a new version of %1$s available. <a target=\"_blank\" class=\"thickbox\" href=\"%2$s"
-"\">View version %3$s details</a>."
-msgstr ""
-
-#: lib/easy-digital-downloads/EDD_SL_Plugin_Updater.php:188
-#, php-format
-msgid ""
-"There is a new version of %1$s available. <a target=\"_blank\" class=\"thickbox\" href=\"%2$s"
-"\">View version %3$s details</a> or <a href=\"%4$s\">update now</a>."
-msgstr ""
-
-#: lib/easy-digital-downloads/EDD_SL_Plugin_Updater.php:326
-msgid "You do not have permission to install plugin updates"
-msgstr ""
-
-#: lib/easy-digital-downloads/EDD_SL_Plugin_Updater.php:326
-msgid "Error"
-msgstr ""
-
 #: templates/answer-submit-form.php:12
 msgid "Your Answer"
 msgstr ""
 
-#: templates/answer-submit-form.php:21 templates/question-submit-form.php:52
+#: templates/answer-submit-form.php:21 templates/question-submit-form.php:53
 msgid "Your Email"
 msgstr ""
 
-#: templates/answer-submit-form.php:26 templates/question-submit-form.php:57
+#: templates/answer-submit-form.php:26 templates/question-submit-form.php:58
 msgid "Your Name"
 msgstr ""
 
-#: templates/answer-submit-form.php:33 templates/question-submit-form.php:24
+#: templates/answer-submit-form.php:34 templates/question-submit-form.php:25
 msgid "Who can see this?"
 msgstr ""
 
-#: templates/answer-submit-form.php:34 templates/question-submit-form.php:25
+#: templates/answer-submit-form.php:35 templates/question-submit-form.php:26
 msgid "Public"
 msgstr "सार्वजनिक"
 
-#: templates/answer-submit-form.php:35 templates/question-submit-form.php:26
+#: templates/answer-submit-form.php:36 templates/question-submit-form.php:27
 msgid "Only Me &amp; Admin"
 msgstr ""
 
-#: templates/answer-submit-form.php:39 templates/question-submit-form.php:65
+#: templates/answer-submit-form.php:41 templates/question-submit-form.php:65
 msgid "Submit"
 msgstr ""
 
 #: templates/answers.php:12
 #, php-format
 msgid "%s Answers"
+msgstr ""
+
+#: templates/answers.php:48 templates/question-submit-form.php:73
+#, php-format
+msgid "Please login or %1$sRegister%2$s to submit your answer"
 msgstr ""
 
 #: templates/archive-question-filter.php:14
@@ -1322,26 +1533,26 @@ msgstr ""
 msgid "Ask Question"
 msgstr "प्रश्न पूछें"
 
-#: templates/captcha-form.php:20
+#: templates/captcha-form.php:21
 msgid "Enter the result"
 msgstr ""
 
 #: templates/content-comment.php:16
 #, php-format
 msgctxt "%s = human-readable time difference"
-msgid "replied %s ago"
+msgid "replied %1$s ago"
 msgstr ""
 
-#: templates/content-edit.php:21 templates/question-submit-form.php:13
-msgid "Title"
-msgstr ""
-
-#: templates/content-edit.php:36 templates/question-submit-form.php:38
+#: templates/content-edit.php:38 templates/question-submit-form.php:39
 msgid "Select question category"
 msgstr "प्रश्न वर्ग चुने"
 
-#: templates/content-edit.php:50
+#: templates/content-edit.php:52
 msgid "Save Changes"
+msgstr ""
+
+#: templates/content-edit.php:56
+msgid "You don't have permission to do this action."
 msgstr ""
 
 #: templates/content-none.php:10
@@ -1352,30 +1563,26 @@ msgstr "आपको प्रश्न देखने की अनुमत�
 msgid "Sorry, but nothing matched your filter"
 msgstr ""
 
-#: templates/content-question.php:18
-msgid "asked"
-msgstr "पूछा गया"
-
-#: templates/content-question.php:25
+#: templates/content-question.php:15
 #, php-format
-msgid "<span><a href=\"%s\">%s%s</a> %s %s ago</span>"
+msgid "<span><a href=\"%1$s\">%2$s%3$s</a> %4$s %5$s ago</span>"
 msgstr ""
 
-#: templates/content-question.php:26 templates/content-single-answer.php:25
+#: templates/content-question.php:16 templates/content-single-answer.php:25
 msgid "&nbsp;&bull;&nbsp;"
 msgstr ""
 
-#: templates/content-question.php:31
+#: templates/content-question.php:21
 #, php-format
 msgid "<strong>%1$s</strong> views"
 msgstr ""
 
-#: templates/content-question.php:35
+#: templates/content-question.php:25
 #, php-format
 msgid "<strong>%1$s</strong> answers"
 msgstr ""
 
-#: templates/content-question.php:39
+#: templates/content-question.php:29
 #, php-format
 msgid "<strong>%1$s</strong> votes"
 msgstr ""
@@ -1394,7 +1601,7 @@ msgstr ""
 
 #: templates/content-single-answer.php:23
 #, php-format
-msgid "<span><a href=\"%s\">%s%s</a> %s answered %s ago</span>"
+msgid "<span><a href=\"%1$s\">%2$s%3$s</a> %4$s answered %5$s ago</span>"
 msgstr ""
 
 #: templates/content-single-answer.php:26
@@ -1403,7 +1610,7 @@ msgstr "निजी"
 
 #: templates/content-single-question.php:19
 #, php-format
-msgid "<span><a href=\"%s\">%s%s</a> %s asked %s ago</span>"
+msgid "<span><a href=\"%1$s\">%2$s%3$s</a> %4$s asked %5$s ago</span>"
 msgstr ""
 
 #: templates/content-single-question.php:25
@@ -1415,9 +1622,8 @@ msgid "This question is:"
 msgstr ""
 
 #: templates/question-submit-form.php:69
-#, fuzzy
-msgid "You do not have permission to submit a question"
-msgstr "आपको प्रश्न पूछने की अनुमति नहीं है."
+msgid "You doesn't have permission to post a question"
+msgstr ""
 
 #: upgrades/upgrades.php:25
 #, php-format
@@ -1426,12 +1632,6 @@ msgstr ""
 
 #: upgrades/upgrades.php:33
 msgid "DWQA Upgrade"
-msgstr ""
-
-#: upgrades/upgrades.php:40
-msgid ""
-"The upgrade process has started, please be patient. This could take several minutes. You "
-"will be automatically redirected when the upgrade is finished..."
 msgstr ""
 
 #: upgrades/upgrades.php:130
@@ -1452,13 +1652,13 @@ msgid "Upgrade process is done"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-msgid "DW Question Answer"
+msgid "DW Question Answer Pro"
 msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"A WordPress plugin was make by DesignWall.com to build an Question Answer system for "
-"support, asking and comunitcate with your customer"
+"A WordPress plugin developed by DesignWall.com to build a complete Question & Answer system "
+"for your WordPress site like Quora, Stackoverflow, etc."
 msgstr ""
 
 #. Author of the plugin/theme
@@ -1469,96 +1669,36 @@ msgstr ""
 msgid "http://www.designwall.com"
 msgstr ""
 
-#~ msgid "Next"
-#~ msgstr "अगला"
+#~ msgid "User Registration was disabled."
+#~ msgstr "प्रयोक्ता रजिस्ट्रेशन बंद हो गया"
 
-#~ msgid "Prev"
-#~ msgstr "पिछला"
-
-#~ msgid "Please enter your question"
-#~ msgstr "कृपया अपना प्रश्न प्रविष्ट करें"
-
-#~ msgid "Your question must be at least 2 characters in length"
-#~ msgstr "आपका प्रश्न कम से कम दो अक्षरों का होना चाहिए"
-
-#~ msgid "Enter a valid email address"
-#~ msgstr "एक वैध ईमेल पता प्रविष्ट करें"
-
-#~ msgid "Enter a question title"
-#~ msgstr "प्रश्न का शीर्षक प्रविष्ट करें"
-
-#~ msgid "Please add your name"
-#~ msgstr "कृपया अपना नाम जोड़े "
-
-#~ msgid "Please enter your answer"
-#~ msgstr "कृपया अपना उत्तर प्रविष्ट करें"
-
-#~ msgid "Comment must have more than 2 characters"
-#~ msgstr "कमेंट कम से कम दो अक्षरों का होना चाहिए"
-
-#~ msgid "Not found! Try another keyword."
-#~ msgstr "कुछ नहीं मिला! एक नया कीवर्ड तलाशें"
-
-#~ msgid "Or press <strong>ENTER</strong> to get more questions"
-#~ msgstr "या ज्यादा प्रश्नों हेतु <strong>प्रविष्ट</strong> दबाये"
-
-#~ msgid "Update"
-#~ msgstr "अपडेट"
-
-#~ msgid "Cancel"
-#~ msgstr "छोड़ें"
-
-#~ msgid "Do you want to delete this comment?"
-#~ msgstr "क्या आप इस कमेंट को नष्ट करना चाहते हैं?"
-
-#~ msgid "Do you want to delete this answer?"
-#~ msgstr "क्या आप इस उत्तर को नष्ट करना चाहते हैं?"
+#~ msgid "This email is already registered, please choose another one."
+#~ msgstr "यह ईमेल पहले ही रजिस्टर हो चूका है, कृपया दूसरा चुने."
 
 #, fuzzy
-#~ msgid "Do you want to update this answer?"
-#~ msgstr "क्या आप इस उत्तर को अपडेट करना चाहते हैं?"
+#~ msgid "This username is already registered. Please use another one."
+#~ msgstr "यह प्रयोक्ता-नाम पहले ही रजिस्टर हो चूका है, कृपया दूसरा चुने."
 
 #, fuzzy
-#~ msgid "Do you want to report this answer?"
-#~ msgstr "क्या आप इस उत्तर को रिपोर्ट करना चाहते हैं?"
+#~ msgid "You have a new answer for your followed question"
+#~ msgstr "आपके followed प्रश्न हेतु एक नया उत्तर मिला है"
 
-#~ msgid "Report"
-#~ msgstr "रिपोर्ट"
+#~ msgid "A new answer for \"{question_title}\" was posted on {site_name}"
+#~ msgstr "{site_name} पर \"{question_title}\" हेतु एक नया उत्तर डाला गया"
 
-#~ msgid "Undo"
-#~ msgstr "एक कदम पीछे"
+#~ msgctxt "noun"
+#~ msgid "Comment"
+#~ msgstr "कमेंट"
 
-#~ msgid "This answer will be marked as spam and hidden. Do you want to flag it?"
-#~ msgstr "यह उत्तर स्पैम के रूप में चिन्हित होगा और छिप जायेगा. क्या आप इससे चिन्हित करना चाहते हैं?"
+#~ msgid ""
+#~ "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of this account"
+#~ "\">Log out?</a>"
+#~ msgstr ""
+#~ "<a href=\"%1$s\">%2$s</a> के रूप में लॉग इन. <a href=\"%3$s\" title=\"इस अकाउंट से लॉगआउट करें "
+#~ "\">लॉगआउट?</a>"
 
-#~ msgid "This answer was flagged as spam. Do you want to show it"
-#~ msgstr "यह उत्तर स्पैम के रूप में चिन्हित हुआ. क्या आप इसे दिखाना चाहते हैं"
-
-#~ msgid "This answer was flagged as spam"
-#~ msgstr "यह उत्तर स्पैम के रूप में चिन्हित किया गया"
-
-#~ msgid "hide"
-#~ msgstr "छिपाएं"
-
-#~ msgid "show"
-#~ msgstr "दिखाएं"
-
-#~ msgid "Follow This Question"
-#~ msgstr "इस प्रश्न को फॉलो करें"
-
-#~ msgid "Unfollow This Question"
-#~ msgstr "इस प्रश्न को अन -फॉलो करें"
-
-#, fuzzy
-#~ msgid "Pin this question to top"
-#~ msgstr "इस प्रश्न को मुख्यपृष्ठ पर स्थापित करें"
-
-#, fuzzy
-#~ msgid "Unpin this question from top"
-#~ msgstr "इस प्रश्न को मुख्यपृष्ठ से विस्थापित करें"
-
-#~ msgid "Do you want to delete this question?"
-#~ msgstr "क्या आप इस प्रश्न को डिलीट करना चाहते हैं?"
+#~ msgid "Your email address will not be published."
+#~ msgstr "आपका ईमेल पता प्रकाशित नहीं होगा."
 
 #~ msgid "Publish"
 #~ msgstr "प्रकाशित"
@@ -1591,8 +1731,8 @@ msgstr ""
 #~ msgstr "प्रश्न डालने हेतु"
 
 #, fuzzy
-#~ msgid "Search query is empty"
-#~ msgstr "सर्च क्वेरी रिक्त हैं"
+#~ msgid "You do not have permission to submit a question"
+#~ msgstr "आपको प्रश्न पूछने की अनुमति नहीं है."
 
 #~ msgid "A page where displays all questions"
 #~ msgstr "एक पन्ना जहां सारे प्रश्न दिखेंगे"
@@ -1627,9 +1767,6 @@ msgstr ""
 
 #~ msgid "Enable/Disable captcha on single question page"
 #~ msgstr "प्रत्येक प्रश्न वाले पृष्ठ पर कैप्त्चा चालू/बंद करें"
-
-#~ msgid "questions"
-#~ msgstr "प्रश्न"
 
 #~ msgid "Allow members to post private question"
 #~ msgstr "सदस्यों को निजी प्रश्न पूछने की अनुमति दें"
@@ -1745,20 +1882,6 @@ msgstr ""
 
 #~ msgid "Private: %s"
 #~ msgstr "निजी: %s"
-
-#~ msgctxt "noun"
-#~ msgid "Comment"
-#~ msgstr "कमेंट"
-
-#~ msgid ""
-#~ "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of this account"
-#~ "\">Log out?</a>"
-#~ msgstr ""
-#~ "<a href=\"%1$s\">%2$s</a> के रूप में लॉग इन. <a href=\"%3$s\" title=\"इस अकाउंट से लॉगआउट करें "
-#~ "\">लॉगआउट?</a>"
-
-#~ msgid "Your email address will not be published."
-#~ msgstr "आपका ईमेल पता प्रकाशित नहीं होगा."
 
 #~ msgid "Add New Question"
 #~ msgstr "नया प्रश्न जोड़े"
@@ -2005,9 +2128,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "This question is now closed"
 #~ msgstr "यह प्रश्न बंद हो चुका है"
-
-#~ msgid "You do not have permission to submit answer."
-#~ msgstr "आपको उत्तर देने की अनुमति नहीं है."
 
 #~ msgid "Please login or"
 #~ msgstr "कृपया लॉग इन करें या"

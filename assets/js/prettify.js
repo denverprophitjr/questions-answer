@@ -60,7 +60,6 @@ window.PR_SHOULD_USE_CONTINUATION = !0;
                 }));
             return f.join("")
         }
-
         for (var t = 0, s = !1, l = !1, p = 0, d = a.length; p < d; ++p) {
             var g = a[p];
             if (g.ignoreCase) l = !0;
@@ -100,7 +99,6 @@ window.PR_SHOULD_USE_CONTINUATION = !0;
                         t[s++ << 1 | 1] = a)
             }
         }
-
         var e = /(?:^|\s)nocode(?:\s|$)/,
             h = [],
             y = 0,
@@ -161,7 +159,6 @@ window.PR_SHOULD_USE_CONTINUATION = !0;
             }
             a.e = p
         }
-
         var h = {}, y;
         (function () {
             for (var e = a.concat(m),
@@ -241,14 +238,12 @@ window.PR_SHOULD_USE_CONTINUATION = !0;
                 }
                 return e
             }
-
             for (; !a.nextSibling;)
                 if (a = a.parentNode, !a) return;
             for (var a = b(a.nextSibling, 0), e;
                  (e = a.parentNode) && e.nodeType === 1;) a = e;
             d.push(a)
         }
-
         var k = /(?:^|\s)nocode(?:\s|$)/,
             t = /\r\n?|\n/,
             s = a.ownerDocument,
@@ -334,7 +329,6 @@ window.PR_SHOULD_USE_CONTINUATION = !0;
             "console" in window && console.log(w && w.stack ? w.stack : w)
         }
     }
-
     var v = ["break,continue,do,else,for,if,return,while"],
         w = [
             [v, "auto,case,char,const,default,double,enum,extern,float,goto,int,long,register,short,signed,sizeof,static,struct,switch,typedef,union,unsigned,void,volatile"],
@@ -494,7 +488,6 @@ window.PR_SHOULD_USE_CONTINUATION = !0;
             p < h.length ? setTimeout(m,
                 250) : a && a()
         }
-
         for (var e = [document.getElementsByTagName("pre"), document.getElementsByTagName("code"), document.getElementsByTagName("xmp")], h = [], k = 0; k < e.length; ++k)
             for (var t = 0, s = e[k].length; t < s; ++t) h.push(e[k][t]);
         var e = q,

@@ -1,35 +1,57 @@
 <?php
 
-function dwqa_current_user_can( $perm, $post_id = false ) {
-	global $dwqa, $current_user;
+function dwqa_user_can( $user_id, $perm, $post_id = false ) {
+	global $dwqa;
+	$can = false;
 	if ( is_user_logged_in() ) {
-		if ( $post_id && $current_user->ID == get_post_field( 'post_author', $post_id ) ) {
-			return true;
-		}
+		if ( $post_id ) {
+			// perm with post id
+			$is_comment  = array( 'post_comment', 'read_comment', 'delete_comment', 'edit_comment', 'manage_comment' );
+			$post_author = 0;
+			// is comment
+			if ( in_array( $perm, $is_comment ) ) {
+				$comment = get_comment( $post_id );
+				if ( isset( $comment->user_id ) ) {
+					$post_author = $comment->user_id;
+				}
+			} else {
+				$post_author = get_post_field( 'post_author', $post_id );
+			}
 
-		if ( current_user_can( 'dwqa_can_' . $perm ) ) {
-			return true;
+			if ( (int) $user_id === (int) $post_author && user_can( $user_id, 'dwqa_can_' . $perm ) ) {
+				$can = true;
+			}
+		} else {
+			// normal perms
+			if ( user_can( $user_id, 'dwqa_can_' . $perm ) ) {
+				$can = true;
+			}
 		}
-
-		return false;
 	} else {
 		$anonymous = isset( $dwqa->permission->perms['anonymous'] ) ? $dwqa->permission->perms['anonymous'] : array();
 		$type      = explode( '_', $perm );
 		if ( isset( $anonymous[ $type[1] ][ $type[0] ] ) && $anonymous[ $type[1] ][ $type[0] ] ) {
-			return true;
+			$can = true;
 		} else {
-			return false;
+			$can = false;
 		}
 	}
 
-	return false;
+	return apply_filters( 'dwqa_user_can', $can, $perm, $user_id, $post_id );
+}
+
+function dwqa_current_user_can( $perm, $post_id = false ) {
+	$current_user_id = get_current_user_id();
+	$can             = dwqa_user_can( $current_user_id, $perm, $post_id );
+
+	return apply_filters( 'dwqa_current_user_can', $can, $current_user_id, $perm, $post_id );
 }
 
 function dwqa_get_warning_page() {
 	global $dwqa_options, $wpdb;
 	$warning_page_id = isset( $dwqa_options['pages']['404'] ) ? $dwqa_options['pages']['404'] : false;
 	if ( $warning_page_id ) {
-
+	
 		$warning_page = wp_cache_get( 'dwqa-warning-page' );
 		if ( $warning_page == false ) {
 			$query        = $wpdb->prepare( 'SELECT * FROM ' . $wpdb->prefix . 'posts WHERE ID = %d ',
@@ -38,7 +60,6 @@ function dwqa_get_warning_page() {
 			$warning_page = $wpdb->get_results( $query );
 			wp_cache_set( 'dwqa-warning-page', $warning_page );
 		}
-
 		return $warning_page;
 	}
 }
@@ -55,6 +76,7 @@ class DWQA_Permission {
 			'post'   => 0,
 			'edit'   => 0,
 			'delete' => 0,
+			'manage' => 0,
 		);
 		$this->objects     = array( 'question', 'answer', 'comment' );
 		$this->defaults    = array(
@@ -64,18 +86,21 @@ class DWQA_Permission {
 					'post'   => 1,
 					'edit'   => 1,
 					'delete' => 1,
+					'manage' => 1,
 				),
 				'answer'   => array(
 					'read'   => 1,
 					'post'   => 1,
 					'edit'   => 1,
 					'delete' => 1,
+					'manage' => 1,
 				),
 				'comment'  => array(
 					'read'   => 1,
 					'post'   => 1,
 					'edit'   => 1,
 					'delete' => 1,
+					'manage' => 1,
 				),
 			),
 			'editor'        => array(
@@ -84,18 +109,21 @@ class DWQA_Permission {
 					'post'   => 1,
 					'edit'   => 1,
 					'delete' => 1,
+					'manage' => 1,
 				),
 				'answer'   => array(
 					'read'   => 1,
 					'post'   => 1,
 					'edit'   => 1,
 					'delete' => 1,
+					'manage' => 1,
 				),
 				'comment'  => array(
 					'read'   => 1,
 					'post'   => 1,
 					'edit'   => 1,
 					'delete' => 1,
+					'manage' => 1,
 				),
 			),
 			'author'        => array(
@@ -104,18 +132,21 @@ class DWQA_Permission {
 					'post'   => 1,
 					'edit'   => 0,
 					'delete' => 0,
+					'manage' => 0,
 				),
 				'answer'   => array(
 					'read'   => 1,
 					'post'   => 1,
 					'edit'   => 0,
 					'delete' => 0,
+					'manage' => 0,
 				),
 				'comment'  => array(
 					'read'   => 1,
 					'post'   => 1,
 					'edit'   => 0,
 					'delete' => 0,
+					'manage' => 0,
 				),
 			),
 			'contributor'   => array(
@@ -124,18 +155,21 @@ class DWQA_Permission {
 					'post'   => 1,
 					'edit'   => 0,
 					'delete' => 0,
+					'manage' => 0,
 				),
 				'answer'   => array(
 					'read'   => 1,
 					'post'   => 1,
 					'edit'   => 0,
 					'delete' => 0,
+					'manage' => 0,
 				),
 				'comment'  => array(
 					'read'   => 1,
 					'post'   => 1,
 					'edit'   => 0,
 					'delete' => 0,
+					'manage' => 0,
 				),
 			),
 			'subscriber'    => array(
@@ -144,18 +178,21 @@ class DWQA_Permission {
 					'post'   => 1,
 					'edit'   => 0,
 					'delete' => 0,
+					'manage' => 0,
 				),
 				'answer'   => array(
 					'read'   => 1,
 					'post'   => 1,
 					'edit'   => 0,
 					'delete' => 0,
+					'manage' => 0,
 				),
 				'comment'  => array(
 					'read'   => 1,
 					'post'   => 1,
 					'edit'   => 0,
 					'delete' => 0,
+					'manage' => 0,
 				)
 			),
 			'anonymous'     => array(
@@ -164,22 +201,24 @@ class DWQA_Permission {
 					'post'   => 1,
 					'edit'   => 0,
 					'delete' => 0,
+					'manage' => 0,
 				),
 				'answer'   => array(
 					'read'   => 1,
 					'post'   => 0,
 					'edit'   => 0,
 					'delete' => 0,
+					'manage' => 0,
 				),
 				'comment'  => array(
 					'read'   => 1,
 					'post'   => 0,
 					'edit'   => 0,
 					'delete' => 0,
+					'manage' => 0,
 				),
 			),
 		);
-
 		add_action( 'init', array( $this, 'first_update_role_functions' ) );
 		add_action( 'init', array( $this, 'prepare_permission' ) );
 
@@ -210,13 +249,11 @@ class DWQA_Permission {
 
 	public function add_caps( $value ) {
 		foreach ( $value as $role_name => $role_info ) {
-			if ( $role_name == 'anonymous' ) {
+			if ( $role_name == 'anonymous' )
 				continue;
-			}
 			$role = get_role( $role_name );
-			if ( ! $role ) {
+			if ( ! $role )
 				continue;
-			}
 
 			foreach ( $this->objects as $post_type ) {
 				foreach ( $this->default_cap as $cap => $default ) {
@@ -233,7 +270,7 @@ class DWQA_Permission {
 	public function update_permission( $old_value, $value ) {
 		$this->update_caps( $value );
 	}
-
+	
 	public function update_caps( $value ) {
 		update_option( 'dwqa_permission', $value );
 		$this->add_caps( $value );
@@ -261,11 +298,11 @@ class DWQA_Permission {
 			$this->perms = $this->defaults;
 
 			$this->update_caps( $this->perms );
-
+			
 			update_option( 'dwqa_has_roles', 1 );
 		}
-	}
-
+	}  
+	
 	public function prepare_permission_caps() {
 		$this->update_caps( $this->defaults );
 	}
@@ -303,7 +340,6 @@ class DWQA_Permission {
 				}
 			}
 		}
-
 		return $all_caps;
 	}
 
@@ -341,29 +377,24 @@ class DWQA_Permission {
 		if ( ( 'dwqa-question' == get_post_type( $post_id ) || 'dwqa-answer' == get_post_type( $post_id ) ) && ! dwqa_current_user_can( 'read_comment' ) ) {
 			return array();
 		}
-
 		return $comments;
 	}
 
 	public function restrict_single_question( $posts ) {
 		global $wp_query, $wpdb, $dwqa_options;
-		if ( is_user_logged_in() ) {
+		if ( is_user_logged_in() ) 
 			return $posts;
-		}
 		//user is not logged
-		if ( ! is_single() ) {
+		if ( ! is_single() ) 
 			return $posts;
-		}
 		//this is a single post
 
-		if ( ! $wp_query->is_main_query() ) {
+		if ( ! $wp_query->is_main_query() )
 			return $posts;
-		}
 		//this is the main query
 
-		if ( $wp_query->post_count ) {
+		if ( $wp_query->post_count ) 
 			return $posts;
-		}
 
 		if ( ! isset( $wp_query->query['post_type'] ) || $wp_query->query['post_type'] != 'dwqa-question' ) {
 			return $posts;
@@ -373,30 +404,28 @@ class DWQA_Permission {
 		} elseif ( isset( $wp_query->query['p'] ) && ! $posts ) {
 			$question = get_post( $wp_query->query['p'] );
 		} elseif ( ! empty( $posts ) ) {
-			$question = $posts[0];
+			$question = $posts[0];	
 		} else {
 			return dwqa_get_warning_page();
 		}
 		//this is a question which was submitted by anonymous user
-		if ( ! dwqa_is_anonymous( $question->ID ) ) {
+		if ( isset( $question->ID ) && ! dwqa_is_anonymous( $question->ID ) ) {
 			if ( ! $posts ) {
 				return dwqa_get_warning_page();
 			}
-
 			return $posts;
 		} else {
 			//This is a pending question
-			if ( 'pending' == get_post_status( $question->ID ) || 'private' == get_post_status( $question->ID ) ) {
+			if ( isset( $question->ID ) && ( 'pending' == get_post_status( $question->ID ) || 'private' == get_post_status( $question->ID ) ) ) {
 				$anonymous_author_view = get_post_meta( $question->ID, '_anonymous_author_view', true );
 				$anonymous_author_view = $anonymous_author_view ? $anonymous_author_view : 0;
-
-
+				
+				
 				if ( $anonymous_author_view < 3 ) {
 					// Allow to read question right after this was added
 					$questions[] = $question;
 					$anonymous_author_view ++;
 					update_post_meta( $question->ID, '_anonymous_author_view', $anonymous_author_view );
-
 					return $questions;
 				} else {
 					return dwqa_get_warning_page();

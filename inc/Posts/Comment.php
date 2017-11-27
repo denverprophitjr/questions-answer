@@ -18,7 +18,6 @@ class DWQA_Posts_Comment {
 		// Prepare comment content
 		add_filter( 'dwqa_pre_comment_content', 'wp_kses_data', 10 );
 	}
-
 	/**
 	 * Change redirect link when comment for answer finished
 	 *
@@ -35,7 +34,6 @@ class DWQA_Posts_Comment {
 				return get_post_permalink( $question ) . '#' . 'answer-' . $comment->comment_post_ID . '&comment=' . $comment->comment_ID;
 			}
 		}
-
 		return $location;
 	}
 
@@ -52,12 +50,12 @@ class DWQA_Posts_Comment {
 		$post_id = $post ? $post->ID : 0;
 
 		if ( current_user_can( 'unfiltered_html' )
-		     && 'dwqa-answer' != get_post_type( $post_id ) ) {
+		     && 'dwqa-answer' != get_post_type( $post_id )  ) {
 			wp_nonce_field( 'unfiltered-html-comment_' . $post_id, '_wp_unfiltered_html_comment_disabled', false );
 			echo "<script>( function() {if ( window===window.parent ) {document.getElementById( '_wp_unfiltered_html_comment_disabled' ).name='_wp_unfiltered_html_comment';}} )();</script>\n";
 		} elseif ( current_user_can( 'unfiltered_html' )
 		           && 'dwqa-answer' == get_post_type( $post_id ) ) {
-
+							
 			wp_nonce_field( 'unfiltered-html-comment_' . $post_id, '_wp_unfiltered_html_comment_answer_disabled', false );
 			echo "<script>( function() {if ( window===window.parent ) {document.getElementById( '_wp_unfiltered_html_comment_answer_disabled' ).name='_wp_unfiltered_html_comment';}} )();</script>\n";
 		}
@@ -69,10 +67,10 @@ class DWQA_Posts_Comment {
 			$result = str_replace( "id='comment_post_ID'", "id='comment_post_" . $id . "_ID'", $result );
 			$result = str_replace( "id='comment_parent'", "id='comment_" . $id . "_parent'", $result );
 		}
-
 		return $result;
 	}
 
+	
 
 	public function sanitizie_comment( $content, $comment ) {
 		$post_type = get_post_type( $comment->comment_post_ID );
@@ -81,7 +79,6 @@ class DWQA_Posts_Comment {
 			$content = make_clickable( $content );
 			$content = preg_replace( '/( <a[^>]* )( > )/', '$1 target="_blank" $2', $content );
 		}
-
 		return $content;
 	}
 
@@ -96,7 +93,7 @@ class DWQA_Posts_Comment {
 			wp_list_comments( array(
 				'style'    => 'ol',
 				'callback' => 'dwqa_question_comment_callback',
-			), $comments );
+			), $comments ); 
 		}
 		exit( 0 );
 	}
@@ -106,7 +103,6 @@ class DWQA_Posts_Comment {
 		if ( $comment->user_id <= 0 && ( get_post_type( $comment->comment_post_ID ) == 'dwqa-question' || get_post_type( $comment->comment_post_ID ) == 'dwqa-answer' ) ) {
 			$comment->comment_author = __( 'Anonymous', 'dwqa' );
 		}
-
 		return $comment;
 	}
 
@@ -135,5 +131,4 @@ class DWQA_Posts_Comment {
 		}
 	}
 }
-
 ?>

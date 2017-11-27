@@ -41,9 +41,7 @@ define( "RECAPTCHA_VERIFY_SERVER", "www.google.com" );
 
 /**
  * Encodes the given data into a query string format
- *
  * @param $data - array of string elements to be encoded
- *
  * @return string - encoded request
  */
 function _recaptcha_qsencode( $data ) {
@@ -59,14 +57,13 @@ function _recaptcha_qsencode( $data ) {
 }
 
 
+
 /**
  * Submits an HTTP POST to a reCAPTCHA server
- *
  * @param string $host
  * @param string $path
  * @param array $data
  * @param int port
- *
  * @return array response
  */
 function _recaptcha_http_post( $host, $path, $data, $port = 80 ) {
@@ -98,6 +95,7 @@ function _recaptcha_http_post( $host, $path, $data, $port = 80 ) {
 }
 
 
+
 /**
  * Gets the challenge HTML (javascript and non-javascript version).
  * This is called from the browser, and the resulting reCAPTCHA HTML widget
@@ -107,6 +105,7 @@ function _recaptcha_http_post( $host, $path, $data, $port = 80 ) {
  * @param string $error The error given by reCAPTCHA (optional, default is null)
  * @param boolean $use_ssl Should the request be made over ssl? (optional, default is false)
  *
+
  * @return string - The HTML to be embedded in the user's form.
  */
 function recaptcha_get_html( $pubkey, $error = null, $use_ssl = false ) {
@@ -133,6 +132,8 @@ function recaptcha_get_html( $pubkey, $error = null, $use_ssl = false ) {
   		<input type="hidden" name="recaptcha_response_field" value="manual_challenge"/>
 	</noscript>';
 }
+
+
 
 
 /**
@@ -203,7 +204,6 @@ function recaptcha_check_answer( $privkey, $remoteip, $challenge, $response, $ex
  * gets a URL where the user can sign up for reCAPTCHA. If your application
  * has a configuration page where you enter a key, you should provide a link
  * using this function.
- *
  * @param string $domain The domain where the page is hosted
  * @param string $appname The name of your application
  */
@@ -214,11 +214,11 @@ function recaptcha_get_signup_url( $domain = null, $appname = null ) {
 		) );
 }
 
-function _recaptcha_aes_pad( $val ) {
+function _recaptcha_aes_pad($val) {
 	$block_size = 16;
 	$numpad     = $block_size - ( strlen( $val ) % $block_size );
 
-	return str_pad( $val, strlen( $val ) + $numpad, chr( $numpad ) );
+	return str_pad( $val, strlen( $val ) + $numpad, chr($numpad));
 }
 
 /* Mailhide related code */
@@ -236,7 +236,7 @@ function _recaptcha_aes_encrypt( $val, $ky ) {
 
 
 function _recaptcha_mailhide_urlbase64( $x ) {
-	return strtr( base64_encode( $x ), '+/', '-_' );
+	return strtr( base64_encode($x), '+/', '-_');
 }
 
 /* gets the reCAPTCHA Mailhide url for a given email, public key and private key */
@@ -250,7 +250,7 @@ function recaptcha_mailhide_url( $pubkey, $privkey, $email ) {
 	$ky        = pack( 'H*', $privkey );
 	$cryptmail = _recaptcha_aes_encrypt( $email, $ky );
 
-	return "http://www.google.com/recaptcha/mailhide/d?k=" . $pubkey . "&c=" . _recaptcha_mailhide_urlbase64( $cryptmail );
+	return "http://www.google.com/recaptcha/mailhide/d?k=" . $pubkey . "&c=" . _recaptcha_mailhide_urlbase64 ($cryptmail);
 }
 
 /**
@@ -264,11 +264,10 @@ function _recaptcha_mailhide_email_parts( $email ) {
 	if ( strlen( $arr[0] ) <= 4 ) {
 		$arr[0] = substr( $arr[0], 0, 1 );
 	} else if ( strlen( $arr[0] ) <= 6 ) {
-		$arr[0] = substr( $arr[0], 0, 3 );
+		$arr[0] = substr ($arr[0], 0, 3 );
 	} else {
-		$arr[0] = substr( $arr[0], 0, 4 );
+		$arr[0] = substr ($arr[0], 0, 4);
 	}
-
 	return $arr;
 }
 
@@ -283,7 +282,7 @@ function recaptcha_mailhide_html( $pubkey, $privkey, $email ) {
 	$url        = recaptcha_mailhide_url( $pubkey, $privkey, $email );
 
 	return htmlentities( $emailparts[0] ) . "<a href='" . htmlentities( $url ) .
-	       "' onclick=\"window.open('" . htmlentities( $url ) . "', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;\" title=\"Reveal this e-mail address\">...</a>@" . htmlentities( $emailparts [1] );
+	       "' onclick=\"window.open('" . htmlentities( $url ) . "', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;\" title=\"Reveal this e-mail address\">...</a>@" . htmlentities($emailparts [1]);
 
 }
 

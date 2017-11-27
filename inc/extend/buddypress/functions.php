@@ -13,12 +13,10 @@ function dp_dwqa_screen_questions() {
 	add_action( 'bp_template_content', 'bp_dwqa_question_content' );
 	bp_core_load_template( apply_filters( 'bp_dwqa_screen_question', 'members/single/plugins' ) );
 }
-
 function dp_dwqa_screen_answers() {
 	add_action( 'bp_template_content', 'bp_dwqa_answer_content' );
 	bp_core_load_template( apply_filters( 'bp_dwqa_screen_question', 'members/single/plugins' ) );
 }
-
 function dp_dwqa_screen_comments() {
 	add_action( 'bp_template_content', 'bp_dwqa_comment_content' );
 	bp_core_load_template( apply_filters( 'bp_dwqa_screen_question', 'members/single/plugins' ) );
@@ -26,28 +24,60 @@ function dp_dwqa_screen_comments() {
 
 //question
 function bp_dwqa_question_content() {
-	add_filter( 'dwqa_prepare_archive_posts', 'dp_dwqa_question_filter_query', 12 );
+	add_filter( 'dwqa_prepare_archive_posts', 'dp_dwqa_question_filter_query', 12);
 	remove_action( 'dwqa_before_questions_archive', 'dwqa_archive_question_filter_layout', 12 );
-	include( DWQA_DIR . 'templates/bp-archive-question.php' );
+	// include(DWQA_DIR .'templates/bp-archive-question.php');
+	global $dwqa;
+	$dwqa->template->load_template( 'bp-archive', 'question' );
 }
 
-function dp_dwqa_question_filter_query( $query ) {
+function dp_dwqa_question_filter_query( $query){
 	$current_user_id = get_current_user_id();
 	$query['author'] = $current_user_id;
-
 	return $query;
 }
 
 //answer
 function bp_dwqa_answer_content() {
-	add_filter( 'dwqa_prepare_archive_posts', 'dp_dwqa_answer_filter_query', 12 );
+	add_filter( 'dwqa_prepare_archive_posts', 'bp_dwqa_answer_filter_query', 12);
 	remove_action( 'dwqa_before_questions_archive', 'dwqa_archive_question_filter_layout', 12 );
-	include( DWQA_DIR . 'templates/bp-archive-question.php' );
+	// include(DWQA_DIR .'templates/bp-archive-question.php');	
+	global $dwqa;
+	$dwqa->template->load_template( 'bp-archive', 'question' );
 }
 
-function dp_dwqa_answer_filter_query( $query ) {
+function bp_dwqa_answer_filter_query( $query){
 	$current_user_id = get_current_user_id();
-	$query['author'] = $current_user_id;
+	$post__in        = array();
+
+	$array              = $query;
+	$array['post_type'] = 'dwqa-answer';
+	$array['author']    = $current_user_id;
+
+	// add_filter( 'posts_groupby', 'bp_dwqa_answers_groupby' );
+	// use this function to fill per page
+	while ( count( $post__in ) < $query['posts_per_page'] ) {
+		$array['post__not_in '] = $post__in;
+		$results                = new WP_Query( $array );
+
+		if ( $results->post_count > 0 ) {
+			foreach ( $results->posts as $result ) {
+				$post__in[] = $result->post_parent;
+			}
+		} else {
+			break;
+		}
+	}
+
+	$query['post__in'] = $post__in;
+	$query['orderby']  = 'post__in';
 
 	return $query;
+}
+
+function bp_dwqa_answers_groupby( $groupby ) {
+	global $wpdb;
+	$groupby = "{$wpdb->posts}.post_parent";
+
+	return $groupby;
 }

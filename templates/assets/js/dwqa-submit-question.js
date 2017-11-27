@@ -44,5 +44,5 @@
                 $self.html($self.text().replace(new RegExp("(" + keyword + ")", "gi"), '<span class="dwqa-text-highlight">$1</span>'));
             });
         }
-    })
+    });
 })(jQuery);

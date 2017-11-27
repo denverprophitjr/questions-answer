@@ -1,4 +1,4 @@
-<?php
+<?php  
 
 function dwqa_get_following_user( $question_id = false ) {
 	if ( ! $question_id ) {
@@ -39,7 +39,6 @@ function dwqa_is_user_flag( $post_id, $user_id = null ) {
 	if ( $flag[ $user_id ] == 1 ) {
 		return true;
 	}
-
 	return false;
 }
 
@@ -51,7 +50,6 @@ function dwqa_user_post_count( $user_id, $post_type = 'post' ) {
 		'post_type'   => $post_type,
 		'fields'      => 'ids',
 	) );
-
 	return $posts->found_posts;
 }
 
@@ -77,10 +75,8 @@ function dwqa_user_comment_count( $user_id ) {
 	$users_comment_count = array_filter( $results, create_function( '$a', 'return $a["user_id"] == ' . $user_id . ';' ) );
 	if ( ! empty( $users_comment_count ) ) {
 		$user_comment_count = array_shift( $users_comment_count );
-
 		return $user_comment_count['number_comment'];
 	}
-
 	return false;
 }
 
@@ -120,14 +116,12 @@ function dwqa_user_most_answer( $number = 10, $from = false, $to = false ) {
 function dwqa_user_most_answer_this_month( $number = 10 ) {
 	$from = strtotime( 'first day of this month' );
 	$to   = strtotime( 'last day of this month' );
-
 	return dwqa_user_most_answer( $number, $from, $to );
 }
 
 function dwqa_user_most_answer_last_month( $number = 10 ) {
 	$from = strtotime( 'first day of last month' );
 	$to   = strtotime( 'last day of last month' );
-
 	return dwqa_user_most_answer( $number, $from, $to );
 }
 
@@ -141,17 +135,16 @@ function dwqa_is_followed( $post_id = false, $user_id = false ) {
 		$user_id = $user->ID;
 	}
 
-	if ( in_array( $user_id, get_post_meta( $post_id, '_dwqa_followers', false ) ) ) {
+	if ( in_array( $user_id, get_post_meta( $post_id, '_dwqa_followers' ) ) ) {
 		return true;
 	}
-
 	return false;
 }
 
 /**
  * Get username
  *
- * @param string $display_name
+ * @param int $post_id
  *
  * @return string
  * @since 1.4.0
@@ -159,17 +152,19 @@ function dwqa_is_followed( $post_id = false, $user_id = false ) {
 function dwqa_the_author( $display_name ) {
 	global $post;
 
-	if ( 'dwqa-answer' == $post->post_type || 'dwqa-question' == $post->post_type ) {
+	if ( isset( $post->ID ) && ( 'dwqa-answer' == $post->post_type || 'dwqa-question' == $post->post_type ) ) {
 		if ( dwqa_is_anonymous( $post->ID ) ) {
 			$anonymous_name = get_post_meta( $post->ID, '_dwqa_anonymous_name', true );
 			$display_name   = $anonymous_name ? $anonymous_name : __( 'Anonymous', 'dwqa' );
 		}
 	}
-
+	$display_name = sanitize_text_field( $display_name );
+	$display_name = wp_filter_kses( $display_name );
+	$display_name = _wp_specialchars( $display_name );
 	return $display_name;
 }
 
-add_filter( 'the_author', 'dwqa_the_author' );
+add_filter( 'the_author', 'dwqa_the_author', 99 );
 
 /**
  * Get user's profile link
@@ -188,7 +183,7 @@ function dwqa_get_author_link( $user_id = false ) {
 	$question_link = isset( $dwqa_general_settings['pages']['archive-question'] ) ? get_permalink( $dwqa_general_settings['pages']['archive-question'] ) : false;
 	$url           = get_the_author_link( $user_id );
 	if ( $question_link ) {
-		$url = add_query_arg( array( 'user' => urlencode( $user->user_nicename ) ), $question_link );
+		$url = add_query_arg( array( 'user' => urlencode( $user->user_login ) ), $question_link );
 	}
 
 	return apply_filters( 'dwqa_get_author_link', $url, $user_id, $user );
@@ -202,7 +197,7 @@ function dwqa_get_author_link( $user_id = false ) {
  *
  * @return array
  * @since 1.4.0
- */
+*/
 function dwqa_get_user_question_subscribes( $user_id = false, $posts_per_page = 5, $page = 1 ) {
 	if ( ! $user_id ) {
 		return array();
@@ -239,7 +234,7 @@ function dwqa_get_user_badge( $user_id = false ) {
 	}
 
 	$badges = array();
-	if ( user_can( $user_id, 'edit_posts' ) ) {
+	if ( dwqa_user_can( $user_id, 'manage_question' ) && dwqa_user_can( $user_id, 'manage_answer' ) && dwqa_user_can( $user_id, 'manage_comment' ) ) {
 		$badges['staff'] = __( 'Staff', 'dwqa' );
 	}
 
@@ -267,7 +262,7 @@ function dwqa_print_user_badge( $user_id = false, $echo = false ) {
 	return $result;
 }
 
-class DWQA_User {
+class DWQA_User { 
 	public function __construct() {
 		// Do something about user roles, permission login, profile setting
 		add_action( 'wp_ajax_dwqa-follow-question', array( $this, 'follow_question' ) );
@@ -281,7 +276,7 @@ class DWQA_User {
 		$question = get_post( intval( $_POST['post'] ) );
 		if ( is_user_logged_in() ) {
 			global $current_user;
-			if ( ! dwqa_is_followed( $question->ID ) ) {
+			if ( ! dwqa_is_followed( $question->ID )  ) {
 				do_action( 'dwqa_follow_question', $question->ID, $current_user->ID );
 				add_post_meta( $question->ID, '_dwqa_followers', $current_user->ID );
 				wp_send_json_success( array( 'code' => 'followed', 'text' => 'Unsubscribe' ) );
@@ -296,5 +291,4 @@ class DWQA_User {
 
 	}
 }
-
 ?>

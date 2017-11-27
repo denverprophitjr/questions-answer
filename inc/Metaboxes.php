@@ -1,9 +1,7 @@
-<?php
+<?php  
 /**
  * Generate html for metabox of question status meta data
- *
  * @param  object $post Post Object
- *
  * @return void
  */
 function dwqa_question_status_box_html( $post ) {
@@ -65,10 +63,8 @@ class DWQA_Metaboxes {
 
 	public function add_css_class_metabox( $classes ) {
 		$classes[] = 'dwqa-answer-list';
-
 		return $classes;
 	}
-
 	/**
 	 * Add metabox for question status meta data
 	 * @return void
@@ -85,7 +81,7 @@ class DWQA_Metaboxes {
 			if ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) {
 
 				$sticky_questions = get_option( 'dwqa_sticky_questions', array() );
-				if ( isset( $_POST['dwqa-question-sticky'] ) && sanitize_text_field( $_POST['dwqa-question-sticky'] ) ) {
+				if ( isset( $_POST['dwqa-question-sticky'] ) && $_POST['dwqa-question-sticky'] ) {
 					if ( ! in_array( $post_id, $sticky_questions ) ) {
 						$sticky_questions[] = $post_id;
 						update_option( 'dwqa_sticky_questions', $sticky_questions );

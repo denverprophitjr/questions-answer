@@ -1,4 +1,4 @@
-<?php
+<?php  
 
 // Callback for dwqa-general-settings Option
 function dwqa_question_registration_setting_display() {
@@ -55,6 +55,24 @@ function dwqa_submit_question_page_display() {
 		) );
 		?><br>
         <span class="description"><?php _e( 'A page where users can submit questions. The <code>[dwqa-submit-question-form]</code> short code must be on this page.', 'dwqa' ) ?></span>
+    </p>
+	<?php
+}
+
+function dwqa_set_register_page_display() {
+	global $dwqa_general_settings;
+
+	$register_page = isset( $dwqa_general_settings['pages']['register-page'] ) ? $dwqa_general_settings['pages']['register-page'] : 0;
+	?>
+    <p>
+		<?php
+		wp_dropdown_pages( array(
+			'name'              => 'dwqa_options[pages][register-page]',
+			'show_option_none'  => __( 'Default', 'dwqa' ),
+			'option_none_value' => '0',
+			'selected'          => $register_page,
+		) );
+		?>
     </p>
 	<?php
 }
@@ -139,13 +157,11 @@ function dwqa_subscrible_email_logo_display() {
 function dwqa_subscrible_enable_new_question_notification() {
 	echo '<th>' . __( 'Enable?', 'dwqa' ) . '</th><td><input type="checkbox" value="1" ' . checked( 1, get_option( 'dwqa_subscrible_enable_new_question_notification', 1 ), false ) . ' name="dwqa_subscrible_enable_new_question_notification" id="dwqa_subscrible_enable_new_question_notification" ><span class="description">' . __( 'Enable notification for new question.', 'dwqa' ) . '</span></td>';
 }
-
 // New Question - Enable Notification
 
 function dwqa_subscrible_new_question_email_subject_display() {
 	echo '<th>' . __( 'Email subject', 'dwqa' ) . '</th><td><input type="text" id="dwqa_subscrible_new_question_email_subject" name="dwqa_subscrible_new_question_email_subject" value="' . get_option( 'dwqa_subscrible_new_question_email_subject' ) . '" class="regular-text" /></span></td>';
 }
-
 // New Question - Email subject
 
 function dwqa_subscrible_new_question_email_display() {
@@ -170,20 +186,17 @@ function dwqa_subscrible_new_question_email_display() {
 	</div>';
 	echo '</td>';
 }
-
 // New Question - Email Content
 
 
 function dwqa_subscrible_enable_new_answer_notification() {
 	echo '<th>' . __( 'Enable?', 'dwqa' ) . '</th><td><input type="checkbox" value="1" ' . checked( 1, get_option( 'dwqa_subscrible_enable_new_answer_notification', 1 ), false ) . ' name="dwqa_subscrible_enable_new_answer_notification" id="dwqa_subscrible_enable_new_answer_notification" ><span class="description">' . __( 'Enable notification for new answer.', 'dwqa' ) . '</span></td>';
 }
-
 // New Answer - Enable Notification
 
 function dwqa_subscrible_new_answer_email_subject_display() {
 	echo '<th>' . __( 'Email subject', 'dwqa' ) . '</th><td><input type="text" id="dwqa_subscrible_new_answer_email_subject" name="dwqa_subscrible_new_answer_email_subject" value="' . get_option( 'dwqa_subscrible_new_answer_email_subject' ) . '" class="regular-text" /></span></td>';
 }
-
 // New Answer - Email Subject
 
 function dwqa_subscrible_new_answer_email_display() {
@@ -210,19 +223,16 @@ function dwqa_subscrible_new_answer_email_display() {
 	</div>';
 	echo '</td>';
 }
-
 // New Answer - Email Content
 
 function dwqa_subscrible_enable_new_answer_followers_notification() {
 	echo '<th>' . __( 'Enable?', 'dwqa' ) . '</th><td><input type="checkbox" value="1" ' . checked( 1, get_option( 'dwqa_subscrible_enable_new_answer_followers_notification', 1 ), false ) . ' name="dwqa_subscrible_enable_new_answer_followers_notification" id="dwqa_subscrible_enable_new_answer_followers_notification" ><span class="description">' . __( 'Enable notification for new answer ( to Followers ).', 'dwqa' ) . '</span></td>';
 }
-
 // New Answer - Follow - Enable Notification
 
 function dwqa_subscrible_new_answer_followers_email_subject_display() {
-	echo '<th>' . __( 'Email subject', 'dwqa' ) . '</th><td><input type="text" id="dwqa_subscrible_new_answer_followers_email_subject" name="dwqa_subscrible_new_answer_followers_email_subject" value="' . get_option( 'dwqa_subscrible_new_answer_followers_email_subject' ) . '" class="regular-text" /></span></td>';
+	echo '<th>' . __( 'Email subject', 'dwqa' ) . '</th><td><input type="text" id="dwqa_subscrible_new_answer_followers_email_subject" name="dwqa_subscrible_new_answer_followers_email_subject" value="' . get_option( 'dwqa_subscrible_new_answer_followers_email_subject', __( '[{site_name}] You have a new answer for your followed question', 'dwqa' ) ) . '" class="regular-text" /></span></td>';
 }
-
 // New Answer - Follow - Email Subject
 
 function dwqa_subscrible_new_answer_followers_email_display() {
@@ -249,19 +259,16 @@ function dwqa_subscrible_new_answer_followers_email_display() {
 	</div>';
 	echo '</td>';
 }
-
 // New Answer - Follow - Email Content
 
 function dwqa_subscrible_enable_new_comment_question_notification() {
 	echo '<th>' . __( 'Enable?', 'dwqa' ) . '</th><td><input type="checkbox" ' . checked( 1, get_option( 'dwqa_subscrible_enable_new_comment_question_notification', 1 ), false ) . ' value="1" name="dwqa_subscrible_enable_new_comment_question_notification" id="dwqa_subscrible_enable_new_comment_question_notification" ><span class="description">' . __( 'Enable notification for new comment of question.', 'dwqa' ) . '</span></td>';
 }
-
 // New Comment - Question - Enable Notification
 
 function dwqa_subscrible_new_comment_question_email_subject_display() {
 	echo '<th>' . __( 'Email subject', 'dwqa' ) . '</th><td><input type="text" id="dwqa_subscrible_new_comment_question_email_subject" name="dwqa_subscrible_new_comment_question_email_subject" value="' . get_option( 'dwqa_subscrible_new_comment_question_email_subject' ) . '" class="regular-text" /></td>';
 }
-
 // New Comment - Question - Email subject
 
 function dwqa_subscrible_new_comment_question_email_display() {
@@ -287,19 +294,16 @@ function dwqa_subscrible_new_comment_question_email_display() {
 	</div>';
 	echo '</td>';
 }
-
 // New Comment - Question - Email Content
 
 function dwqa_subscrible_enable_new_comment_question_followers_notification() {
 	echo '<th>' . __( 'Enable?', 'dwqa' ) . '</th><td><input type="checkbox" ' . checked( 1, get_option( 'dwqa_subscrible_enable_new_comment_question_followers_notify', 1 ), false ) . ' value="1" name="dwqa_subscrible_enable_new_comment_question_followers_notify" id="dwqa_subscrible_enable_new_comment_question_followers_notify" ><span class="description">' . __( 'Enable notification for new comment of question.', 'dwqa' ) . '</span></td>';
 }
-
 // New Comment - Question - Follow - Enable Notification
 
 function dwqa_subscrible_new_comment_question_followers_email_subject_display() {
 	echo '<th>' . __( 'Email subject', 'dwqa' ) . '</th><td><input type="text" id="dwqa_subscrible_new_comment_question_followers_email_subject" name="dwqa_subscrible_new_comment_question_followers_email_subject" value="' . get_option( 'dwqa_subscrible_new_comment_question_followers_email_subject' ) . '" class="widefat" /></td>';
 }
-
 // New Comment - Question - Follow - Email subject
 
 function dwqa_subscrible_new_comment_question_followers_email_display() {
@@ -325,19 +329,16 @@ function dwqa_subscrible_new_comment_question_followers_email_display() {
 	</div>';
 	echo '</td>';
 }
-
 // New Comment - Question - Follow - Email Content
 
 function dwqa_subscrible_enable_new_comment_answer_notification() {
 	echo '<th>' . __( 'Enable?', 'dwqa' ) . '</th><td><input type="checkbox" ' . checked( 1, get_option( 'dwqa_subscrible_enable_new_comment_answer_notification', 1 ), false ) . ' value="1" name="dwqa_subscrible_enable_new_comment_answer_notification" id="dwqa_subscrible_enable_new_comment_answer_notification" ><span class="description">' . __( 'Enable notification for new comment of answer.', 'dwqa' ) . '</span></td>';
 }
-
 // New Comment - Answer - Enable Notification
 
 function dwqa_subscrible_new_comment_answer_email_subject_display() {
 	echo '<th>' . __( 'Email subject', 'dwqa' ) . '</th><td><input type="text" id="dwqa_subscrible_new_comment_answer_email_subject" name="dwqa_subscrible_new_comment_answer_email_subject" value="' . get_option( 'dwqa_subscrible_new_comment_answer_email_subject' ) . '" class="regular-text" /></td>';
 }
-
 // New Comment - Answer - Email Subject
 
 function dwqa_subscrible_new_comment_answer_email_display() {
@@ -363,19 +364,16 @@ function dwqa_subscrible_new_comment_answer_email_display() {
 	</div>';
 	echo '</td>';
 }
-
 // New Comment - Answer - Email Content
 
 function dwqa_subscrible_enable_new_comment_answer_followers_notification() {
 	echo '<th>' . __( 'Enable?', 'dwqa' ) . '</th><td><input type="checkbox" ' . checked( 1, get_option( 'dwqa_subscrible_enable_new_comment_answer_followers_notification', 1 ), false ) . ' value="1" name="dwqa_subscrible_enable_new_comment_answer_followers_notification" id="dwqa_subscrible_enable_new_comment_answer_followers_notification" ><span class="description">' . __( 'Enable notification for new comment of answer.', 'dwqa' ) . '</span></td>';
 }
-
 // New Comment - Answer - Follow - Enable Notification
 
 function dwqa_subscrible_new_comment_answer_followers_email_subject_display() {
 	echo '<th>' . __( 'Email subject', 'dwqa' ) . '</th><td><input type="text" id="dwqa_subscrible_new_comment_answer_followers_email_subject" name="dwqa_subscrible_new_comment_answer_followers_email_subject" value="' . get_option( 'dwqa_subscrible_new_comment_answer_followers_email_subject' ) . '" class="regular-text" /></td>';
 }
-
 // New Comment - Answer - Follow - Email Subject
 
 function dwqa_subscrible_new_comment_answer_followers_email_display() {
@@ -401,7 +399,6 @@ function dwqa_subscrible_new_comment_answer_followers_email_display() {
 	</div>';
 	echo '</td>';
 }
-
 // New Comment - Answer - Follow - Email Content
 
 // End email setting html 
@@ -421,6 +418,12 @@ function dwqa_question_tag_rewrite_display() {
 	echo '<p><input type="text" name="dwqa_options[question-tag-rewrite]" id="dwqa_options_question_tag_rewrite" value="' . ( isset( $dwqa_general_settings['question-tag-rewrite'] ) ? $dwqa_general_settings['question-tag-rewrite'] : 'question-tag' ) . '" class="regular-text" /></p>';
 }
 
+function dwqa_question_slug_category_rewrite_display() {
+	global $dwqa_general_settings;
+
+	echo '<p><input type="checkbox" name="dwqa_options[question-slug-category-rewrite]"  id="dwqa_options_question_slug_category_rewrite" value="1" ' . checked( 1, ( isset( $dwqa_general_settings['question-slug-category-rewrite'] ) ? $dwqa_general_settings['question-slug-category-rewrite'] : false ), false ) . '><span class="description">' . __( 'Enable categories slug first single question link.', 'dwqa' ) . '</span></p>';
+}
+
 function dwqa_permission_display() {
 	global $dwqa;
 	$perms = $dwqa->permission->perms;
@@ -437,6 +440,7 @@ function dwqa_permission_display() {
             <th><?php _e( 'Post', 'dwqa' ) ?></th>
             <th><?php _e( 'Edit', 'dwqa' ) ?></th>
             <th><?php _e( 'Delete', 'dwqa' ) ?></th>
+            <th><?php _e( 'Manage', 'dwqa' ) ?></th>
         </tr>
         </thead>
         <tbody>
@@ -458,6 +462,9 @@ function dwqa_permission_display() {
                 <td>
                     <input type="checkbox" <?php checked( true, ( isset( $perms[ $key ]['question']['delete'] ) ? $perms[ $key ]['question']['delete'] : false ) ); ?>
                            name="dwqa_permission[<?php echo $key ?>][question][delete]" value="1"></td>
+                <td>
+                    <input type="checkbox" <?php checked( true, ( isset( $perms[ $key ]['question']['manage'] ) ? $perms[ $key ]['question']['manage'] : false ) ); ?>
+                           name="dwqa_permission[<?php echo $key ?>][question][manage]" value="1"></td>
 
             </tr>
 		<?php endforeach; ?>
@@ -478,6 +485,10 @@ function dwqa_permission_display() {
                 <input type="checkbox" <?php checked( true, ( isset( $perms['anonymous']['question']['delete'] ) ? $perms['anonymous']['question']['delete'] : false ) ); ?>
                        name="dwqa_permission[<?php echo 'anonymous' ?>][question][delete]" value="1"
                        disabled="disabled"></td>
+            <td>
+                <input type="checkbox" <?php checked( true, ( isset( $perms['anonymous']['question']['manage'] ) ? $perms['anonymous']['question']['manage'] : false ) ); ?>
+                       name="dwqa_permission[<?php echo 'anonymous' ?>][question][manage]" value="1"
+                       disabled="disabled"></td>
         </tr>
         </tbody>
     </table>
@@ -490,10 +501,11 @@ function dwqa_permission_display() {
         <thead>
         <tr>
             <th width="20%"></th>
-            <th>Read</th>
-            <th>Post</th>
-            <th>Edit</th>
-            <th>Delete</th>
+            <th><?php _e( 'Read', 'dwqa' ) ?></th>
+            <th><?php _e( 'Post', 'dwqa' ) ?></th>
+            <th><?php _e( 'Edit', 'dqwa' ) ?></th>
+            <th><?php _e( 'Delete', 'dwqa' ) ?></th>
+            <th><?php _e( 'Manage', 'dwqa' ) ?></th>
         </tr>
         </thead>
         <tbody>
@@ -515,6 +527,9 @@ function dwqa_permission_display() {
                 <td>
                     <input type="checkbox" <?php checked( true, ( isset( $perms[ $key ]['answer']['delete'] ) ? $perms[ $key ]['answer']['delete'] : false ) ); ?>
                            name="dwqa_permission[<?php echo $key ?>][answer][delete]" value="1"></td>
+                <td>
+                    <input type="checkbox" <?php checked( true, ( isset( $perms[ $key ]['answer']['manage'] ) ? $perms[ $key ]['answer']['manage'] : false ) ); ?>
+                           name="dwqa_permission[<?php echo $key ?>][answer][manage]" value="1"></td>
 
             </tr>
 		<?php endforeach; ?>
@@ -535,6 +550,10 @@ function dwqa_permission_display() {
                 <input type="checkbox" <?php checked( true, ( isset( $perms['anonymous']['answer']['delete'] ) ? $perms['anonymous']['answer']['delete'] : false ) ); ?>
                        name="dwqa_permission[<?php echo 'anonymous' ?>][answer][delete]" value="1" disabled="disabled">
             </td>
+            <td>
+                <input type="checkbox" <?php checked( true, ( isset( $perms['anonymous']['answer']['manage'] ) ? $perms['anonymous']['answer']['manage'] : false ) ); ?>
+                       name="dwqa_permission[<?php echo 'anonymous' ?>][answer][manage]" value="1" disabled="disabled">
+            </td>
         </tr>
         </tbody>
     </table>
@@ -547,10 +566,11 @@ function dwqa_permission_display() {
         <thead>
         <tr>
             <th width="20%"></th>
-            <th>Read</th>
-            <th>Post</th>
-            <th>Edit</th>
-            <th>Delete</th>
+            <th><?php _e( 'Read', 'dwqa' ) ?></th>
+            <th><?php _e( 'Post', 'dqwa' ) ?></th>
+            <th><?php _e( 'Edit', 'dwqa' ) ?></th>
+            <th><?php _e( 'Delete', 'dwqa' ) ?></th>
+            <th><?php _e( 'Manage', 'dwqa' ) ?></th>
         </tr>
         </thead>
         <tbody>
@@ -572,6 +592,9 @@ function dwqa_permission_display() {
                 <td>
                     <input type="checkbox" <?php checked( true, ( isset( $perms[ $key ]['comment']['delete'] ) ? $perms[ $key ]['comment']['delete'] : false ) ); ?>
                            name="dwqa_permission[<?php echo $key ?>][comment][delete]" value="1"></td>
+                <td>
+                    <input type="checkbox" <?php checked( true, ( isset( $perms[ $key ]['comment']['manage'] ) ? $perms[ $key ]['comment']['manage'] : false ) ); ?>
+                           name="dwqa_permission[<?php echo $key ?>][comment][manage]" value="1"></td>
             </tr>
 		<?php endforeach; ?>
         <tr class="group available">
@@ -590,6 +613,10 @@ function dwqa_permission_display() {
                 <input type="checkbox" <?php checked( true, ( isset( $perms['anonymous']['comment']['delete'] ) ? $perms['anonymous']['comment']['delete'] : false ) ); ?>
                        name="dwqa_permission[<?php echo 'anonymous' ?>][comment][delete]" value="1" disabled="disabled">
             </td>
+            <td>
+                <input type="checkbox" <?php checked( true, ( isset( $perms['anonymous']['comment']['manage'] ) ? $perms['anonymous']['comment']['manage'] : false ) ); ?>
+                       name="dwqa_permission[<?php echo 'anonymous' ?>][comment][manage]" value="1" disabled="disabled">
+            </td>
         </tr>
         </tbody>
     </table>
@@ -597,7 +624,7 @@ function dwqa_permission_display() {
     <p class="reset-button-container align-right" style="text-align:right">
         <button data-type="comment" class="button reset-permission" name="dwqa-permission-reset"
                 value="comment"><?php _e( 'Reset Default', 'dwqa' ); ?></button>
-    </p>
+	</p>
 	<?php
 }
 
@@ -612,6 +639,12 @@ function dwqa_captcha_in_single_question_display() {
 	global $dwqa_general_settings;
 
 	echo '<p><input type="checkbox" name="dwqa_options[captcha-in-single-question]"  id="dwqa_options_captcha_in_question" value="1" ' . checked( 1, ( isset( $dwqa_general_settings['captcha-in-single-question'] ) ? $dwqa_general_settings['captcha-in-single-question'] : false ), false ) . '><span class="description">' . __( 'Enable captcha on single question page.', 'dwqa' ) . '</span></p>';
+}
+
+function dwqa_captcha_in_comment_single_question_display() {
+	global $dwqa_general_settings;
+
+	echo '<p><input type="checkbox" name="dwqa_options[captcha-in-comment-single-question]"  id="dwqa_options_captcha_in_comment_question" value="1" ' . checked( 1, ( isset( $dwqa_general_settings['captcha-in-comment-single-question'] ) ? $dwqa_general_settings['captcha-in-comment-single-question'] : false ), false ) . '><span class="description">' . __( 'Enable captcha on comment single question page.', 'dwqa' ) . ' (' . __( 'Google reCaptcha v2 only', 'dwqa' ) . ')</span></p>';
 }
 
 function dwqa_captcha_google_pubic_key_display() {
@@ -629,7 +662,11 @@ function dwqa_captcha_google_private_key_display() {
 function dwqa_captcha_select_type_display() {
 	global $dwqa_general_settings;
 
-	$types         = apply_filters( 'dwqa_captcha_type', array( 'default' => __( 'Default', 'dwqa' ) ) );
+	$types         = apply_filters( 'dwqa_captcha_type', array(
+		'default'           => __( 'Default', 'dwqa' ),
+		'google-captcha-v2' => __( 'Google reCaptcha v2', 'dwqa' ),
+		'funcaptcha'        => __( 'FunCaptcha', 'dwqa' )
+	) );
 	$total         = count( $types );
 	$type_selected = isset( $dwqa_general_settings['captcha-type'] ) ? $dwqa_general_settings['captcha-type'] : 'default';
 	echo '<select name="dwqa_options[captcha-type]">';
@@ -639,9 +676,27 @@ function dwqa_captcha_select_type_display() {
 	echo '</select>';
 }
 
-function dwqa_posts_per_page_display() {
+function dwqa_current_captcha_selected() {
 	global $dwqa_general_settings;
-	$posts_per_page = isset( $dwqa_general_settings['posts-per-page'] ) ? $dwqa_general_settings['posts-per-page'] : 5;
+
+	return isset( $dwqa_general_settings['captcha-type'] ) ? $dwqa_general_settings['captcha-type'] : false;
+}
+
+function dwqa_fc_public_key_display() {
+	global $dwqa_general_settings;
+	$public_key = isset( $dwqa_general_settings['funcaptcha-public-key'] ) ? $dwqa_general_settings['funcaptcha-public-key'] : '';
+	echo '<p><input type="text" name="dwqa_options[funcaptcha-public-key]" value="' . $public_key . '" class="regular-text"></p>';
+}
+
+function dwqa_fc_private_key_display() {
+	global $dwqa_general_settings;
+	$private_key = isset( $dwqa_general_settings['funcaptcha-private-key'] ) ? $dwqa_general_settings['funcaptcha-private-key'] : '';
+	echo '<p><input type="text" name="dwqa_options[funcaptcha-private-key]" value="' . $private_key . '" class="regular-text"></p>';
+}
+
+function dwqa_posts_per_page_display(){
+	global $dwqa_general_settings;
+	$posts_per_page = isset( $dwqa_general_settings['posts-per-page'] ) ? $dwqa_general_settings['posts-per-page'] : 15;
 	echo '<p><input type="text" name="dwqa_options[posts-per-page]" class="small-text" value="' . $posts_per_page . '" > <span class="description">' . __( 'questions.', 'dwqa' ) . '</span></p>';
 }
 
@@ -649,6 +704,151 @@ function dwqa_answer_per_page_display() {
 	global $dwqa_general_settings;
 	$posts_per_page = isset( $dwqa_general_settings['answer-per-page'] ) ? $dwqa_general_settings['answer-per-page'] : 5;
 	echo '<p><input id="dwqa_setting_answers_per_page" type="text" name="dwqa_options[answer-per-page]" class="small-text" value="' . $posts_per_page . '" > <span class="description">' . __( 'answers.', 'dwqa' ) . '</span></p>';
+}
+
+function dwqa_enable_private_question_display() {
+	global $dwqa_general_settings;
+
+	echo '<p><label for="dwqa_options_enable_private_question"><input type="checkbox" name="dwqa_options[enable-private-question]"  id="dwqa_options_enable_private_question" value="1" ' . checked( 1, ( isset( $dwqa_general_settings['enable-private-question'] ) ? $dwqa_general_settings['enable-private-question'] : false ), false ) . '><span class="description">' . __( 'Allow members to post private question.', 'dwqa' ) . '</span></label></p>';
+}
+
+function dwqa_enable_review_question_mode() {
+	global $dwqa_general_settings;
+
+	echo '<p><label for="dwqa_options_enable_review_question"><input type="checkbox" name="dwqa_options[enable-review-question]"  id="dwqa_options_enable_review_question" value="1" ' . checked( 1, ( isset( $dwqa_general_settings['enable-review-question'] ) ? $dwqa_general_settings['enable-review-question'] : false ), false ) . '><span class="description">' . __( 'Question must be manually approved.', 'dwqa' ) . '</span></label></p>';
+}
+
+function dwqa_show_status_icon() {
+	global $dwqa_general_settings;
+
+	echo '<p><label for="dwqa_options_enable_show_status_icon"><input type="checkbox" name="dwqa_options[show-status-icon]"  id="dwqa_options_enable_show_status_icon" value="1" ' . checked( 1, ( isset( $dwqa_general_settings['show-status-icon'] ) ? $dwqa_general_settings['show-status-icon'] : false ), false ) . '><span class="description">' . __( 'Display status icon on the left side.', 'dwqa' ) . '</span></label></p>';
+}
+
+function dwqa_disable_question_status() {
+	global $dwqa_general_settings;
+
+	echo '<p><label for="dwqa_options_dwqa_disable_question_status"><input type="checkbox" name="dwqa_options[disable-question-status]"  id="dwqa_options_dwqa_disable_question_status" value="1" ' . checked( 1, ( isset( $dwqa_general_settings['disable-question-status'] ) ? $dwqa_general_settings['disable-question-status'] : false ), false ) . '><span class="description">' . __( 'Disable question status feature.', 'dwqa' ) . '</span></label></p>';
+}
+
+function dwqa_show_all_answers() {
+	global $dwqa_general_settings;
+
+	echo '<p><label for="dwqa_options_dwqa_show_all_answers"><input type="checkbox" name="dwqa_options[show-all-answers-on-single-question-page]"  id="dwqa_options_dwqa_show_all_answers" value="1" ' . checked( 1, ( isset( $dwqa_general_settings['show-all-answers-on-single-question-page'] ) ? $dwqa_general_settings['show-all-answers-on-single-question-page'] : false ), false ) . '><span class="description">' . __( 'Show all answers on single question page.', 'dwqa' ) . '</span></label></p>';
+}
+
+function dwqa_single_template_options() {
+	global $dwqa_general_settings;
+	$selected   = isset( $dwqa_general_settings['single-template'] ) ? $dwqa_general_settings['single-template'] : -1;
+	$theme_path = trailingslashit( get_template_directory() );
+	$files      = scandir( $theme_path );
+	?>
+    <p><label for="dwqa_single_question_template">
+            <select name="dwqa_options[single-template]" id="dwqa_single_question_template">
+                <option <?php selected( $selected, - 1 ); ?>
+                        value="-1"><?php _e( 'Select template for Single Quesiton page', 'dwqa' ) ?></option>
+				<?php foreach ( $files as $file ) : ?>
+					<?php $ext = pathinfo( $file, PATHINFO_EXTENSION ); ?>
+					<?php if ( is_dir( $file ) || strpos( $file, '.' === 0 ) || $ext != 'php' ) {
+						continue;
+					} ?>
+                    <option <?php selected( $selected, $file ); ?>
+                            value="<?php echo $file; ?>"><?php echo $file ?></option>
+				<?php endforeach; ?>
+            </select> <span
+                    class="description"><?php _e( 'By default, your single.php template file will be used if you do not choose any template', 'dwqa' ) ?></span>
+        </label>
+    </p>
+	<?php
+
+}
+
+function dwqa_markdown_editor_setting_layout() {
+	global $dwqa_general_settings;
+
+	$checked = isset( $dwqa_general_settings['markdown-editor'] ) ? true : false;
+
+	?>
+    <input class="checkbox" name="dwqa_options[markdown-editor]" id="dwqa_markdown_editor"
+           type="checkbox" <?php checked( $checked, true ) ?>>
+    <span class="description"><?php _e( 'Enable', 'dwqa' ) ?></span>
+	<?php
+}
+
+function dwqa_permalink_section_layout() {
+	printf( __( 'If you like, you may enter custom structure for your single question, question category and question tag URLs here. For example, using <code>topic</code> as your question base would make your question links like <code>%s</code>. If you leave these blank the default will be used.', 'dwqa' ), home_url( 'topic/question-name/' ) );
+}
+
+function dwqa_get_rewrite_slugs() {
+	global $dwqa_general_settings;
+	$dwqa_general_settings = get_option( 'dwqa_options' );
+	
+	$rewrite_slugs = array();
+
+	$question_rewrite = get_option( 'dwqa-question-rewrite', 'question' );
+	$question_rewrite = $question_rewrite ? $question_rewrite : 'question';
+	if ( isset( $dwqa_general_settings['question-rewrite'] ) && $dwqa_general_settings['question-rewrite'] && $dwqa_general_settings['question-rewrite'] != $question_rewrite ) {
+		$question_rewrite = $dwqa_general_settings['question-rewrite'];
+		update_option( 'dwqa-question-rewrite', $question_rewrite );
+	}
+
+	$rewrite_slugs['question_rewrite'] = $question_rewrite;
+
+	$question_category_rewrite = $dwqa_general_settings['question-category-rewrite'];
+	$question_category_rewrite = $question_category_rewrite ? $question_category_rewrite : 'question-category';
+	if ( isset( $dwqa_general_settings['question-category-rewrite'] ) && $dwqa_general_settings['question-category-rewrite'] && $dwqa_general_settings['question-category-rewrite'] != $question_category_rewrite ) {
+		$question_category_rewrite = $dwqa_general_settings['question-category-rewrite'];
+		update_option( 'dwqa-question-category-rewrite', $question_category_rewrite );
+	}
+
+	$rewrite_slugs['question_category_rewrite'] = $question_category_rewrite;
+
+	$question_tag_rewrite = $dwqa_general_settings['question-tag-rewrite'];
+	$question_tag_rewrite = $question_tag_rewrite ? $question_tag_rewrite : 'question-tag';
+	if ( isset( $dwqa_general_settings['question-tag-rewrite'] ) && $dwqa_general_settings['question-tag-rewrite'] && $dwqa_general_settings['question-tag-rewrite'] != $question_tag_rewrite ) {
+		$question_tag_rewrite = $dwqa_general_settings['question-tag-rewrite'];
+		update_option( 'dwqa-question-tag-rewrite', $question_tag_rewrite );
+	}
+	$rewrite_slugs['question_tag_rewrite'] = $question_tag_rewrite;
+
+	return $rewrite_slugs;
+}
+
+//luvitas
+
+function dwqa_answer_admin_first() {
+	global $dwqa_general_settings;
+
+	echo '<p><label for="dwqa_options_answer_admin_first"><input type="checkbox" name="dwqa_options[answer-admin-first]"  id="dwqa_options_answer_admin_first" value="1" ' . checked( 1, ( isset( $dwqa_general_settings['answer-admin-first'] ) ? $dwqa_general_settings['answer-admin-first'] : false ), false ) . '><span class="description">' . __( 'Display admin answer first then display another answer.', 'dwqa' ) . '</span></label></p>';
+}
+
+function dwqa_answer_approve() {
+	global $dwqa_general_settings;
+
+	echo '<p><label for="dwqa_options_answer_approve"><input type="checkbox" name="dwqa_options[answer-approve]"  id="dwqa_options_answer_approve" value="1" ' . checked( 1, ( isset( $dwqa_general_settings['answer-approve'] ) ? $dwqa_general_settings['answer-approve'] : false ), false ) . '><span class="description">' . __( 'Answers must be manually approved.', 'dwqa' ) . '</span></label></p>';
+}
+
+function dwqa_show_button_upload() {
+	global $dwqa_general_settings;
+
+	echo '<p><label for="dwqa_options_show_button_upload"><input type="checkbox" name="dwqa_options[show-button-upload]"  id="dwqa_options_show_button_upload" value="1" ' . checked( 1, ( isset( $dwqa_general_settings['show-button-upload'] ) ? $dwqa_general_settings['show-button-upload'] : false ), false ) . '><span class="description">' . __( 'Show button upload.', 'dwqa' ) . '</span></label></p>';
+}
+
+function dwqa_max_size_upload() {
+	global $dwqa_general_settings;
+	$max_size_upload = isset( $dwqa_general_settings['max-size-upload'] ) ? $dwqa_general_settings['max-size-upload'] : '';
+	echo '<p><input id="dwqa_setting_max_size_upload" type="text" name="dwqa_options[max-size-upload]" class="medium-text" value="' . $max_size_upload . '" > <span class="description">' . __( 'KB.', 'dwqa' ) . '</span></p>';
+}
+
+function dwqa_max_files_upload() {
+	global $dwqa_general_settings;
+	$max_files_upload = isset( $dwqa_general_settings['max-files-upload'] ) ? $dwqa_general_settings['max-files-upload'] : '';
+	echo '<p><input id="dwqa_setting_max_files_upload" type="text" name="dwqa_options[max-files-upload]" class="medium-text" value="' . $max_files_upload . '" > <span class="description">' . __( 'For single answer.', 'dwqa' ) . '</span></p>';
+}
+
+function dwqa_accept_upload_extension() {
+	global $dwqa_general_settings;
+	$accept_upload_extension = isset( $dwqa_general_settings['accept-upload-extension'] ) ? $dwqa_general_settings['accept-upload-extension'] : '';
+	echo '<p><input id="dwqa_setting_accept_upload_extension" type="text" name="dwqa_options[accept-upload-extension]" class="medium-text" value="' . $accept_upload_extension . '" ><br><span class="description">' . __( 'Separate By "|" (txt|jpg|pdf).', 'dwqa' ) . '</span></p>';
 }
 
 function dwqa_allow_anonymous_vote() {
@@ -700,102 +900,6 @@ function dwqa_number_day_auto_closure() {
 }
 
 
-function dwqa_enable_private_question_display() {
-	global $dwqa_general_settings;
-
-	echo '<p><label for="dwqa_options_enable_private_question"><input type="checkbox" name="dwqa_options[enable-private-question]"  id="dwqa_options_enable_private_question" value="1" ' . checked( 1, ( isset( $dwqa_general_settings['enable-private-question'] ) ? $dwqa_general_settings['enable-private-question'] : false ), false ) . '><span class="description">' . __( 'Allow members to post private question.', 'dwqa' ) . '</span></label></p>';
-}
-
-function dwqa_enable_review_question_mode() {
-	global $dwqa_general_settings;
-
-	echo '<p><label for="dwqa_options_enable_review_question"><input type="checkbox" name="dwqa_options[enable-review-question]"  id="dwqa_options_enable_review_question" value="1" ' . checked( 1, ( isset( $dwqa_general_settings['enable-review-question'] ) ? $dwqa_general_settings['enable-review-question'] : false ), false ) . '><span class="description">' . __( 'Question must be manually approved.', 'dwqa' ) . '</span></label></p>';
-}
-
-function dwqa_show_status_icon() {
-	global $dwqa_general_settings;
-
-	echo '<p><label for="dwqa_options_enable_show_status_icon"><input type="checkbox" name="dwqa_options[show-status-icon]"  id="dwqa_options_enable_show_status_icon" value="1" ' . checked( 1, ( isset( $dwqa_general_settings['show-status-icon'] ) ? $dwqa_general_settings['show-status-icon'] : false ), false ) . '><span class="description">' . __( 'Display status icon on the left side.', 'dwqa' ) . '</span></label></p>';
-}
-
-function dwqa_disable_question_status() {
-	global $dwqa_general_settings;
-
-	echo '<p><label for="dwqa_options_dwqa_disable_question_status"><input type="checkbox" name="dwqa_options[disable-question-status]"  id="dwqa_options_dwqa_disable_question_status" value="1" ' . checked( 1, ( isset( $dwqa_general_settings['disable-question-status'] ) ? $dwqa_general_settings['disable-question-status'] : false ), false ) . '><span class="description">' . __( 'Disable question status feature.', 'dwqa' ) . '</span></label></p>';
-}
-
-function dwqa_show_all_answers() {
-	global $dwqa_general_settings;
-
-	echo '<p><label for="dwqa_options_dwqa_show_all_answers"><input type="checkbox" name="dwqa_options[show-all-answers-on-single-question-page]"  id="dwqa_options_dwqa_show_all_answers" value="1" ' . checked( 1, ( isset( $dwqa_general_settings['show-all-answers-on-single-question-page'] ) ? $dwqa_general_settings['show-all-answers-on-single-question-page'] : false ), false ) . '><span class="description">' . __( 'Show all answers on single question page.', 'dwqa' ) . '</span></label></p>';
-}
-
-function dwqa_single_template_options() {
-	global $dwqa_general_settings;
-	$selected   = isset( $dwqa_general_settings['single-template'] ) ? $dwqa_general_settings['single-template'] : - 1;
-	$theme_path = trailingslashit( get_template_directory() );
-	$files      = scandir( $theme_path );
-	?>
-    <p><label for="dwqa_single_question_template">
-            <select name="dwqa_options[single-template]" id="dwqa_single_question_template">
-                <option <?php selected( $selected, - 1 ); ?>
-                        value="-1"><?php _e( 'Select template for Single Quesiton page', 'dwqa' ) ?></option>
-				<?php foreach ( $files as $file ) : ?>
-					<?php $ext = pathinfo( $file, PATHINFO_EXTENSION ); ?>
-					<?php if ( is_dir( $file ) || strpos( $file, '.' === 0 ) || $ext != 'php' ) {
-						continue;
-					} ?>
-                    <option <?php selected( $selected, $file ); ?>
-                            value="<?php echo $file; ?>"><?php echo $file ?></option>
-				<?php endforeach; ?>
-            </select> <span
-                    class="description"><?php _e( 'By default, your single.php template file will be used if you do not choose any template', 'dwqa' ) ?></span>
-        </label>
-    </p>
-	<?php
-
-}
-
-function dwqa_permalink_section_layout() {
-	printf( __( 'If you like, you may enter custom structure for your single question, question category and question tag URLs here. For example, using <code>topic</code> as your question base would make your question links like <code>%s</code>. If you leave these blank the default will be used.', 'dwqa' ), home_url( 'topic/question-name/' ) );
-}
-
-function dwqa_get_rewrite_slugs() {
-	global $dwqa_general_settings;
-	$dwqa_general_settings = get_option( 'dwqa_options' );
-
-	$rewrite_slugs = array();
-
-	$question_rewrite = get_option( 'dwqa-question-rewrite', 'question' );
-	$question_rewrite = $question_rewrite ? $question_rewrite : 'question';
-	if ( isset( $dwqa_general_settings['question-rewrite'] ) && $dwqa_general_settings['question-rewrite'] && $dwqa_general_settings['question-rewrite'] != $question_rewrite ) {
-		$question_rewrite = $dwqa_general_settings['question-rewrite'];
-		update_option( 'dwqa-question-rewrite', $question_rewrite );
-	}
-
-	$rewrite_slugs['question_rewrite'] = $question_rewrite;
-
-	$question_category_rewrite = $dwqa_general_settings['question-category-rewrite'];
-	$question_category_rewrite = $question_category_rewrite ? $question_category_rewrite : 'question-category';
-	if ( isset( $dwqa_general_settings['question-category-rewrite'] ) && $dwqa_general_settings['question-category-rewrite'] && $dwqa_general_settings['question-category-rewrite'] != $question_category_rewrite ) {
-		$question_category_rewrite = $dwqa_general_settings['question-category-rewrite'];
-		update_option( 'dwqa-question-category-rewrite', $question_category_rewrite );
-	}
-
-	$rewrite_slugs['question_category_rewrite'] = $question_category_rewrite;
-
-	$question_tag_rewrite = $dwqa_general_settings['question-tag-rewrite'];
-	$question_tag_rewrite = $question_tag_rewrite ? $question_tag_rewrite : 'question-tag';
-	if ( isset( $dwqa_general_settings['question-tag-rewrite'] ) && $dwqa_general_settings['question-tag-rewrite'] && $dwqa_general_settings['question-tag-rewrite'] != $question_tag_rewrite ) {
-		$question_tag_rewrite = $dwqa_general_settings['question-tag-rewrite'];
-		update_option( 'dwqa-question-tag-rewrite', $question_tag_rewrite );
-	}
-	$rewrite_slugs['question_tag_rewrite'] = $question_tag_rewrite;
-
-	return $rewrite_slugs;
-}
-
-
 function dwqa_is_captcha_enable() {
 	global $dwqa_general_settings;
 	$public_key  = isset( $dwqa_general_settings['captcha-google-public-key'] ) ? $dwqa_general_settings['captcha-google-public-key'] : '';
@@ -804,18 +908,27 @@ function dwqa_is_captcha_enable() {
 	if ( ! $public_key || ! $private_key ) {
 		return false;
 	}
-
 	return true;
 }
 
 function dwqa_is_captcha_enable_in_submit_question() {
 	global $dwqa_general_settings;
 	$captcha_in_question = isset( $dwqa_general_settings['captcha-in-question'] ) ? $dwqa_general_settings['captcha-in-question'] : false;
-
+	
 	if ( $captcha_in_question ) {
 		return true;
 	}
 
+	return false;
+}
+
+function dwqa_is_captcha_enable_in_comment() {
+	global $dwqa_general_settings;
+	$captcha_in_comment = isset( $dwqa_general_settings['captcha-in-comment-single-question'] ) ? $dwqa_general_settings['captcha-in-comment-single-question'] : false;
+
+	if ( $captcha_in_comment ) {
+		return true;
+	}
 	return false;
 }
 
@@ -824,8 +937,7 @@ function dwqa_is_captcha_enable_in_single_question() {
 	$captcha_in_single_question = isset( $dwqa_general_settings['captcha-in-single-question'] ) ? $dwqa_general_settings['captcha-in-single-question'] : false;
 	if ( $captcha_in_single_question ) {
 		return true;
-	}
-
+	} 
 	return false;
 }
 
@@ -840,7 +952,7 @@ function dwqa_is_enable_status() {
 }
 
 class DWQA_Settings {
-	public function __construct() {
+	public function __construct(){
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 		add_action( 'init', array( $this, 'init_options' ), 9 );
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
@@ -851,11 +963,14 @@ class DWQA_Settings {
 
 	public function enqueue_script() {
 		wp_enqueue_script( 'dwqa-admin-settings-page', DWQA_URI . 'assets/js/admin-settings-page.js', array( 'jquery' ), true );
+		if ( isset( $_REQUEST['post_type'] ) && $_REQUEST['post_type'] == 'dwqa-question' && isset( $_REQUEST['page'] ) && $_REQUEST['page'] == 'dwqa-settings' ) {
+			wp_enqueue_style( 'dwqa-admin-settings-style', DWQA_URI . 'assets/css/admin-style.css', array(), true );
+		}
 	}
 
 	public function update_options( $option, $old_value, $value ) {
 		if ( $option == 'dwqa_options' ) {
-			if ( $old_value['pages']['archive-question'] != $value['pages']['archive-question'] ) {
+			if ( $old_value['pages']['archive-question'] != $value['pages']['archive-question']  ) {
 				$questions_page_content = get_post_field( 'post_content', $value['pages']['archive-question'] );
 				if ( strpos( $questions_page_content, '[dwqa-list-questions]' ) === false ) {
 					$questions_page_content = str_replace( '[dwqa-submit-question-form]', '', $questions_page_content );
@@ -876,14 +991,14 @@ class DWQA_Settings {
 					) );
 				}
 			}
-
+			
 			// Flush rewrite when rewrite rule settings change
 			flush_rewrite_rules();
 		}
 	}
 
 	// Create admin menus for backend
-	public function admin_menu() {
+	public function admin_menu(){
 		global $dwqa_setting_page;
 		$dwqa_setting_page = add_submenu_page( 'edit.php?post_type=dwqa-question', __( 'Plugin Settings', 'dwqa' ), __( 'Settings', 'dwqa' ), 'manage_options', 'dwqa-settings', array(
 			$this,
@@ -891,7 +1006,7 @@ class DWQA_Settings {
 		) );
 	}
 
-	public function init_options() {
+	public function init_options(){
 		global $dwqa_options, $dwqa_general_settings;
 		$dwqa_general_settings = $dwqa_options = wp_parse_args( get_option( 'dwqa_options' ), array(
 			'pages'                      => array(
@@ -899,21 +1014,21 @@ class DWQA_Settings {
 				'archive-question' => 0,
 			),
 			'question-category-rewrite'  => '',
-			'question-tag-rewrite'       => '',
+			'question-tag-rewrite' => '',
 			'captcha-in-single-question' => false,
-			'question-new-time-frame'    => 4,
+			'question-new-time-frame' => 4,
 		) );
 	}
 
 	public function flush_rules() {
-		if ( isset( $_GET['page'] ) && 'dwqa-settings' == esc_html( $_GET['page'] ) ) {
+		if ( isset( $_GET['page'] ) && 'dwqa-settings' == $_GET['page'] ) {
 			flush_rewrite_rules();
 		}
 	}
 
 	public function current_email_tab() {
-		if ( isset( $_GET['tab'] ) && 'email' == esc_html( $_GET['tab'] ) ) {
-			return isset( $_GET['section'] ) ? esc_html( $_GET['section'] ) : 'general';
+		if ( isset( $_GET['tab'] ) && 'email' == $_GET['tab'] ) {
+			return isset( $_GET['section'] ) ? $_GET['section'] : 'general';
 		}
 
 		return false;
@@ -950,7 +1065,7 @@ class DWQA_Settings {
 
 		//Register Setting Sections
 		add_settings_section(
-			'dwqa-general-settings',
+			'dwqa-general-settings', 
 			__( 'Page Settings', 'dwqa' ),
 			null,
 			'dwqa-settings'
@@ -960,7 +1075,7 @@ class DWQA_Settings {
 			'dwqa_options[pages][archive-question]',
 			__( 'Question List Page', 'dwqa' ),
 			'dwqa_pages_settings_display',
-			'dwqa-settings',
+			'dwqa-settings', 
 			'dwqa-general-settings'
 		);
 
@@ -968,6 +1083,14 @@ class DWQA_Settings {
 			'dwqa_options[pages][submit-question]',
 			__( 'Ask Question Page', 'dwqa' ),
 			'dwqa_submit_question_page_display',
+			'dwqa-settings', 
+			'dwqa-general-settings'
+		);
+
+		add_settings_field(
+			'dwqa_options[pages][register-page]',
+			__( 'Register page', 'dwqa' ),
+			'dwqa_set_register_page_display',
 			'dwqa-settings',
 			'dwqa-general-settings'
 		);
@@ -1026,7 +1149,7 @@ class DWQA_Settings {
 			'dwqa_options[enable-review-question]',
 			__( 'Before A Question Appears', 'dwqa' ),
 			'dwqa_enable_review_question_mode',
-			'dwqa-settings',
+			'dwqa-settings', 
 			'dwqa-misc-settings'
 		);
 
@@ -1034,7 +1157,7 @@ class DWQA_Settings {
 			'dwqa_options[enable-private-question]',
 			__( 'Other Question Settings', 'dwqa' ),
 			'dwqa_enable_private_question_display',
-			'dwqa-settings',
+			'dwqa-settings', 
 			'dwqa-misc-settings'
 		);
 
@@ -1078,6 +1201,62 @@ class DWQA_Settings {
 			'dwqa-answer-settings'
 		);
 
+		add_settings_field(
+			'dwqa_options[answer-admin-first]',
+			__( 'Other Answer Setting', 'dwqa' ),
+			'dwqa_answer_admin_first',
+			'dwqa-settings',
+			'dwqa-answer-settings'
+		);
+
+		add_settings_field(
+			'dwqa_options[answer-approve]',
+			'',
+			'dwqa_answer_approve',
+			'dwqa-settings',
+			'dwqa-answer-settings'
+		);
+
+		// Upload Settings
+		add_settings_section(
+			'dwqa-upload-settings',
+			__( 'Upload Settings', 'dwqa' ),
+			false,
+			'dwqa-settings'
+		);
+
+		add_settings_field(
+			'dwqa_options[show-button-upload]',
+			__( 'Show button upload', 'dwqa' ),
+			'dwqa_show_button_upload',
+			'dwqa-settings',
+			'dwqa-upload-settings'
+		);
+
+		add_settings_field(
+			'dwqa_options[max-size-upload]',
+			__( 'Maximum file size', 'dwqa' ),
+			'dwqa_max_size_upload',
+			'dwqa-settings',
+			'dwqa-upload-settings'
+		);
+
+		add_settings_field(
+			'dwqa_options[max-files-upload]',
+			__( 'Maximum files to upload', 'dwqa' ),
+			'dwqa_max_files_upload',
+			'dwqa-settings',
+			'dwqa-upload-settings'
+		);
+
+		add_settings_field(
+			'dwqa_options[accept-upload-extension]',
+			__( 'Accept upload extension', 'dwqa' ),
+			'dwqa_accept_upload_extension',
+			'dwqa-settings',
+			'dwqa-upload-settings'
+		);
+		
 		// Vote Settings
 		add_settings_section(
 			'dwqa-vote-settings',
@@ -1093,7 +1272,7 @@ class DWQA_Settings {
 			'dwqa-settings',
 			'dwqa-vote-settings'
 		);
-
+		
 		// Akismet Settings
 		add_settings_section(
 			'dwqa-akismet-settings',
@@ -1123,7 +1302,7 @@ class DWQA_Settings {
 			'dwqa-settings',
 			'dwqa-akismet-settings'
 		);
-
+		
 		//Auto closure Settings
 		add_settings_section(
 			'dwqa-auto-closure-settings',
@@ -1147,6 +1326,8 @@ class DWQA_Settings {
 			'dwqa-auto-closure-settings'
 		);
 
+		do_action( 'dwqa_register_middle_setting_field');
+
 		//Captcha Setting
 
 		add_settings_section(
@@ -1158,16 +1339,16 @@ class DWQA_Settings {
 
 		add_settings_field(
 			'dwqa_options[captcha-type]',
-			__( 'Type', 'dwqa' ),
+			__( 'Type', 'dwqa' ), 
 			'dwqa_captcha_select_type_display',
-			'dwqa-settings',
+			'dwqa-settings', 
 			'dwqa-captcha-settings'
 		);
 
 		add_settings_field(
 			'dwqa_options[captcha-in-question]',
 			__( 'Ask Question Page', 'dwqa' ),
-			'dwqa_captcha_in_question_display',
+			'dwqa_captcha_in_question_display', 
 			'dwqa-settings',
 			'dwqa-captcha-settings'
 		);
@@ -1176,11 +1357,67 @@ class DWQA_Settings {
 			'dwqa_options[captcha-in-single-question]',
 			__( 'Single Question Page', 'dwqa' ),
 			'dwqa_captcha_in_single_question_display',
+			'dwqa-settings', 
+			'dwqa-captcha-settings'
+		);
+
+		add_settings_field(
+			'dwqa_options[captcha-in-comment-single-question]',
+			__( 'Comment Single Question Page', 'dwqa' ),
+			'dwqa_captcha_in_comment_single_question_display',
+			'dwqa-settings',
+			'dwqa-captcha-settings'
+		);
+
+		add_settings_field(
+			'dwqa_options[captcha-google-public-key]',
+			__( 'Google ReCaptcha Public Key', 'dwqa' ),
+			'dwqa_captcha_google_pubic_key_display',
+			'dwqa-settings',
+			'dwqa-captcha-settings'
+		);
+
+		add_settings_field(
+			'dwqa_options[captcha-google-private-key]',
+			__( 'Google ReCaptcha Private Key', 'dwqa' ),
+			'dwqa_captcha_google_private_key_display',
+			'dwqa-settings',
+			'dwqa-captcha-settings'
+		);
+
+		add_settings_field(
+			'dwqa_options[funcaptcha-public-key]',
+			__( 'Funcaptcha Public Key', 'dwqa' ),
+			'dwqa_fc_public_key_display',
+			'dwqa-settings',
+			'dwqa-captcha-settings'
+		);
+
+		add_settings_field(
+			'dwqa_options[funcaptcha-private-key]',
+			__( 'FunCaptcha Private Key', 'dwqa' ),
+			'dwqa_fc_private_key_display',
 			'dwqa-settings',
 			'dwqa-captcha-settings'
 		);
 
 		do_action( 'dwqa_captcha_setting_field' );
+
+		// other settings
+		add_settings_section(
+			'dwqa-other-settings',
+			__( 'Other Settings', 'dwqa' ),
+			false,
+			'dwqa-settings'
+		);
+
+		add_settings_field(
+			'dwqa_options[markdown-editor]',
+			__( 'Markdown Editor', 'dwqa' ),
+			'dwqa_markdown_editor_setting_layout',
+			'dwqa-settings',
+			'dwqa-other-settings'
+		);
 
 
 		//Permalink
@@ -1195,6 +1432,14 @@ class DWQA_Settings {
 			'dwqa_options[question-rewrite]',
 			__( 'Question Base', 'dwqa' ),
 			'dwqa_question_rewrite_display',
+			'dwqa-settings', 
+			'dwqa-permalink-settings'
+		);
+
+		add_settings_field(
+			'dwqa_options[question-slug-category-rewrite]',
+			__( 'Category Slug', 'dwqa' ),
+			'dwqa_question_slug_category_rewrite_display',
 			'dwqa-settings',
 			'dwqa-permalink-settings'
 		);
@@ -1203,7 +1448,7 @@ class DWQA_Settings {
 			'dwqa_options[question-category-rewrite]',
 			__( 'Question Category Base', 'dwqa' ),
 			'dwqa_question_category_rewrite_display',
-			'dwqa-settings',
+			'dwqa-settings', 
 			'dwqa-permalink-settings'
 		);
 
@@ -1211,17 +1456,18 @@ class DWQA_Settings {
 			'dwqa_options[question-tag-rewrite]',
 			__( 'Question Tag Base', 'dwqa' ),
 			'dwqa_question_tag_rewrite_display',
-			'dwqa-settings',
+			'dwqa-settings', 
 			'dwqa-permalink-settings'
 		);
+		
 
 		register_setting( 'dwqa-settings', 'dwqa_options' );
 
 		add_settings_section(
-			'dwqa-subscribe-settings',
+			'dwqa-subscribe-settings', 
 			false,
 			false,
-			'dwqa-email'
+			'dwqa-email' 
 		);
 
 		add_settings_section(
@@ -1253,7 +1499,7 @@ class DWQA_Settings {
 		//     'dwqa-email', 
 		//     'dwqa-subscribe-settings'
 		// );
-		register_setting( 'dwqa-subscribe-settings-new-question', 'dwqa_subscrible_sendto_address' );
+		register_setting( 'dwqa-subscribe-settings', 'dwqa_subscrible_sendto_address' );
 
 		// Cc address setting
 		// add_settings_field( 
@@ -1280,6 +1526,15 @@ class DWQA_Settings {
 			'dwqa_subscrible_from_address',
 			__( 'From Email', 'dwqa' ),
 			array( $this, 'email_from_address_display' ),
+			'dwqa-email', 
+			'dwqa-subscribe-settings'
+		);
+		register_setting( 'dwqa-subscribe-settings', 'dwqa_subscrible_from_address' );
+
+		add_settings_field(
+			'dwqa_subscrible_from_name',
+			__( 'From name', 'dwqa' ),
+			array( $this, 'email_from_name_display' ),
 			'dwqa-email',
 			'dwqa-subscribe-settings'
 		);
@@ -1290,7 +1545,7 @@ class DWQA_Settings {
 			'dwqa_subscrible_send_copy_to_admin',
 			false,
 			array( $this, 'email_send_copy_to_admin' ),
-			'dwqa-email',
+			'dwqa-email', 
 			'dwqa-subscribe-settings'
 		);
 		register_setting( 'dwqa-subscribe-settings', 'dwqa_subscrible_send_copy_to_admin' );
@@ -1356,14 +1611,15 @@ class DWQA_Settings {
 			__( 'Group Permission', 'dwqa' ),
 			'dwqa_permission_display',
 			'dwqa-permission',
-			'dwqa-permission-settings'
+			'dwqa-permission-settings' 
 		);
 
 		register_setting( 'dwqa-permission-settings', 'dwqa_permission' );
 	}
 
-	public function settings_display() {
+	public function settings_display(){
 		global $dwqa_general_settings;
+		global $dwqa;
 		$email_section = $this->current_email_tab();
 		?>
         <style type="text/css">
@@ -1381,7 +1637,19 @@ class DWQA_Settings {
             }
         </style>
         <div class="wrap">
-            <h2><?php _e( 'DWQA Settings', 'dwqa' ) ?></h2>
+            <div class="dwqa-settings-head">
+                <div class="heade-decs">
+                    <h2><?php _e( 'Welcome to DW Q&A', 'dwqa' ) ?></h2>
+                    <p><?php _e( 'DW Question & Answer Pro is an all-time favourite question & answer plugin for WordPress. Your WordPress site will have a full-featured question & answer section like StackOverflow, Quora or Yahoo Answers.', 'dwqa' ) ?></p>
+                </div>
+                <div class="head-thumb dwqa-badge">
+                    <img src="<?php echo DWQA_URI . '/assets/img/dwqa.png' ?>" alt="DWQA Logo" width="100" height="100">
+                    <ul>
+                        <li>By <a href="https://www.designwall.com/" target="blank">DesignWall</a></li>
+                        <li>Version <?php echo $dwqa->version; ?></li>
+                    </ul>
+                </div>
+            </div>
 			<?php settings_errors(); ?>
 			<?php $active_tab = isset( $_GET['tab'] ) ? esc_html( $_GET['tab'] ) : 'general'; ?>
             <h2 class="nav-tab-wrapper">
@@ -1391,11 +1659,13 @@ class DWQA_Settings {
                    class="nav-tab <?php echo $active_tab == 'email' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Emails', 'dwqa' ); ?></a>
                 <a href="?post_type=dwqa-question&amp;page=dwqa-settings&amp;tab=permission"
                    class="nav-tab <?php echo $active_tab == 'permission' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Permissions', 'dwqa' ); ?></a>
-                <a href="?post_type=dwqa-question&amp;page=dwqa-settings&amp;tab=licenses"
-                   class="nav-tab <?php echo $active_tab == 'licenses' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Licenses', 'dwqa' ); ?></a>
+				<?php if ( class_exists( 'DWQA_Envato_API' ) ) : ?>
+                    <a href="?post_type=dwqa-question&amp;page=dwqa-settings&amp;tab=envato"
+                       class="nav-tab <?php echo $active_tab == 'envato' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Envato API', 'dwqa' ); ?></a>
+				<?php endif; ?>
             </h2>
 
-            <form method="post" action="options.php">
+            <form method="post" action="options.php" class="dwqa-settings-body">
 				<?php
 
 				switch ( $active_tab ) {
@@ -1410,6 +1680,9 @@ class DWQA_Settings {
 							echo '<table class="form-table"><tr>';
 							echo '<th scope="row">' . __( 'Email Logo', 'dwqa' ) . '</th><td>';
 							dwqa_subscrible_email_logo_display();
+							echo '<tr>';
+							$this->email_sendto_address_display();
+							echo '</tr>';
 							echo '</td></tr></table>';
 							do_settings_sections( 'dwqa-email' );
 						endif;
@@ -1432,9 +1705,6 @@ class DWQA_Settings {
 							echo '</tr>';
 							echo '<tr>';
 							dwqa_subscrible_new_question_email_display();
-							echo '</tr>';
-							echo '<tr>';
-							$this->email_sendto_address_display();
 							echo '</tr>';
 							echo '</table>';
 							echo '</div>'; //End tab for New Question Notification
@@ -1462,7 +1732,7 @@ class DWQA_Settings {
 							echo '</div>';//End tab for New Answer Notification To Followers
 
 							echo '<div id="new-answer" class="tab-pane">';
-							echo '<h3>' . __( 'New Answer Notifications (to Admin)', 'dwqa' ) . '</h3>';
+							echo '<h3>' . __( 'New Answer Notifications (to Author)', 'dwqa' ) . '</h3>';
 							echo '<table class="form-table">';
 							echo '<tr>';
 							dwqa_subscrible_enable_new_answer_notification();
@@ -1470,9 +1740,6 @@ class DWQA_Settings {
 							dwqa_subscrible_new_answer_email_subject_display();
 							echo '<tr>';
 							dwqa_subscrible_new_answer_email_display();
-							echo '</tr>';
-							echo '<tr>';
-							$this->new_answer_forward();
 							echo '</tr>';
 							echo '</table>';
 							echo '</div>';//End tab for New Answer Notification
@@ -1499,7 +1766,7 @@ class DWQA_Settings {
 
 
 							echo '<div id="new-comment-question" class="tab-pane">';
-							echo '<h3>' . __( 'New Comment to Question Notifications (to Admin)', 'dwqa' ) . '</h3>';
+							echo '<h3>' . __( 'New Comment to Question Notifications (to Author)', 'dwqa' ) . '</h3>';
 							echo '<table class="form-table">';
 							echo '<tr>';
 							dwqa_subscrible_enable_new_comment_question_notification();
@@ -1509,9 +1776,6 @@ class DWQA_Settings {
 							echo '</tr>';
 							echo '<tr>';
 							dwqa_subscrible_new_comment_question_email_display();
-							echo '</tr>';
-							echo '<tr>';
-							$this->new_comment_question_forward();
 							echo '</tr>';
 							echo '</table>';
 							echo '<hr>';
@@ -1536,7 +1800,7 @@ class DWQA_Settings {
 
 
 							echo '<div id="new-comment-answer" class="tab-pane">';
-							echo '<h3>' . __( 'New Comment to Answer Notifications (to Admin)', 'dwqa' ) . '</h3>';
+							echo '<h3>' . __( 'New Comment to Answer Notifications (to Author)', 'dwqa' ) . '</h3>';
 							echo '<table class="form-table">';
 							echo '<tr>';
 							dwqa_subscrible_enable_new_comment_answer_notification();
@@ -1546,9 +1810,6 @@ class DWQA_Settings {
 							echo '</tr>';
 							echo '<tr>';
 							dwqa_subscrible_new_comment_answer_email_display();
-							echo '</tr>';
-							echo '<tr>';
-							$this->new_comment_answer_forward();
 							echo '</tr>';
 							echo '</table>';
 							echo '</div>'; //End tab for New Comment to Answer Notification
@@ -1566,13 +1827,9 @@ class DWQA_Settings {
 						dwqa_permission_display();
 						submit_button();
 						break;
-					case 'licenses':
-						settings_fields( 'dwqa-addons' );
-						echo '<p class="description">' . sprintf( __( 'Manage <a href="%s">DWQA Extensions</a> license keys', 'dwqa' ), add_query_arg( array(
-								'post_type' => 'dwqa-question',
-								'page'      => 'dwqa-extensions'
-							), admin_url( 'edit.php' ) ) ) . '</p>';
-						do_settings_sections( 'dwqa-addons-settings' );
+					case 'envato':
+						settings_fields( 'dwqa-envato-settings' );
+						do_settings_sections( 'dwqa-envato' );
 						submit_button();
 						break;
 					default:
@@ -1589,48 +1846,52 @@ class DWQA_Settings {
 	}
 
 	public function new_answer_forward() {
-		echo '<th>' . __( 'Forward to', 'dwqa' ) . '</th>';
+		echo '<th>' . __( 'Forward to', 'dwqa' ) .'</th>';
 		$this->textarea_field( 'dwqa_subscrible_new_answer_forward' );
 	}
 
 	public function new_comment_question_forward() {
-		echo '<th>' . __( 'Forward to', 'dwqa' ) . '</th>';
+		echo '<th>' . __( 'Forward to', 'dwqa' ) .'</th>';
 		$this->textarea_field( 'dwqa_subscrible_new_comment_question_forward' );
 	}
 
 	public function new_comment_answer_forward() {
-		echo '<th>' . __( 'Forward to', 'dwqa' ) . '</th>';
+		echo '<th>' . __( 'Forward to', 'dwqa' ) .'</th>';
 		$this->textarea_field( 'dwqa_subscrible_new_comment_answer_forward' );
 	}
 
 	public function email_sendto_address_display() {
-		echo '<th>' . __( 'Forward to', 'dwqa' ) . '</th>';
+		echo '<th>' . __( 'Forward to', 'dwqa' ) .'</th>';
 		$this->textarea_field( 'dwqa_subscrible_sendto_address' );
 	}
 
 	public function email_cc_address_display() {
-		echo '<p>' . __( 'Cc', 'dwqa' ) . '</p>';
+		echo '<p>' . __( 'Cc', 'dwqa' ).'</p>';
 		$this->input_text_field( 'dwqa_subscrible_cc_address' );
 	}
 
 	public function email_bcc_address_display() {
-		echo '<p>' . __( 'Bcc', 'dwqa' ) . '</p>';
+		echo '<p>' . __( 'Bcc', 'dwqa' ).'</p>';
 		$this->input_text_field( 'dwqa_subscrible_bcc_address' );
 	}
 
 	public function email_from_address_display() {
-		$this->input_text_field( 'dwqa_subscrible_from_address', false, __( 'This address will be used as the sender of the outgoing emails.', 'dwqa' ) );
+		$this->input_text_field( 'dwqa_subscrible_from_address', get_bloginfo( 'admin_email' ), false, __( 'This address will be used as the sender of the outgoing emails.', 'dwqa' ) );
+	}
+
+	public function email_from_name_display() {
+		$this->input_text_field( 'dwqa_subscrible_from_name', get_bloginfo( 'name' ), false, __( 'This address will be used as the sender of the outgoing name.', 'dwqa' ) );
 	}
 
 	public function email_send_copy_to_admin() {
-		$this->input_checkbox_field(
+		$this->input_checkbox_field( 
 			'dwqa_subscrible_send_copy_to_admin',
-			__( 'Send a copy of every email to admin.', 'dwqa' )
+			__( 'Send a copy of every email to admin.','dwqa' )
 		);
 	}
 
-	public function input_text_field( $option, $label = false, $description = false, $class = false ) {
-		echo '<p><label for="' . $option . '"><input type="text" id="' . $option . '" name="' . $option . '" value="' . get_option( $option ) . '" class="regular-text" />';
+	public function input_text_field( $option, $default = null, $label = false, $description = false, $class = false ) {
+		echo '<p><label for="' . $option . '"><input type="text" id="' . $option . '" name="' . $option . '" value="' . get_option( $option, $default ) . '" class="regular-text" />';
 		if ( $description ) {
 			echo '<br><span class="description">' . $description . '</span>';
 		}

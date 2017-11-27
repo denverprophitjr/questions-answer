@@ -29,7 +29,7 @@
         <aside><span class="dwqa-pick-best-answer"><?php _e( 'Best Answer', 'dwqa' ) ?></span></aside>
 
 	<?php endif; ?>
-    <div class="dwqa-answer-meta">
+    <aside class="dwqa-answer-meta">
 		<?php $user_id = get_post_field( 'post_author', get_the_ID() ) ? get_post_field( 'post_author', get_the_ID() ) : 0 ?>
 		<?php printf( __( '<span><a href="%s"><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">%s%s</span></span></a> %s answered %s ago</span>', 'dwqa' ), dwqa_get_author_link( $user_id ), get_avatar( $user_id, 48 ), get_the_author(), dwqa_print_user_badge( $user_id ), human_time_diff( get_post_time( 'U', true ) ) ) ?>
 		<?php if ( 'private' == get_post_status() ) : ?>
@@ -37,7 +37,7 @@
             <span><?php _e( 'Private', 'dwqa' ) ?></span>
 		<?php endif; ?>
         <span class="dwqa-answer-actions"><?php dwqa_answer_button_action(); ?></span>
-    </div>
+    </aside>
     <span class="dwqa-answer-content" itemprop="text"><?php the_content(); ?>
 </span>
 </div>
@@ -45,6 +45,6 @@
 <?php comments_template(); ?>
 </div>
 <div class="well">
-    [bookly-form category_id="3" service_id="11" staff_member_id="1" hide="categories,services,quantity,staff_members"]
+	<?php echo do_shortcode( '[bookly-form category_id="3" service_id="11" staff_member_id="1" hide="categories,services,quantity,staff_members"]' ); ?>
 </div>
 <!-- TODO Add parentItem schema attribute -->

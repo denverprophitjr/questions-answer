@@ -5,21 +5,22 @@ function dwqa_add_notice( $message, $type = 'success', $comment = false ) {
 	$dwqa->session->add( $message, $type, $comment );
 }
 
-function dwqa_clear_notices() {
+function dwqa_clear_notices( $comment = false ) {
 	global $dwqa;
-	$dwqa->session->clear();
+	$dwqa->session->clear( $comment );
 }
 
 add_action( 'dwqa_before_edit_form', 'dwqa_print_notices' );
 add_action( 'dwqa_before_question_submit_form', 'dwqa_print_notices' );
+add_action( 'dwqa_before_single_question_comment_notice', 'dwqa_print_notices' );
 function dwqa_print_notices( $comment = false ) {
 	global $dwqa;
 	echo $dwqa->session->print_notices( $comment );
+	dwqa_clear_notices( $comment );
 }
 
 function dwqa_count_notices( $type = '', $comment = false ) {
 	global $dwqa;
-
 	return $dwqa->session->count( $type, $comment );
 }
 
@@ -29,10 +30,28 @@ function dwqa_add_wp_error_message( $errors, $comment = false ) {
 	}
 }
 
+function dwqa_get_notice_error( $comment = false ) {
+	global $dwqa;
+	$key         = $comment ? 'dwqa-comment-notices' : 'dwqa-notices';
+	$all_notices = $dwqa->session->get( $key, array() );
+	print_r( $all_notices );
+	if ( isset( $all_notices['error'] ) && count( $all_notices['error'] ) > 0 ) {
+		return $all_notices['error'][0];
+	}
+
+	return null;
+}
+
+
 class DWQA_Session {
 	protected $_data = array();
 	protected $_dirty = false;
 
+	public function __construct() {
+		if ( ! session_id() ) {
+			session_start();
+		}
+	}
 	public function __get( $key ) {
 		return $this->get( $key );
 	}
@@ -42,12 +61,12 @@ class DWQA_Session {
 	}
 
 	public function __isset( $key ) {
-		return isset( $this->_data[ sanitize_title( $key ) ] );
+		return isset( $_SESSION['dwqa_session'][ sanitize_title( $key ) ] );
 	}
 
 	public function __unset( $key ) {
-		if ( isset( $this->_data[ $key ] ) ) {
-			unset( $this->_data[ $key ] );
+		if ( isset( $_SESSION['dwqa_session'][ $key ] ) ) {
+			unset( $_SESSION['dwqa_session'][ $key ] );
 			$this->_dirty = true;
 		}
 	}
@@ -55,20 +74,19 @@ class DWQA_Session {
 	public function get( $key, $default = '' ) {
 		$key = sanitize_key( $key );
 
-		return isset( $this->_data[ $key ] ) ? maybe_unserialize( $this->_data[ $key ] ) : $default;
+		return isset( $_SESSION['dwqa_session'][ $key ] ) ? maybe_unserialize( $_SESSION['dwqa_session'][ $key ] ) : $default;
 	}
 
 	public function set( $key, $value ) {
 		if ( $value !== $this->get( $key ) ) {
-			$this->_data[ sanitize_key( $key ) ] = maybe_serialize( $value );
-			$this->_dirty                        = true;
+			$_SESSION['dwqa_session'][ sanitize_key( $key ) ] = maybe_serialize( $value );
+			$this->_dirty                                     = true;
 		}
 	}
 
 	public function add( $message, $type = 'success', $comment = false ) {
 		if ( ! did_action( 'init' ) ) {
 			_doing_it_wrong( __FUNCTION__, __( 'This function should not be called before init.', 'dwqa' ), '1.4.0' );
-
 			return;
 		}
 
@@ -83,21 +101,26 @@ class DWQA_Session {
 		$this->set( $key, $notices );
 	}
 
-	public function clear() {
+	public function clear( $comment = false ) {
 		if ( ! did_action( 'init' ) ) {
 			_doing_it_wrong( __FUNCTION__, __( 'This function should not be called before init.', 'dwqa' ), '1.4.0' );
-
 			return;
 		}
 
 		global $dwqa;
-		$this->set( 'dwqa-notices', null );
+		if ( $comment ) {
+			//$this->set( 'dwqa-comment-notices', null );
+			unset( $_SESSION['dwqa_session']['dwqa-comment-notices'] );
+		} else {
+			// $this->set( 'dwqa-notices', null );
+			unset( $_SESSION['dwqa_session']['dwqa-notices'] );
+		}
+		
 	}
 
 	public function print_notices( $comment = false ) {
 		if ( ! did_action( 'init' ) ) {
 			_doing_it_wrong( __FUNCTION__, __( 'This function should not be called before init.', 'dwqa' ), '1.4.0' );
-
 			return;
 		}
 
@@ -110,18 +133,16 @@ class DWQA_Session {
 		foreach ( $types as $type ) {
 			if ( $this->count( $type, $comment ) > 0 ) {
 				foreach ( $notices[ $type ] as $message ) {
-					return sprintf( '<p class="dwqa-alert dwqa-alert-%s">%s</p>', $type, $message );
+					return sprintf( '<p class="dwqa-alert dwqa-alert-%1$s">%2$s</p>', $type, $message );
 				}
 			}
 		}
-
-		dwqa_clear_notices();
+		dwqa_clear_notices( $comment);
 	}
 
 	public function count( $type = '', $comment = false ) {
 		if ( ! did_action( 'init' ) ) {
 			_doing_it_wrong( __FUNCTION__, __( 'This function should not be called before init.', 'dwqa' ), '1.4.0' );
-
 			return;
 		}
 

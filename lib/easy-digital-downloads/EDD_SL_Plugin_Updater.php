@@ -131,7 +131,7 @@ class EDD_SL_Plugin_Updater {
 		remove_filter( 'pre_set_site_transient_update_plugins', array( $this, 'check_update' ), 10 );
 
 		$update_cache = get_site_transient( 'update_plugins' );
-
+		
 		$update_cache = is_object( $update_cache ) ? $update_cache : new stdClass();
 
 		if ( empty( $update_cache->response ) || empty( $update_cache->response[ $this->name ] ) ) {
@@ -250,7 +250,7 @@ class EDD_SL_Plugin_Updater {
 	 * Disable SSL verification in order to prevent download update failures
 	 *
 	 * @param array $args
-	 * @param string $url
+	 * @param string  $url
 	 *
 	 * @return object $array
 	 */
@@ -259,7 +259,6 @@ class EDD_SL_Plugin_Updater {
 		if ( strpos( $url, 'https://' ) !== false && strpos( $url, 'edd_action=package_download' ) ) {
 			$args['sslverify'] = false;
 		}
-
 		return $args;
 	}
 
@@ -299,10 +298,7 @@ class EDD_SL_Plugin_Updater {
 			'url'        => home_url()
 		);
 
-		$request = wp_remote_post( $this->api_url, array( 'timeout'   => 15,
-		                                                  'sslverify' => false,
-		                                                  'body'      => $api_params
-		) );
+		$request = wp_remote_post( $this->api_url, array( 'timeout' => 15, 'sslverify' => false, 'body' => $api_params ) );
 
 		if ( ! is_wp_error( $request ) ) {
 			$request = json_decode( wp_remote_retrieve_body( $request ) );

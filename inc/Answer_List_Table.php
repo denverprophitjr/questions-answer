@@ -1,4 +1,4 @@
-<?php
+<?php  
 
 if ( ! class_exists( 'WP_List_Table' ) ) {
 	require_once ABSPATH . 'wp-admin/includes/class-wp-list-table.php';
@@ -10,7 +10,6 @@ class DWQA_Answer_List_Table extends WP_List_Table {
 		parent::__construct();
 		add_filter( 'wp_trim_excerpt', array( $this, 'trim_exceprt_more' ) );
 	}
-
 	/**
 	 * Prepares the list of items for displaying.
 	 * @uses WP_List_Table::set_pagination_args()
@@ -28,7 +27,7 @@ class DWQA_Answer_List_Table extends WP_List_Table {
 
 
 		/**
-		 * REQUIRED. Finally, we build an array to be used by the class for column
+		 * REQUIRED. Finally, we build an array to be used by the class for column 
 		 * headers. The $this->_column_headers property takes an array which contains
 		 * 3 other arrays. One for all columns, one for hidden columns, and one
 		 * for sortable columns.
@@ -85,7 +84,6 @@ class DWQA_Answer_List_Table extends WP_List_Table {
 			'author' => __( 'Author', 'dwqa' ),
 			'detail' => __( 'Detail', 'dwqa' ),
 		);
-
 		return $columns;
 	}
 

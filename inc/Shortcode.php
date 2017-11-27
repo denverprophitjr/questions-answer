@@ -1,12 +1,11 @@
 <?php
-
 /**
  *  DW Question Answer Shortcode
  */
 class DWQA_Shortcode {
 	private $shortcodes = array(
 		'dwqa-list-questions',
-		'dwqa-submit-question-form',
+		'dwqa-submit-question-form', 
 		'dwqa-popular-questions',
 		'dwqa-latest-answers',
 		'dwqa-question-followers',
@@ -49,34 +48,25 @@ class DWQA_Shortcode {
 		);
 
 		$buffer = preg_replace( $search, $replace, $buffer );
-
 		return $buffer;
 	}
 
-	public function archive_question( $atts = array() ) {
+	public function archive_question( $atts ) {
 		global $dwqa, $script_version, $dwqa_sript_vars;
 		ob_start();
 
-		if ( isset( $atts['category'] ) ) {
-			$atts['tax_query'][] = array(
-				'taxonomy' => 'dwqa-question_category',
-				'terms'    => esc_html( $atts['category'] ),
-				'field'    => 'slug'
-			);
-			unset( $atts['category'] );
-		}
+		$args = array();
 
-		if ( isset( $atts['tag'] ) ) {
-			$atts['tax_query'][] = array(
-				'taxonomy' => 'dwqa-question_tag',
-				'terms'    => esc_html( $atts['tag'] ),
+		if ( isset( $atts['category'] ) ) {
+			$args['tax_query'][] = array(
+				'taxonomy' => 'dwqa-question_category',
+				'terms'    => $atts['category'],
 				'field'    => 'slug'
 			);
-			unset( $atts['tag'] );
 		}
 
 		$dwqa->template->remove_all_filters( 'the_content' );
-		dwqa()->filter->prepare_archive_posts( $atts );
+		$dwqa->filter->prepare_archive_posts( $args );
 		echo '<div class="dwqa-container" >';
 		dwqa_load_template( 'archive', 'question' );
 		echo '</div>';
@@ -91,12 +81,15 @@ class DWQA_Shortcode {
 			'jquery-ui-autocomplete'
 		), $script_version, true );
 		wp_localize_script( 'dwqa-questions-list', 'dwqa', $dwqa_sript_vars );
-
 		return apply_filters( 'dwqa-shortcode-question-list-content', $this->sanitize_output( $html ) );
 	}
 
-	public function submit_question_form_shortcode() {
-		global $dwqa, $dwqa_sript_vars, $script_version;
+	public function submit_question_form_shortcode( $atts = array() ) {
+		global $dwqa, $dwqa_sript_vars, $script_version, $dwqa_shortcode_atts;
+
+		//add param to template
+		$dwqa_shortcode_atts = $atts;
+		
 		ob_start();
 
 		$dwqa->template->remove_all_filters( 'the_content' );
@@ -115,7 +108,6 @@ class DWQA_Shortcode {
 			'jquery-ui-autocomplete'
 		), $script_version, true );
 		wp_localize_script( 'dwqa-submit-question', 'dwqa', $dwqa_sript_vars );
-
 		return $this->sanitize_output( $html );
 	}
 
@@ -147,13 +139,12 @@ class DWQA_Shortcode {
 			while ( $questions->have_posts() ) {
 				$questions->the_post();
 				$html .= '<li><a href="' . get_permalink() . '" class="question-title">' . get_the_title() . '</a> ' . __( 'asked by', 'dwqa' ) . ' ' . get_the_author_link() . '</li>';
-			}
+			}   
 			$html .= '</ul>';
 			$html .= '</div>';
 		}
 		wp_reset_query();
 		wp_reset_postdata();
-
 		return $html;
 	}
 
@@ -190,13 +181,12 @@ class DWQA_Shortcode {
 				if ( $question_id ) {
 					$html .= '<li>' . __( 'Answer at', 'dwqa' ) . ' <a href="' . get_permalink( $question_id ) . '#answer-' . $answer_id . '" title="' . __( 'Link to', 'dwqa' ) . ' ' . get_the_title( $question_id ) . '">' . get_the_title( $question_id ) . '</a></li>';
 				}
-			}
+			}   
 			$html .= '</ul>';
 			$html .= '</div>';
 		}
 		wp_reset_query();
 		wp_reset_postdata();
-
 		return $html;
 	}
 
@@ -236,13 +226,10 @@ class DWQA_Shortcode {
 			'dwqa-submit-question-form',
 		);
 		if ( is_singular( 'dwqa-question' ) || is_singular( 'dwqa-answer' ) ) {
-			foreach ( $shortcodes as $shortcode_tag ) {
+			foreach ( $shortcodes as $shortcode_tag ) 
 				remove_shortcode( $shortcode_tag );
-			}
 		}
-
 		/* Return the post content. */
-
 		return $content;
 	}
 

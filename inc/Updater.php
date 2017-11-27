@@ -80,9 +80,8 @@ class DWQA_Updater {
 			'body'      => $api_params
 		) );
 
-		if ( is_wp_error( $response ) ) {
+		if ( is_wp_error( $response ) )
 			return false;
-		}
 
 		$license_data = json_decode( wp_remote_retrieve_body( $response ) );
 
@@ -118,7 +117,6 @@ class DWQA_Updater {
 		if ( $old && $old != $new ) {
 			delete_option( $this->license_status_key ); // new license has been entered, so must reactivate
 		}
-
 		return $new;
 	}
 
@@ -178,9 +176,8 @@ class DWQA_Updater {
 		) );
 
 		// make sure the response came back okay
-		if ( is_wp_error( $response ) ) {
+		if ( is_wp_error( $response ) )
 			return false;
-		}
 
 		// decode the license data
 		$license_data = json_decode( wp_remote_retrieve_body( $response ) );
@@ -222,20 +219,17 @@ class DWQA_Updater {
 			) );
 
 			// make sure the response came back okay
-			if ( is_wp_error( $response ) ) {
+			if ( is_wp_error( $response ) )
 				return false;
-			}
 
 			// decode the license data
 			$license_data = json_decode( wp_remote_retrieve_body( $response ) );
 
 			// $license_data->license will be either "deactivated" or "failed"
-			if ( $license_data->license == 'deactivated' ) {
+			if ( $license_data->license == 'deactivated' )
 				delete_option( 'edd_sample_license_status' );
-			}
 
 		}
 	}
 }
-
 ?>

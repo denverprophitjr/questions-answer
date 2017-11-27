@@ -12,12 +12,20 @@ function dwqa_genesis_intergrate_genesis( $value, $setting ) {
 	return $value;
 }
 
+add_filter( 'genesis_pre_get_option_content_archive_limit', 'dwqa_genesis_intergrate_genesis_content_archive_limit', 9999, 2 );
+function dwqa_genesis_intergrate_genesis_content_archive_limit( $value, $setting ) {
+	if ( is_tax( 'dwqa-question_category' ) || is_tax( 'dwqa-question_tag' ) ) {
+		return '0';
+	}
+
+	return $value;
+}
+
 // not show question in category page when set Features on front is 0
 add_filter( 'genesis_pre_get_option_features_on_front', 'dwqa_genesis_feature_on_first_page', 9999, 2 );
 function dwqa_genesis_feature_on_first_page( $value, $setting ) {
 	if ( is_tax( 'dwqa-question_category' ) || is_tax( 'dwqa-question_tag' ) ) {
 		$dwqa_options = get_option( 'dwqa_options', array() );
-
 		return isset( $dwqa_options['posts-per-page'] ) ? $dwqa_options['posts-per-page'] : 15;
 	}
 
@@ -30,7 +38,6 @@ function dwqa_genesis_feature_on_first_page( $value, $setting ) {
  * Show shortcode when page or page template when using the_excerpt()
  *
  * @param string $content
- *
  * @return string
  */
 function dwqa_the_excerpt( $content ) {
@@ -50,11 +57,6 @@ function dwqa_the_excerpt( $content ) {
 		$content = apply_filters( 'the_content', $post->post_content );
 	}
 
-	if ( is_singular( 'dwqa-question' ) ) {
-		$content = apply_filters( 'the_content', $post->post_content );
-	}
-
 	return $content;
 }
-
 add_filter( 'the_excerpt', 'dwqa_the_excerpt' );

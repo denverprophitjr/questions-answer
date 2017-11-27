@@ -1,349 +1,429 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: DW Question Answer\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-17 16:30+0700\n"
-"PO-Revision-Date: 2016-08-17 16:30+0700\n"
-"Last-Translator: DesignWall <webmaster@designwall.com>\n"
-"Language-Team: DesignWall <webmaster@designwall.com>\n"
-"Language: en\n"
+"Project-Id-Version: DW Question Answer Pro\n"
+"POT-Creation-Date: 2016-09-12 10:32+0700\n"
+"PO-Revision-Date: 2016-09-12 10:32+0700\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar_DZ\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
 "X-Generator: Poedit 1.8.7\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c\n"
-"X-Poedit-Basepath: .\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: dw-question-answer.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
 
 #: dw-question-answer.php:147
-msgid "DWQA Questions"
-msgstr "الأسئلة"
+msgid "Next"
+msgstr "التالي"
+
+#: dw-question-answer.php:148
+msgid "Prev"
+msgstr "السابق"
+
+#: dw-question-answer.php:150
+msgid "Please enter your question"
+msgstr "إطرح سؤالك"
+
+#: dw-question-answer.php:151
+msgid "Your question must be at least 2 characters in length"
+msgstr "سؤالك يجب ان يحتوي على حرفين على الأقل"
+
+#: dw-question-answer.php:152
+msgid "Enter a valid email address"
+msgstr "أدخل عنوان بريد إلكتروني صالح"
+
+#: dw-question-answer.php:153
+msgid "Enter a question title"
+msgstr "أدخل عنوان السؤال"
+
+#: dw-question-answer.php:154
+msgid "Please add your name"
+msgstr "إسمك الكريم"
+
+#: dw-question-answer.php:155
+msgid "Please enter your answer"
+msgstr "الرجاء منك كتابة إجابتك"
+
+#: dw-question-answer.php:156 inc/Handle.php:241
+msgid "Please enter your comment content"
+msgstr "الرجاء كتابة محتوى تعليقك لا تتركه فارغا !"
+
+#: dw-question-answer.php:157
+msgid "Comment must have more than 2 characters"
+msgstr "التعليق يجب أن يكون  بأكثر من حرفين"
+
+#: dw-question-answer.php:158
+msgid "Not found! Try another keyword."
+msgstr "لم يتم العثور عليه! جرب كلمة مفتاحية أخرى."
+
+#: dw-question-answer.php:159
+msgid "Or press <strong>ENTER</strong> to get more questions"
+msgstr "أو إضغط على <strong>أدخل</strong> للحصول على المزيد من الأسئلة"
+
+#: dw-question-answer.php:160
+msgid "Update"
+msgstr "تحديث"
+
+#: dw-question-answer.php:161 inc/Posts/Answer.php:317 inc/Posts/Base.php:320
+#: inc/Settings.php:402 inc/Settings.php:441 inc/Settings.php:480
+#: inc/Template.php:58 inc/Template.php:172 inc/Template.php:189
+#: templates/content-comment.php:19
+msgid "Edit"
+msgstr "تعديل"
+
+#: dw-question-answer.php:162
+msgid "Cancel"
+msgstr "إلغاء"
+
+#: dw-question-answer.php:163
+msgid "Do you want to delete this comment?"
+msgstr "هل تريد حذف هذا التعليق ؟"
 
 #: dw-question-answer.php:164
+msgid "Do you want to delete this answer?"
+msgstr "هل تريد حذف هذه الإجابة ؟ "
+
+#: dw-question-answer.php:165
+msgid "Do you want to update this answer?"
+msgstr "هل تريد تحديث هذه الإجابة ؟"
+
+#: dw-question-answer.php:166
+msgid "Do you want to report this answer?"
+msgstr "هل تريد التبليغ عن هذه الإجابة ؟"
+
+#: dw-question-answer.php:168
+msgid "Report"
+msgstr "تبليغ"
+
+#: dw-question-answer.php:169
+msgid "Undo"
+msgstr "تراجع"
+
+#: dw-question-answer.php:170
+msgid "This answer will be marked as spam and hidden. Do you want to flag it?"
+msgstr ""
+"هذه الإجابة سيتم وضع علامة عليها كسبام و مخفية . هل تريد وضع علامة عليه؟\n"
+" "
+
+#: dw-question-answer.php:171
+msgid "This answer was flagged as spam. Do you want to show it"
+msgstr "هذه الإجابة مخفية ، هل تريد إظهارها ؟"
+
+#: dw-question-answer.php:172
+msgid "This answer was flagged as spam"
+msgstr "هذه الإجابة علّمت على أنها سبام (مزعجة) و تم إخفائها ."
+
+#: dw-question-answer.php:173
+msgid "hide"
+msgstr "إخفاء"
+
+#: dw-question-answer.php:174
+msgid "show"
+msgstr "إظهار"
+
+#: dw-question-answer.php:176
+msgid "Follow This Question"
+msgstr "تابع هذا السؤال"
+
+#: dw-question-answer.php:177
+msgid "Unfollow This Question"
+msgstr "إلغاء متابعة السؤال"
+
+#: dw-question-answer.php:178
+msgid "Pin this question to top"
+msgstr "ثبّت هذا السؤال "
+
+#: dw-question-answer.php:179
+msgid "Unpin this question from top"
+msgstr "إلغاء تثبيت السؤال"
+
+#: dw-question-answer.php:182
+msgid "Do you want to delete this question?"
+msgstr "هل تريد حذف هذا السؤال ؟"
+
+#: dw-question-answer.php:204
+msgid "DWQA Questions"
+msgstr "الأسئلة "
+
+#: dw-question-answer.php:221
 msgid "DWQA Ask Question"
-msgstr "أضف سؤال"
+msgstr "إطرح سؤالك"
 
-#: inc/Admin/Extensions.php:13
-msgid "DWQA Markdown"
+#: inc/Admin/Notice.php:41
+msgid "Action failed. Please refresh the page and retry."
 msgstr ""
 
-#: inc/Admin/Extensions.php:19
-msgid "DWQA Leaderboard"
+#: inc/Admin/Upgrade.php:12
+msgid "DWQA Upgrades"
 msgstr ""
 
-#: inc/Admin/Extensions.php:25
-msgid "DWQA Captcha"
-msgstr ""
-
-#: inc/Admin/Extensions.php:31
-msgid "DWQA Embed Question"
-msgstr ""
-
-#: inc/Admin/Extensions.php:37
-msgid "DWQA Widgets"
-msgstr ""
-
-#: inc/Admin/Extensions.php:47
-msgid "Extensions"
-msgstr ""
-
-#: inc/Admin/Extensions.php:75
-msgid "Get It Now!"
-msgstr ""
-
-#: inc/Admin/Welcome.php:27 inc/Admin/Welcome.php:28
-msgid "Welcome to DW Question & Answer"
-msgstr ""
-
-#: inc/Admin/Welcome.php:35 inc/Admin/Welcome.php:36
-msgid "DW Question & Answer Changelog"
-msgstr ""
-
-#: inc/Admin/Welcome.php:43 inc/Admin/Welcome.php:44
-msgid "DW Question & Answer Credits"
-msgstr ""
-
-#: inc/Admin/Welcome.php:60
-#, php-format
-msgid "Welcome to DW Question & Answer %s"
-msgstr ""
-
-#: inc/Admin/Welcome.php:61
+#: inc/Admin/Upgrade.php:20 upgrades/upgrades.php:40
 msgid ""
-"Thank you for installing our WordPress plugin. If you have any question "
-"about this plugin, please submit to our <a target=\"_blank\" href=\"https://"
-"www.designwall.com/question/\">Q&A section</a>."
+"The upgrade process has started, please be patient. This could take several "
+"minutes. You will be automatically redirected when the upgrade is finished..."
 msgstr ""
 
-#: inc/Admin/Welcome.php:69
-msgid "What&#8217;s New"
+#: inc/Admin/Upgrade.php:52
+msgid ""
+"<strong>DW Question & Answer Data Update Required</strong> &#8211; We just "
+"need to update your install to the latest version"
 msgstr ""
 
-#: inc/Admin/Welcome.php:70
-msgid "Changelog"
+#: inc/Admin/Upgrade.php:53
+msgid "Run the updater"
 msgstr ""
 
-#: inc/Admin/Welcome.php:71
-msgid "Credits"
+#: inc/Admin/Upgrade.php:57
+msgid ""
+"It is strongly recommended that you backup your database before proceeding. "
+"Are you sure you wish to run the updater now?"
 msgstr ""
 
-#: inc/Admin/Welcome.php:199
-msgid "Contributors"
+#: inc/Admin/Upgrade.php:66
+msgid "You do not have permission to do upgrade."
 msgstr ""
 
-#: inc/Admin/Welcome.php:218
-msgid "No valid changelog was found."
-msgstr ""
-
-#: inc/Ajax.php:29 inc/Ajax.php:47 inc/Ajax.php:83 inc/Ajax.php:113
-#: inc/Ajax.php:132 inc/Ajax.php:150 inc/Ajax.php:215 inc/Handle.php:256
-#: inc/Handle.php:455 inc/Permission.php:286 inc/Status.php:319
+#: inc/Ajax.php:29 inc/Ajax.php:50 inc/Ajax.php:92 inc/Ajax.php:125
+#: inc/Ajax.php:144 inc/Ajax.php:162 inc/Ajax.php:229 inc/Handle.php:336
+#: inc/Handle.php:493 inc/Permission.php:327 inc/Status.php:317
 msgid "Are you cheating huh?"
-msgstr "هل تخادع , اممم ؟"
+msgstr "هل أنت تغش ؟"
 
-#: inc/Ajax.php:33 inc/Handle.php:260
-msgid "You do not have permission to edit comment."
-msgstr ""
-
-#: inc/Ajax.php:37
-#, fuzzy
+#: inc/Ajax.php:35
 msgid "Comment ID must be showed."
-msgstr "رقم التعليق يجب أن يظهر"
+msgstr "ID التعليق يجب إظهاره"
 
-#: inc/Ajax.php:51 inc/Handle.php:154
+#: inc/Ajax.php:40 inc/Handle.php:340
+msgid "You do not have permission to edit comment."
+msgstr "لا تملك الصلاحيات الكافية لتعديل هذا التعليق ."
+
+#: inc/Ajax.php:56 inc/Handle.php:194
 msgid "Answer is missing."
-msgstr ""
+msgstr "الإجابة مفقودة ."
 
-#: inc/Ajax.php:55 inc/Handle.php:158
+#: inc/Ajax.php:60 inc/Handle.php:198
 msgid "This post is not answer."
-msgstr ""
+msgstr "هذا السؤال لم تتم الإجابة عنه بعد"
 
-#: inc/Ajax.php:59 inc/Ajax.php:162
+#: inc/Ajax.php:64 inc/Ajax.php:176
 msgid "You do not have permission to delete this post."
-msgstr ""
+msgstr "لا تملك الصلاحيات الكافية لحذف هذا المنشور ."
 
-#: inc/Ajax.php:86
+#: inc/Ajax.php:98
 msgid "Missing id of answer"
-msgstr "رقم الاجابة ناقص"
+msgstr "id هذه الإجابة مفقود ."
 
-#: inc/Ajax.php:154 inc/Handle.php:477
+#: inc/Ajax.php:168 inc/Handle.php:514
 msgid "Question is missing."
-msgstr ""
+msgstr "سؤال مفقود"
 
-#: inc/Ajax.php:158 inc/Handle.php:481
+#: inc/Ajax.php:172 inc/Handle.php:518
 msgid "This post is not question."
-msgstr ""
+msgstr "هذا المنشور ليس سؤال !"
 
-#: inc/Ajax.php:206
-#, fuzzy
+#: inc/Ajax.php:220
 msgid "You do not have permission to edit question status"
-msgstr "ليس لديك صلاحيات لرؤية الاجابة"
+msgstr "لا تملك الصلاحيات الكافية لتعديل حالة السؤال ."
 
-#: inc/Ajax.php:223 inc/Ajax.php:273
-msgid "Not Found!!!"
-msgstr ""
+#: inc/Ajax.php:237 inc/Ajax.php:291
+msgid "Search query is empty"
+msgstr "خانة البحث فارغة"
 
 #: inc/Answer_List_Table.php:81 inc/Posts/Answer.php:271 inc/Template.php:48
 msgid "Author"
-msgstr "الكاتب"
+msgstr "كاتب"
 
 #: inc/Answer_List_Table.php:82
 msgid "Detail"
-msgstr "معلومات"
+msgstr "التفاصيل"
 
-#: inc/Answer_List_Table.php:92 inc/Notifications.php:116
-#: inc/Notifications.php:214 inc/Notifications.php:233 inc/Posts/Base.php:230
-#: inc/Posts/Comment.php:102 inc/Settings.php:419 inc/Settings.php:455
-#: inc/Settings.php:490 inc/User.php:155
+#: inc/Answer_List_Table.php:92 inc/Notifications.php:104
+#: inc/Notifications.php:124 inc/Posts/Base.php:230 inc/Posts/Comment.php:102
+#: inc/Posts/Question.php:86 inc/Posts/Question.php:113
+#: inc/Posts/Question.php:130 inc/Settings.php:421 inc/Settings.php:460
+#: inc/Settings.php:498 inc/User.php:155 inc/helper/akismet.php:36
 msgid "Anonymous"
-msgstr "مجهولون"
+msgstr "مجهول"
 
 #: inc/Answer_List_Table.php:101
 msgid "Answered on "
-msgstr "اجابة على"
+msgstr "الرد على"
 
-#: inc/Answer_List_Table.php:112 inc/Helptab.php:153
+#: inc/Answer_List_Table.php:112 inc/Helptab.php:149
 msgid "Read more"
 msgstr "قراءة المزيد"
 
-#: inc/Handle.php:29
+#: inc/Handle.php:26
+msgid "You do not have permission to submit answer."
+msgstr "لا تملك الصلاحيات الكافية لطرح إجابتك !"
+
+#: inc/Handle.php:35
 msgid "&quot;Helllo&quot;, Are you cheating huh?."
-msgstr ""
+msgstr "&quot;مرحبا&quot;, هل تغش ؟"
 
-#: inc/Handle.php:32
+#: inc/Handle.php:38
 msgid "Delete draft"
-msgstr "محو المسودة"
+msgstr "حذف المسودة"
 
-#: inc/Handle.php:39
+#: inc/Handle.php:45
 msgid "Answer content is empty"
-msgstr ""
+msgstr "محتوى الإجابة فارغ"
 
-#: inc/Handle.php:42
+#: inc/Handle.php:49
 msgid "Question is empty"
-msgstr ""
+msgstr "محتوى السؤال فارغ"
 
-#: inc/Handle.php:46 inc/Handle.php:432
-msgid "You do not have permission to submit question."
-msgstr "لا تملك صلاحيات لاضافة سؤال "
-
-#: inc/Handle.php:50 inc/Handle.php:218 inc/Handle.php:300
-#, fuzzy
+#: inc/Handle.php:53 inc/Handle.php:256 inc/Handle.php:388
 msgid "Missing email information"
-msgstr "ينقص البريد الالكتروني"
+msgstr "معلومات الإيميل مفقودة"
 
-#: inc/Handle.php:54 inc/Handle.php:222 inc/Handle.php:305
-#, fuzzy
+#: inc/Handle.php:57 inc/Handle.php:260 inc/Handle.php:393
 msgid "Missing name information"
-msgstr "ينقص الاسم"
+msgstr "معلومات الإسم مفقودة"
 
-#: inc/Handle.php:58 inc/Handle.php:451
+#: inc/Handle.php:61 inc/Handle.php:489
 msgid "Captcha is not correct"
-msgstr "تأكد من رمز التحقق"
+msgstr "إحابتك على سؤال التحقق خاطئة"
 
-#: inc/Handle.php:77
+#: inc/Handle.php:82
 msgid "Answer for "
-msgstr "اجابة لـ"
+msgstr "إجابة على"
 
-#: inc/Handle.php:139
+#: inc/Handle.php:181
 msgid "You do not have permission to edit answer."
-msgstr ""
+msgstr "لا تملك الصلاحيات الكافية لتعديل هذه الإجابة ."
 
-#: inc/Handle.php:143 inc/Handle.php:520 inc/Posts/Question.php:473
+#: inc/Handle.php:185 inc/Handle.php:557 inc/Posts/Question.php:552
 msgid "Hello, Are you cheating huh?"
-msgstr "كيف حالك؟ هل تخادع ؟"
+msgstr "مرحبا ، هل أنت تغش ؟؟؟"
 
-#: inc/Handle.php:148
+#: inc/Handle.php:190
 msgid "You must enter a valid answer content."
-msgstr ""
+msgstr "يجب عليك إدخال محتوى إجابة صحيحة"
 
-#: inc/Handle.php:194
+#: inc/Handle.php:232
 msgid "You can't post comment"
-msgstr "لا تستطيع اضافة تعليق"
+msgstr "لا يمكنك إضافة التعليقات"
 
-#: inc/Handle.php:197
+#: inc/Handle.php:235
 msgid "Missing post id."
-msgstr ""
+msgstr "id هذا المنشور مفقود"
 
-#: inc/Handle.php:203
-msgid "Please enter your comment content"
-msgstr "اضف تعليقك"
-
-#: inc/Handle.php:249
+#: inc/Handle.php:329
 msgid "Comment is missing"
-msgstr ""
+msgstr "تعليق مفقود"
 
-#: inc/Handle.php:264
+#: inc/Handle.php:344
 msgid "Comment content must not be empty."
-msgstr "انه تعليق , كيف يكون فارغ "
+msgstr "محتوى التعليق يجب ان لا يكون فارغا !!"
 
-#: inc/Handle.php:294 inc/Handle.php:471
+#: inc/Handle.php:374 inc/Handle.php:510
 msgid "You must enter a valid question title."
-msgstr ""
+msgstr "يجب عليك إدخال عنوان السؤال بشكل صحيح !"
 
-#: inc/Handle.php:384
-msgid "User Registration was disabled."
-msgstr "عذرا تم ايقاف التسجيل في الوقت الحالي"
+#: inc/Handle.php:467
+msgid "You do not have permission to submit question."
+msgstr "لا تملك الصلاحيات الكافية لطرح سؤالك !"
 
-#: inc/Handle.php:387
-msgid "This email is already registered, please choose another one."
-msgstr "هذا البريد تم استعماله من قبل , الرجاء اختيار بريد آخر"
-
-#: inc/Handle.php:390
-#, fuzzy
-msgid "This username is already registered. Please use another one."
-msgstr "اسم المستعمل تم اختياره من قبل , الرجاء اختيار اسم مستعمل آخر"
-
-#: inc/Handle.php:444
+#: inc/Handle.php:482
 msgid "Your question is waiting moderator."
-msgstr ""
+msgstr "سؤالك في إنتظار موافقة الإدارة !"
 
-#: inc/Handle.php:466 inc/Status.php:347
-#, fuzzy
+#: inc/Handle.php:505 inc/Status.php:345
 msgid "You do not have permission to edit question"
-msgstr "لا تملك صلاحيات لاضافة سؤال "
+msgstr "لا تملك الصلاحيات الكافية لتعديل السؤال ."
 
-#: inc/Helptab.php:47
+#: inc/Helptab.php:43
 msgid "Overview"
 msgstr "نظرة عامة"
 
-#: inc/Helptab.php:48
+#: inc/Helptab.php:44
 msgid "DW Question Answer Plugin"
-msgstr "DW سؤال جواب اضافة"
+msgstr "منصة سؤال و جواب"
 
-#: inc/Helptab.php:49
+#: inc/Helptab.php:45
 msgid ""
 "DW Question Answer is a WordPress Plugin which helps you build a Question & "
 "Answer system on your WordPress sites. The plugin is easy to install and set "
 "up. Let start building up your community with this WordPress question & "
 "answer system."
 msgstr ""
-"DW سؤال و اجابة  هو اضافة  ووردبريس التي تساعدك على بناء نظام سؤال وجواب على "
-"مواقع ووردبريس الخاص بك. الاضافة سهلة التركيب التفعيل . ابني مجتمعك الخاص مع "
-"اضافة  DW"
+
+#: inc/Helptab.php:48
+msgid "Setup Question List Page"
+msgstr ""
 
 #: inc/Helptab.php:52
-msgid "Setup Question List Page"
-msgstr "اعدادت قائمة الأسئلة"
+msgid "Setup Ask Question Page"
+msgstr ""
 
 #: inc/Helptab.php:56
-msgid "Setup Ask Question Page"
-msgstr "اعدادت قائمة الأجوبة"
+msgid "Shortcode"
+msgstr "كود مختصر"
 
 #: inc/Helptab.php:60
-msgid "Shortcode"
-msgstr "اختصارات"
-
-#: inc/Helptab.php:64
 msgid "Style integration"
-msgstr "دمج مع القالب"
+msgstr ""
+
+#: inc/Helptab.php:169
+msgid "For more information:"
+msgstr ""
+
+#: inc/Helptab.php:170
+msgid "DW Question Answer Guide"
+msgstr ""
+
+#: inc/Helptab.php:171
+msgid "Community"
+msgstr ""
+
+#: inc/Helptab.php:172
+msgid "DesignWall Wordpress Themes"
+msgstr ""
 
 #: inc/Helptab.php:173
-msgid "For more information:"
-msgstr "لمعلومات أكثر :"
-
-#: inc/Helptab.php:174
-msgid "DW Question Answer Guide"
-msgstr "سؤال اجابة دليل DW"
-
-#: inc/Helptab.php:175
-msgid "Community"
-msgstr "مجتمع"
-
-#: inc/Helptab.php:176
-msgid "DesignWall Wordpress Themes"
-msgstr "وردبريس قوالب DesignWall"
-
-#: inc/Helptab.php:177
 msgid "DesignWall Wordpress Plugins"
-msgstr "وردبريس اضافات DesignWall"
+msgstr ""
+
+#: inc/Log.php:12
+msgid "Logs"
+msgstr ""
 
 #: inc/Metaboxes.php:13 templates/content-single-question.php:31
-#: templates/question-submit-form.php:22
+#: templates/question-submit-form.php:23
 msgid "Status"
 msgstr "الحالة"
 
-#: inc/Metaboxes.php:15 inc/Status.php:304
+#: inc/Metaboxes.php:15 inc/Status.php:302
 #: templates/archive-question-filter.php:18
 #: templates/content-single-question.php:32
 msgid "Open"
 msgstr "مفتوح"
 
-#: inc/Metaboxes.php:16 inc/Status.php:287
+#: inc/Metaboxes.php:16 inc/Status.php:285
 msgid "Pending"
-msgstr "في الانتظار"
+msgstr "في الإنتظار"
 
-#: inc/Metaboxes.php:17 inc/Status.php:284
+#: inc/Metaboxes.php:17 inc/Status.php:282
 #: templates/archive-question-filter.php:19
 #: templates/content-single-question.php:34
 msgid "Resolved"
 msgstr "تم الحل"
 
-#: inc/Metaboxes.php:18 inc/Status.php:290
+#: inc/Metaboxes.php:18 inc/Status.php:288
 msgid "Re-Open"
-msgstr "اعادة الفتح"
+msgstr "إعادة الفتح"
 
-#: inc/Metaboxes.php:19 inc/Status.php:293
+#: inc/Metaboxes.php:19 inc/Status.php:291
 #: templates/archive-question-filter.php:20
 #: templates/content-single-question.php:33
 msgid "Closed"
@@ -351,78 +431,85 @@ msgstr "مغلق"
 
 #: inc/Metaboxes.php:25
 msgid "Sticky"
-msgstr "مثتب"
+msgstr "مثبت"
 
 #: inc/Metaboxes.php:29
-#, fuzzy
 msgid "Pin question to top of archive page."
-msgstr "تثبيت السؤال في اعلى الصفحة "
+msgstr "تثبيت السؤال في أعلى الصفحة"
 
 #: inc/Metaboxes.php:45 inc/Posts/Answer.php:225 inc/Posts/Answer.php:227
-#: inc/Settings.php:431 templates/archive-question-filter.php:34
+#: inc/Settings.php:434 templates/archive-question-filter.php:34
 msgid "Answers"
-msgstr "اجابات"
+msgstr "الإجابات"
 
 #: inc/Metaboxes.php:65
 msgid "Question Meta Data"
-msgstr "بيانات تعريف السؤال"
+msgstr ""
 
-#: inc/Notifications.php:29
+#: inc/Notifications.php:30
 msgid "A new question was posted on {site_name}"
-msgstr "سؤال جديد تم اضافته في  {site_name}"
+msgstr "سؤال جديد تم طرحه بواسطة {site_name}"
 
-#: inc/Notifications.php:132
-#, fuzzy
-msgid "You have a new answer for your followed question"
-msgstr "اجابة جديدة على سؤال قمت بتتبعه"
+#: inc/Notifications.php:161 inc/Settings.php:202
+msgid "[{site_name}] You have a new answer for your followed question"
+msgstr "[{site_name}] توجد إجابة جديدة على السؤال الذي تتابعه !"
 
-#: inc/Notifications.php:250
-msgid "A new answer for \"{question_title}\" was posted on {site_name}"
-msgstr "اجابة جديد في  \"{question_title}\" تم اضافتها على  {site_name}"
+#: inc/Notifications.php:213
+msgid ""
+"[{site_name}] A new answer for \"{question_title}\" was posted on {site_name}"
+msgstr ""
+"[{site_name}] توجد إجابة جديدة على : \"{question_title}\" المنشور بواسطة : "
+"{site_name}"
 
-#: inc/Notifications.php:334 inc/Notifications.php:380
+#: inc/Notifications.php:300 inc/Notifications.php:346
 msgid "[{site_name}] You have a new comment for question {question_title}"
-msgstr "[{site_name}] لديك تعليق جديد على سؤال {question_title}"
+msgstr "[{site_name}] تعليق جديد على السؤال : {question_title}"
 
-#: inc/Notifications.php:339 inc/Notifications.php:385
+#: inc/Notifications.php:305 inc/Notifications.php:351
 msgid "[{site_name}] You have a new comment for answer"
-msgstr " لديك تعليق جديد على اجابتك [{site_name}]"
+msgstr "[{site_name}] تعليق جديد على إجابتك"
+
+#: inc/Notifications.php:428
+msgid "New Comment in: "
+msgstr "تعليق جديد على :"
+
+#: inc/Notifications.php:436
+msgid "New Answer in: "
+msgstr "إجابة جديد على :"
+
+#: inc/Notifications.php:442
+msgid "New Question: "
+msgstr "سؤال جديد :"
 
 #: inc/PointerHelper.php:60
 msgid "How to use DW Question Answer"
-msgstr "كيف أستعمل DW اجابة و سؤال ؟"
+msgstr ""
 
 #: inc/PointerHelper.php:61
 msgid "Documents, Support From DesignWall (help)"
-msgstr "وثائق , دعم من DesignWall ( المساعدة  ) "
+msgstr ""
 
 #: inc/PointerHelper.php:70
 msgid "Config your support channel"
-msgstr "تهيئة قناة الدعم"
+msgstr ""
 
 #: inc/PointerHelper.php:71
-#, fuzzy
 msgid "Change comment settings, and create the Submit question page."
-msgstr "تعديل اعدادت التعاليق , و اضف صفحة اضافة الأسئلة "
+msgstr ""
 
 #: inc/Posts/Answer.php:226 inc/Posts/Answer.php:270
 msgid "Answer"
-msgstr "جواب"
+msgstr "إجابة"
 
 #: inc/Posts/Answer.php:273
 msgid "In Response To"
-msgstr "جواب الى "
+msgstr "رد على"
 
-#: inc/Posts/Answer.php:317 inc/Posts/Base.php:320 inc/Settings.php:402
-#: inc/Template.php:58 inc/Template.php:163 inc/Template.php:180
-#: templates/content-comment.php:19
-msgid "Edit"
-msgstr "تعديل"
-
-#: inc/Posts/Answer.php:318 inc/Settings.php:403 inc/Template.php:168
-#: inc/Template.php:185 templates/content-comment.php:22
+#: inc/Posts/Answer.php:318 inc/Settings.php:403 inc/Settings.php:442
+#: inc/Settings.php:481 inc/Template.php:177 inc/Template.php:194
+#: templates/content-comment.php:22
 msgid "Delete"
-msgstr "محو"
+msgstr "حذف"
 
 #: inc/Posts/Answer.php:319 inc/Posts/Base.php:322
 msgid "View"
@@ -430,7 +517,7 @@ msgstr "مشاهدة"
 
 #: inc/Posts/Answer.php:323
 msgid "Submitted"
-msgstr "مواصلة"
+msgstr "أرسلت"
 
 #: inc/Posts/Answer.php:324
 msgid "on"
@@ -438,7 +525,7 @@ msgstr "في"
 
 #: inc/Posts/Answer.php:359
 msgid "Question ID"
-msgstr ""
+msgstr "ID السؤال"
 
 #: inc/Posts/Answer.php:370 inc/Posts/Answer.php:373
 msgid "ID"
@@ -446,237 +533,239 @@ msgstr ""
 
 #: inc/Posts/Base.php:5
 msgid "Are you cheating, huh?"
-msgstr "هل تخادع , اممم ؟"
+msgstr "هل أنت تغش ؟"
 
 #: inc/Posts/Base.php:18
 msgid "What "
-msgstr "ماذا ؟"
+msgstr "ماذا"
 
 #: inc/Posts/Base.php:46
 msgid "You voted for this "
-msgstr "لقد قمت بالتصويت لـ"
+msgstr "لقد قمت بالتصويت لهذا"
 
 #: inc/Posts/Base.php:242
 #, php-format
 msgid "Posts by %s"
-msgstr "%s أضيف عبر "
+msgstr "نشرت بواسطة %s"
 
 #: inc/Posts/Base.php:251 inc/Posts/Base.php:255
 #, php-format
 msgid "%s answered <span class=\"dwqa-date\">%s</span> ago"
-msgstr ""
+msgstr "%s  تمت الإجابة<span class=\"dwqa-date\">%s</span> الماضية"
 
 #: inc/Posts/Base.php:257
 #, php-format
 msgid "%s asked <span class=\"dwqa-date\">%s</span> ago"
-msgstr ""
+msgstr "%s طرح منذ <span class=\"dwqa-date\">%s</span> الماضية"
 
 #: inc/Posts/Base.php:306
 msgid "DWQA Posts"
-msgstr ""
+msgstr "المنشورات"
 
 #: inc/Posts/Base.php:307
 msgid "DWQA Post"
-msgstr ""
+msgstr "منشور"
 
 #: inc/Posts/Base.php:318
 msgctxt "dwqa"
 msgid "Add New"
-msgstr ""
+msgstr "إضافة جديد"
 
 #: inc/Posts/Base.php:319
-#, fuzzy
 msgid "Add New"
-msgstr "أضف جديد"
+msgstr "إضافة جديد"
 
-#: inc/Posts/Base.php:321 inc/Status.php:296
+#: inc/Posts/Base.php:321 inc/Status.php:294
 msgid "New"
 msgstr "جديد"
 
 #: inc/Posts/Base.php:323
 msgid "Search "
-msgstr ""
+msgstr "بحث"
 
 #: inc/Posts/Base.php:324
 msgid "not found"
-msgstr ""
+msgstr "لم يتم العثور عليه"
 
 #: inc/Posts/Base.php:325
 msgid "not found in Trash"
-msgstr ""
+msgstr "لم يتم العثور عليه في سلة المهملات"
 
 #: inc/Posts/Base.php:326
 msgid "Parent:"
-msgstr ""
+msgstr "الأصل :"
 
-#: inc/Posts/Question.php:56 inc/Shortcode.php:138
-#: inc/widgets/Closed_Question.php:49 inc/widgets/Latest_Question.php:42
+#: inc/Posts/Question.php:56 inc/Shortcode.php:130
+#: inc/widgets/Closed_Question.php:49 inc/widgets/Latest_Question.php:39
 #: inc/widgets/Popular_Question.php:43
 msgid "asked by"
-msgstr "سؤال عبر"
+msgstr "طلب من"
 
-#: inc/Posts/Question.php:100 inc/Posts/Question.php:102
-#: inc/Posts/Question.php:266 inc/Settings.php:395
+#: inc/Posts/Question.php:126
+msgid "asked"
+msgstr "سألت"
+
+#: inc/Posts/Question.php:183 inc/Posts/Question.php:185
+#: inc/Posts/Question.php:345 inc/Settings.php:395
 #: templates/archive-question-filter.php:28
 msgid "Questions"
-msgstr ""
+msgstr "الأسئلة"
 
-#: inc/Posts/Question.php:101
+#: inc/Posts/Question.php:184
 msgid "Question"
 msgstr "سؤال"
 
-#: inc/Posts/Question.php:196
+#: inc/Posts/Question.php:275
 msgctxt "taxonomy general name"
 msgid "Question Categories"
-msgstr ""
+msgstr "تصنيفات السؤال"
 
-#: inc/Posts/Question.php:197
+#: inc/Posts/Question.php:276
 msgctxt "taxonomy singular name"
-msgid "Question Category"
-msgstr ""
-
-#: inc/Posts/Question.php:198
-msgid "Search Question Categories"
-msgstr ""
-
-#: inc/Posts/Question.php:199
-msgid "All Question Categories"
-msgstr ""
-
-#: inc/Posts/Question.php:200
-msgid "Parent Question Category"
-msgstr ""
-
-#: inc/Posts/Question.php:201
-msgid "Parent Question Category:"
-msgstr ""
-
-#: inc/Posts/Question.php:202
-msgid "Edit Question Category"
-msgstr ""
-
-#: inc/Posts/Question.php:203
-msgid "Update Question Category"
-msgstr ""
-
-#: inc/Posts/Question.php:204
-msgid "Add New Question Category"
-msgstr ""
-
-#: inc/Posts/Question.php:205
-msgid "New Question Category Name"
-msgstr ""
-
-#: inc/Posts/Question.php:206
 msgid "Question Category"
 msgstr "تصنيف السؤال"
 
-#: inc/Posts/Question.php:225
+#: inc/Posts/Question.php:277
+msgid "Search Question Categories"
+msgstr "إبحث في تصنيفات السؤال"
+
+#: inc/Posts/Question.php:278
+msgid "All Question Categories"
+msgstr "جميع تصنيفات السؤال"
+
+#: inc/Posts/Question.php:279
+msgid "Parent Question Category"
+msgstr "التصنيف الأب"
+
+#: inc/Posts/Question.php:280
+msgid "Parent Question Category:"
+msgstr "التصنيف الأب :"
+
+#: inc/Posts/Question.php:281
+msgid "Edit Question Category"
+msgstr "تعديل تصنيف السؤال"
+
+#: inc/Posts/Question.php:282
+msgid "Update Question Category"
+msgstr "تحديث تصنيف السؤال"
+
+#: inc/Posts/Question.php:283
+msgid "Add New Question Category"
+msgstr "إضافة تصنيف جديد"
+
+#: inc/Posts/Question.php:284
+msgid "New Question Category Name"
+msgstr "تصنيف جديد للسؤال"
+
+#: inc/Posts/Question.php:285
+msgid "Question Category"
+msgstr "تصنيف السؤال"
+
+#: inc/Posts/Question.php:304
 msgctxt "taxonomy general name"
-msgid "Question Tags"
-msgstr ""
-
-#: inc/Posts/Question.php:226
-msgctxt "taxonomy singular name"
-msgid "Question Tag"
-msgstr ""
-
-#: inc/Posts/Question.php:227
-msgid "Search Question Tags"
-msgstr ""
-
-#: inc/Posts/Question.php:228
-msgid "Popular Question Tags"
-msgstr ""
-
-#: inc/Posts/Question.php:229
-msgid "All Question Tags"
-msgstr ""
-
-#: inc/Posts/Question.php:232
-msgid "Edit Question Tag"
-msgstr ""
-
-#: inc/Posts/Question.php:233
-msgid "Update Question Tag"
-msgstr ""
-
-#: inc/Posts/Question.php:234
-msgid "Add New Question Tag"
-msgstr ""
-
-#: inc/Posts/Question.php:235
-msgid "New Question Tag Name"
-msgstr ""
-
-#: inc/Posts/Question.php:236
-msgid "Separate question tags with commas"
-msgstr ""
-
-#: inc/Posts/Question.php:237
-msgid "Add or remove question tags"
-msgstr ""
-
-#: inc/Posts/Question.php:238
-msgid "Choose from the most used question tags"
-msgstr ""
-
-#: inc/Posts/Question.php:239
-msgid "No question tags found."
-msgstr ""
-
-#: inc/Posts/Question.php:240
 msgid "Question Tags"
 msgstr "وسوم السؤال"
 
-#: inc/Posts/Question.php:276
+#: inc/Posts/Question.php:305
+msgctxt "taxonomy singular name"
+msgid "Question Tag"
+msgstr "وسم السؤال"
+
+#: inc/Posts/Question.php:306
+msgid "Search Question Tags"
+msgstr "إيحث في وسوم السؤال"
+
+#: inc/Posts/Question.php:307
+msgid "Popular Question Tags"
+msgstr "وسوم الأسئلة الأكثر شعبة"
+
+#: inc/Posts/Question.php:308
+msgid "All Question Tags"
+msgstr "جميع وسوم الأسئلة"
+
+#: inc/Posts/Question.php:311
+msgid "Edit Question Tag"
+msgstr "تعديل وسم السؤال"
+
+#: inc/Posts/Question.php:312
+msgid "Update Question Tag"
+msgstr "تحديث وسم السؤال"
+
+#: inc/Posts/Question.php:313
+msgid "Add New Question Tag"
+msgstr "إضافة وسم جديد للسؤال"
+
+#: inc/Posts/Question.php:314
+msgid "New Question Tag Name"
+msgstr "وسم جديد للسؤال"
+
+#: inc/Posts/Question.php:315
+msgid "Separate question tags with commas"
+msgstr "إفصل بين وسوم الأسئلة بفاصلة ( , )"
+
+#: inc/Posts/Question.php:316
+msgid "Add or remove question tags"
+msgstr "إضافة أو حذف وسوم السؤال"
+
+#: inc/Posts/Question.php:317
+msgid "Choose from the most used question tags"
+msgstr "إختر من الوسوم الأكثر إستخداما"
+
+#: inc/Posts/Question.php:318
+msgid "No question tags found."
+msgstr "لم يتم العثور على وسوم السؤال"
+
+#: inc/Posts/Question.php:319
+msgid "Question Tags"
+msgstr "وسوم السؤال"
+
+#: inc/Posts/Question.php:355
 msgid "Info"
 msgstr "معلومات"
 
-#: inc/Posts/Question.php:287 templates/content-question.php:22
+#: inc/Posts/Question.php:366 inc/helper/functions.php:362
 msgid "answered"
-msgstr "اجابة"
+msgstr "مجابة"
 
-#: inc/Posts/Question.php:288
+#: inc/Posts/Question.php:367
 msgid "voted"
-msgstr "تصويت"
+msgstr "تم التوصيت "
 
-#: inc/Posts/Question.php:289
+#: inc/Posts/Question.php:368
 msgid "views"
-msgstr "مشاهدة"
+msgstr "زيارات"
 
-#: inc/Posts/Question.php:410 inc/User.php:266
+#: inc/Posts/Question.php:489 inc/User.php:266
 msgid "Invalid Post"
-msgstr "ما اخترته لاغ "
+msgstr "لم يتم العثور على المنشور"
 
-#: inc/Posts/Question.php:445
+#: inc/Posts/Question.php:524
 msgid "Sticky Questions"
-msgstr "ثبت الاجابة"
+msgstr "تثبيت الأسئلة"
 
-#: inc/Posts/Question.php:479
+#: inc/Posts/Question.php:558
 msgid "Question is not valid"
-msgstr "السؤال لاغ"
+msgstr "السؤال غير صحيح"
 
-#: inc/Posts/Question.php:500
+#: inc/Posts/Question.php:579
 msgid "Delete Action was failed"
-msgstr "عملية المحو لم تتم بنجاح"
+msgstr "عملية الحذف فشلت"
 
-#: inc/Posts/Question.php:505
+#: inc/Posts/Question.php:584
 msgid "You do not have permission to delete this question"
-msgstr "لا تملك صلاحيات لمحو هذا السؤال"
+msgstr "لا تملك الصلاحيات الكافية لحذف هذا السؤال ."
 
 #: inc/Session.php:68 inc/Session.php:85 inc/Session.php:95 inc/Session.php:118
 msgid "This function should not be called before init."
-msgstr ""
+msgstr "لا يجب أن يتم استدعاء هذه الدالة قبل الحرف الأول."
 
 #: inc/Settings.php:8
-#, fuzzy
 msgid "Login required. No anonymous post allowed"
-msgstr "الدخول المطلوبة. لا يسمح للمجهول"
+msgstr "تسجيل الدخول إجباي ، لا يمكنك للزوار بطرح منشوراتهم"
 
 #: inc/Settings.php:20
 msgid "Select Archive Question Page"
-msgstr "حدد أرشيف  سؤال الصفحة"
+msgstr "حدد صفحة السؤال "
 
 #: inc/Settings.php:24
 msgid ""
@@ -692,22 +781,20 @@ msgstr "ساعات"
 msgid ""
 "A period of time in which new questions are highlighted and marked as New"
 msgstr ""
-"تسليط الضوء  على السؤال الجديد و يتم اعتباره سؤال جديد لفترة زمنية المحددة"
 
 #: inc/Settings.php:36
 msgid "days"
 msgstr "أيام"
 
 #: inc/Settings.php:36
-#, fuzzy
 msgid ""
 "A Question will be marked as overdue if it passes this period of time, "
 "starting from the time the question was submitted"
-msgstr "يتم اعتبار السؤال قديم بعد مرور الفترة الزمنية المحددة"
+msgstr ""
 
 #: inc/Settings.php:47
 msgid "Select Submit Question Page"
-msgstr "اختر صفحة الأسئلة "
+msgstr ""
 
 #: inc/Settings.php:52
 msgid ""
@@ -738,31 +825,31 @@ msgstr ""
 #: inc/Settings.php:233 inc/Settings.php:268 inc/Settings.php:303
 #: inc/Settings.php:338
 msgid "Enable?"
-msgstr ""
+msgstr "تمكين ؟"
 
 #: inc/Settings.php:126
 msgid "Enable notification for new question."
-msgstr ""
+msgstr "تفعيل الإشعارات للأسئلة الجديدة"
 
 #: inc/Settings.php:131 inc/Settings.php:166 inc/Settings.php:202
 #: inc/Settings.php:238 inc/Settings.php:273 inc/Settings.php:308
 #: inc/Settings.php:343
 msgid "Email subject"
-msgstr "موضوع الايمل"
+msgstr "عنوان الإيميل"
 
 #: inc/Settings.php:136 inc/Settings.php:171 inc/Settings.php:207
 #: inc/Settings.php:243 inc/Settings.php:278 inc/Settings.php:313
 #: inc/Settings.php:348
 msgid "Email Content"
-msgstr "محتوى الايميل"
+msgstr "محتوى الإيميل"
 
 #: inc/Settings.php:161
 msgid "Enable notification for new answer."
-msgstr ""
+msgstr "تفعيل الإشعارات للأجوبة الجديدة"
 
 #: inc/Settings.php:197
 msgid "Enable notification for new answer ( to Followers )."
-msgstr ""
+msgstr "ت ( to Followers )."
 
 #: inc/Settings.php:233 inc/Settings.php:268
 msgid "Enable notification for new comment of question."
@@ -772,74 +859,89 @@ msgstr ""
 msgid "Enable notification for new comment of answer."
 msgstr ""
 
-#: inc/Settings.php:400
+#: inc/Settings.php:400 inc/Settings.php:439 inc/Settings.php:478
 msgid "Read"
-msgstr "قراءة"
+msgstr "إقرأ"
 
-#: inc/Settings.php:401
+#: inc/Settings.php:401 inc/Settings.php:440 inc/Settings.php:479
 msgid "Post"
-msgstr "بوست"
+msgstr "أنشر"
 
-#: inc/Settings.php:429 inc/Settings.php:465 inc/Settings.php:500
+#: inc/Settings.php:404 inc/Settings.php:443 inc/Settings.php:482
+msgid "Manage"
+msgstr "إدارة"
+
+#: inc/Settings.php:432 inc/Settings.php:471 inc/Settings.php:509
 msgid "Reset Default"
-msgstr "اعادة الاعدادت الى الافتراضي "
+msgstr "إعادة إلى الحالة الإفتراضية"
 
-#: inc/Settings.php:467
+#: inc/Settings.php:473
 msgid "Comments"
-msgstr ""
+msgstr "التعليقات"
 
-#: inc/Settings.php:509
+#: inc/Settings.php:518
 msgid "Enable captcha on submit question page."
 msgstr ""
 
-#: inc/Settings.php:515
+#: inc/Settings.php:524
 msgid "Enable captcha on single question page."
 msgstr ""
 
-#: inc/Settings.php:533
+#: inc/Settings.php:543
 msgid "Default"
+msgstr "الإفتراضي"
+
+#: inc/Settings.php:544
+msgid "Google reCaptcha v2"
 msgstr ""
 
-#: inc/Settings.php:546
+#: inc/Settings.php:545
+msgid "FunCaptcha"
+msgstr ""
+
+#: inc/Settings.php:577
 msgid "questions."
-msgstr ""
+msgstr "الأسئلة."
 
-#: inc/Settings.php:552
+#: inc/Settings.php:583
 msgid "answers."
-msgstr ""
+msgstr "الأجوبة."
 
-#: inc/Settings.php:558
+#: inc/Settings.php:589
 msgid "Allow members to post private question."
 msgstr ""
 
-#: inc/Settings.php:564
+#: inc/Settings.php:595
 msgid "Question must be manually approved."
-msgstr ""
+msgstr "السؤال يجب ان يتم قبوله يدويا"
 
-#: inc/Settings.php:570
+#: inc/Settings.php:601
 msgid "Display status icon on the left side."
 msgstr ""
 
-#: inc/Settings.php:576
+#: inc/Settings.php:607
 msgid "Disable question status feature."
 msgstr ""
 
-#: inc/Settings.php:582
+#: inc/Settings.php:613
 msgid "Show all answers on single question page."
 msgstr ""
 
-#: inc/Settings.php:593
-#, fuzzy
+#: inc/Settings.php:624
 msgid "Select template for Single Quesiton page"
-msgstr "حدد أرشيف  سؤال الصفحة"
+msgstr ""
 
-#: inc/Settings.php:599
+#: inc/Settings.php:630
 msgid ""
 "By default, your single.php template file will be used if you do not choose "
 "any template"
 msgstr ""
 
-#: inc/Settings.php:607
+#: inc/Settings.php:644
+msgid "Enable"
+msgstr "تفعيل"
+
+#: inc/Settings.php:649
 #, php-format
 msgid ""
 "If you like, you may enter custom structure for your single question, "
@@ -848,577 +950,671 @@ msgid ""
 "<code>%s</code>. If you leave these blank the default will be used."
 msgstr ""
 
-#: inc/Settings.php:732
+#: inc/Settings.php:774
 msgid "Plugin Settings"
-msgstr "اعدادت الاضافة"
+msgstr ""
 
-#: inc/Settings.php:732
+#: inc/Settings.php:774
 msgid "Settings"
-msgstr "اعدادت"
+msgstr "الإعدادات"
 
-#: inc/Settings.php:768
+#: inc/Settings.php:810
 msgid "Email Settings"
-msgstr ""
+msgstr "إعدادات الإيميل"
 
-#: inc/Settings.php:769
+#: inc/Settings.php:811
 msgid "New Question Notifications"
-msgstr ""
+msgstr "إشعار جديد للسؤال"
 
-#: inc/Settings.php:770
+#: inc/Settings.php:812
 msgid "New Answer Notifications"
-msgstr ""
+msgstr "إشعار جديد للإجابة"
 
-#: inc/Settings.php:771
+#: inc/Settings.php:813
 msgid "New Comment Notifications"
-msgstr ""
+msgstr "إشعار جديد للتعليق"
 
-#: inc/Settings.php:784
+#: inc/Settings.php:826
 msgid "Page Settings"
 msgstr ""
 
-#: inc/Settings.php:791
+#: inc/Settings.php:833
 msgid "Question List Page"
-msgstr "قائمة الأسئلة"
+msgstr "صفحة قائمة الأسئلة"
 
-#: inc/Settings.php:799 inc/Settings.php:930
+#: inc/Settings.php:841 inc/Settings.php:972
 msgid "Ask Question Page"
-msgstr "صفحة اضافة سؤال"
+msgstr "صفحة إضافة سؤال"
 
-#: inc/Settings.php:842
+#: inc/Settings.php:884
 msgid "Question Settings"
-msgstr ""
+msgstr "إعدادات السؤال"
 
-#: inc/Settings.php:849
+#: inc/Settings.php:891
 msgid "Archive Page Show At Most"
 msgstr ""
 
-#: inc/Settings.php:857
+#: inc/Settings.php:899
 msgid "Before A Question Appears"
 msgstr ""
 
-#: inc/Settings.php:865
+#: inc/Settings.php:907
 msgid "Other Question Settings"
 msgstr ""
 
-#: inc/Settings.php:890
+#: inc/Settings.php:932
 msgid "Answer Settings"
 msgstr ""
 
-#: inc/Settings.php:897
+#: inc/Settings.php:939
 msgid "Answer Listing"
 msgstr ""
 
-#: inc/Settings.php:915
+#: inc/Settings.php:957
 msgid "Captcha Settings"
 msgstr ""
 
-#: inc/Settings.php:922
+#: inc/Settings.php:964
 msgid "Type"
-msgstr ""
+msgstr "نوع"
 
-#: inc/Settings.php:938
+#: inc/Settings.php:980
 msgid "Single Question Page"
 msgstr ""
 
-#: inc/Settings.php:950
-msgid "Permalink Settings"
-msgstr "اعدادت الروابط - هام قم بحفظ الاعدادت حتى و لو لم تقم بتغيير شيء"
+#: inc/Settings.php:988
+msgid "Google ReCaptcha Public Key"
+msgstr ""
 
-#: inc/Settings.php:957
+#: inc/Settings.php:996
+msgid "Google ReCaptcha Private Key"
+msgstr ""
+
+#: inc/Settings.php:1004
+msgid "Funcaptcha Public Key"
+msgstr ""
+
+#: inc/Settings.php:1012
+msgid "FunCaptcha Private Key"
+msgstr ""
+
+#: inc/Settings.php:1023
+msgid "Other Settings"
+msgstr ""
+
+#: inc/Settings.php:1030
+msgid "Markdown Editor"
+msgstr ""
+
+#: inc/Settings.php:1040
+msgid "Permalink Settings"
+msgstr ""
+
+#: inc/Settings.php:1047
 msgid "Question Base"
 msgstr ""
 
-#: inc/Settings.php:965
+#: inc/Settings.php:1055
 msgid "Question Category Base"
 msgstr ""
 
-#: inc/Settings.php:973
+#: inc/Settings.php:1063
 msgid "Question Tag Base"
 msgstr ""
 
-#: inc/Settings.php:1042
+#: inc/Settings.php:1132
 msgid "From Email"
-msgstr "من البريد الالكتروني"
+msgstr ""
 
-#: inc/Settings.php:1110 inc/Settings.php:1117
+#: inc/Settings.php:1141
+msgid "From name"
+msgstr ""
+
+#: inc/Settings.php:1209 inc/Settings.php:1216
 msgid "Group Permission"
-msgstr "صلاحيات المجوعة"
+msgstr ""
 
-#: inc/Settings.php:1145
+#: inc/Settings.php:1244
 msgid "DWQA Settings"
-msgstr "DWQA اعدادت"
+msgstr ""
 
-#: inc/Settings.php:1149
+#: inc/Settings.php:1248
 msgid "General"
-msgstr "عام"
+msgstr ""
 
-#: inc/Settings.php:1150
+#: inc/Settings.php:1249
 msgid "Emails"
 msgstr ""
 
-#: inc/Settings.php:1151
+#: inc/Settings.php:1250
 msgid "Permissions"
 msgstr ""
 
-#: inc/Settings.php:1152
-msgid "Licenses"
+#: inc/Settings.php:1252
+msgid "Envato API"
 msgstr ""
 
-#: inc/Settings.php:1166
+#: inc/Settings.php:1267
 msgid "Email settings"
 msgstr ""
 
-#: inc/Settings.php:1168
+#: inc/Settings.php:1269
 msgid "Email Logo"
-msgstr "شعار البريد الالكتروني"
+msgstr ""
 
-#: inc/Settings.php:1182
+#: inc/Settings.php:1286
 msgid "New Question Notifications (to Admin)"
 msgstr ""
 
-#: inc/Settings.php:1206
+#: inc/Settings.php:1307
 msgid "New Answer Notifications (to Followers)"
 msgstr ""
 
-#: inc/Settings.php:1222
-msgid "New Answer Notifications (to Admin)"
+#: inc/Settings.php:1323
+msgid "New Answer Notifications (to Author)"
 msgstr ""
 
-#: inc/Settings.php:1242
+#: inc/Settings.php:1340
 msgid "New Comment to Question Notifications (to Followers)"
 msgstr ""
 
-#: inc/Settings.php:1259
-msgid "New Comment to Question Notifications (to Admin)"
+#: inc/Settings.php:1357
+msgid "New Comment to Question Notifications (to Author)"
 msgstr ""
 
-#: inc/Settings.php:1279
+#: inc/Settings.php:1374
 msgid "New Comment to Answer Notifications (to Followers)"
 msgstr ""
 
-#: inc/Settings.php:1296
-msgid "New Comment to Answer Notifications (to Admin)"
+#: inc/Settings.php:1391
+msgid "New Comment to Answer Notifications (to Author)"
 msgstr ""
 
-#: inc/Settings.php:1314
+#: inc/Settings.php:1406
 msgid "Save all changes"
-msgstr "حفظ جميع الاعدادت"
-
-#: inc/Settings.php:1328
-#, php-format
-msgid "Manage <a href=\"%s\">DWQA Extensions</a> license keys"
 msgstr ""
 
-#: inc/Settings.php:1346 inc/Settings.php:1351 inc/Settings.php:1356
-#: inc/Settings.php:1361
+#: inc/Settings.php:1437 inc/Settings.php:1442 inc/Settings.php:1447
+#: inc/Settings.php:1452
 msgid "Forward to"
+msgstr "إرسال إلى"
+
+#: inc/Settings.php:1457
+msgid "Cc"
 msgstr ""
 
-#: inc/Settings.php:1366
-msgid "Cc"
-msgstr "cc"
-
-#: inc/Settings.php:1371
+#: inc/Settings.php:1462
 msgid "Bcc"
-msgstr "Bcc"
+msgstr ""
 
-#: inc/Settings.php:1376
+#: inc/Settings.php:1467
 msgid "This address will be used as the sender of the outgoing emails."
-msgstr "هذا البريد سيتم استعماله كمرسل "
+msgstr ""
 
-#: inc/Settings.php:1382
+#: inc/Settings.php:1471
+msgid "This address will be used as the sender of the outgoing name."
+msgstr ""
+
+#: inc/Settings.php:1477
 msgid "Send a copy of every email to admin."
 msgstr ""
 
-#: inc/Shortcode.php:115 inc/widgets/Popular_Question.php:21
+#: inc/Shortcode.php:107 inc/widgets/Popular_Question.php:21
 msgid "Popular Questions"
-msgstr "الاسئلة المشهورة"
+msgstr "الأسئلة الأكثر شعبية"
 
-#: inc/Shortcode.php:152
+#: inc/Shortcode.php:144
 msgid "Latest Answers"
-msgstr "آخر الأجوبة"
+msgstr "الأجوبة المضافة مؤخرا"
 
-#: inc/Shortcode.php:178
+#: inc/Shortcode.php:170
 msgid "Answer at"
-msgstr "اجابة على "
+msgstr "أجيبت على"
 
-#: inc/Shortcode.php:178
+#: inc/Shortcode.php:170
 msgid "Link to"
-msgstr "رابط لـ"
+msgstr "ربط إلى"
 
-#: inc/Shortcode.php:206
+#: inc/Shortcode.php:198
 #, php-format
 msgid "%d person who is following this question"
 msgid_plural "%d people who are following this question"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "لا يوجد أي شخص يتابع هذا السؤال"
+msgstr[1] "شخص واحد يتابع هذا السؤال"
+msgstr[2] "شخصان يتابعان هذا السؤال"
+msgstr[3] "%d متابع لهذا السؤال"
+msgstr[4] "%d متابع لهذا السؤال"
+msgstr[5] "%d متابع لهذا السؤال"
 
-#: inc/Shortcode.php:236
+#: inc/Shortcode.php:228
 msgid "Question List"
-msgstr ""
+msgstr "قائمة الأسئلة"
 
-#: inc/Status.php:300
+#: inc/Status.php:298
 msgid "Answered"
-msgstr "تم الاجابة"
+msgstr "مجابة"
 
-#: inc/Status.php:324
+#: inc/Status.php:322
 msgid "Missing post ID"
-msgstr "ينقص تعريف البوست"
+msgstr "id هذا المنشور مفقود"
 
-#: inc/Status.php:337
+#: inc/Status.php:335
 msgid "Post does not exist"
-msgstr "لم يتعم العثور على البوست"
+msgstr "هذا المنشور غير متوفر حاليا"
 
-#: inc/Status.php:342
+#: inc/Status.php:340
 msgid "Invalid post status"
-msgstr "خطأ حول حالة البوست"
-
-#: inc/Template.php:15 templates/content-edit.php:44
-#: templates/question-submit-form.php:46
-msgid "Tag"
 msgstr ""
 
-#: inc/Template.php:15 inc/Template.php:20 templates/content-edit.php:29
-#: templates/question-submit-form.php:32
+#: inc/Template.php:15 templates/content-edit.php:46
+#: templates/question-submit-form.php:47
+msgid "Tag"
+msgstr "وسم"
+
+#: inc/Template.php:15 inc/Template.php:20 templates/content-edit.php:31
+#: templates/question-submit-form.php:33
 msgid "Category"
 msgstr "تصنيف"
 
 #: inc/Template.php:43
 msgid "Showing search results for"
-msgstr ""
+msgstr "إظهار نتائج البحث على"
 
 #: inc/Template.php:78
 msgid "What do you want to know?"
-msgstr ""
+msgstr "مالذي تبحث عنه ؟"
 
-#: inc/Template.php:157
+#: inc/Template.php:166
 msgid "Subscribe"
-msgstr ""
+msgstr "إشترك"
 
-#: inc/Template.php:445
+#: inc/Template.php:466
 msgid "Email"
-msgstr "البريد الالكتروني"
+msgstr "الإيميل"
 
-#: inc/Template.php:447
+#: inc/Template.php:468
 msgid "Name"
-msgstr "الاسم"
+msgstr "الإسم"
 
-#: inc/Template.php:449
+#: inc/Template.php:470
 #, php-format
 msgid "Required fields are marked %s"
-msgstr "يتم وضع علامة على الحقول المطلوبة %s"
+msgstr "الحقول المطلوبة تم تعليمها %s"
 
-#: inc/Template.php:461
+#: inc/Template.php:482
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
-msgstr "يجب عليك أن تكون <a href=\"%s\">متصل</a> لاضافة تعليق"
+msgstr "يجب عليك <a href=\"%s\">تسجيل الدخول</a> لإضافة تعليق."
 
-#: inc/Template.php:464
+#: inc/Template.php:485
 #, php-format
 msgid ""
 "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags "
 "and attributes: %s"
 msgstr ""
-"تستطيع استعمال <abbr title=\"HyperText Markup Language\">HTML</abbr> : %s"
+"يمكنك استخدام <abbr title=\"HyperText Markup Language\">HTML</abbr> الوسوم و "
+"الصفات : %s"
 
-#: inc/Template.php:467
+#: inc/Template.php:488
 msgid "Leave a Reply"
-msgstr "أترك رد"
+msgstr "أضف رد"
 
-#: inc/Template.php:468
+#: inc/Template.php:489
 #, php-format
 msgid "Leave a Reply to %s"
-msgstr "أترك رد لـ %s"
+msgstr "أضف رد لـ: %s"
 
-#: inc/Template.php:469
+#: inc/Template.php:490
 msgid "Cancel reply"
-msgstr "الغاء الرد"
+msgstr "إلغاء الرد"
 
-#: inc/Template.php:470
+#: inc/Template.php:491
 msgid "Post Comment"
-msgstr "اضافة تعليق"
+msgstr "إضافة تعليق"
 
-#: inc/Template.php:645
+#: inc/Template.php:666
 msgid "Sticky Question"
-msgstr "تنثبيت التعليق"
+msgstr "سؤال مثبت"
 
-#: inc/Template.php:659
+#: inc/Template.php:680
 msgid "Ask a question"
-msgstr "أضف سؤالك"
+msgstr "إطرح سؤالك"
 
-#: inc/Template.php:661
-#, fuzzy
+#: inc/Template.php:682
 msgid "Login to ask a question"
-msgstr "يجب عليك الاتصال لاضافة سؤالك"
+msgstr "سجل دخولك لتستطيع القيام بطرح سؤالك"
 
-#: inc/Template.php:1128
-#, fuzzy
+#: inc/Template.php:1141
 msgid "Choose as the best answer"
-msgstr "اختر أفضل اجابة"
+msgstr "إختيار كأفضل إجابة"
 
 #: inc/Updater.php:97
 msgid "License Key"
-msgstr ""
+msgstr "لترخيص"
 
 #: inc/Updater.php:122
 msgid "Activate"
-msgstr ""
+msgstr "تفعيل"
 
 #: inc/Updater.php:176
 msgid "Plugin was activated"
-msgstr ""
+msgstr "تم تفعيل الإضافة"
 
 #: inc/User.php:230
 msgid "Staff"
-msgstr "فريق العمل"
+msgstr "إدارة الموقع"
 
 #: inc/Walker/Category.php:20 inc/Walker/Tag.php:20
 #, php-format
 msgid "View all posts filed under %s"
-msgstr "رؤية جميع الأسئلة في %s"
+msgstr ""
 
 #: inc/Walker/Category.php:35 inc/Walker/Tag.php:35
 #, php-format
 msgid "Feed for all posts filed under %s"
-msgstr "تغذية جميع الأسئلة في %s"
+msgstr ""
+
+#: inc/helper/functions.php:363
+msgid "commented"
+msgstr "تم التعليق"
+
+#: inc/widgets/Ask_Form.php:5
+msgid "Show ask question form in sidebar."
+msgstr "إظهار صندوق طرح السؤال في الودجات"
+
+#: inc/widgets/Ask_Form.php:6
+msgid "DWQA Ask Form"
+msgstr "صندوق طرح السؤال"
+
+#: inc/widgets/Ask_Form.php:36 inc/widgets/Category_Question.php:69
+#: inc/widgets/Leaderboard.php:58 templates/content-edit.php:23
+#: templates/question-submit-form.php:14
+msgid "Title"
+msgstr "العنوان"
+
+#: inc/widgets/Category_Question.php:5
+msgid "Show a list of categories or tags."
+msgstr "إظهار قائمة التصنيفات أو الوسوم"
+
+#: inc/widgets/Category_Question.php:6
+msgid "DWQA Categories/Tags"
+msgstr "التصنيفات/الوسوم"
+
+#: inc/widgets/Category_Question.php:10
+msgid "DWQA Categories"
+msgstr "التصنيفات"
+
+#: inc/widgets/Category_Question.php:75
+msgid "Taxonomy"
+msgstr "التصنيف"
+
+#: inc/widgets/Category_Question.php:77
+msgid "Categories"
+msgstr "التصنيفات"
+
+#: inc/widgets/Category_Question.php:78
+msgid "Tags"
+msgstr "الوسوم"
+
+#: inc/widgets/Category_Question.php:85
+msgid "Show count"
+msgstr "إظهار عدد"
+
+#: inc/widgets/Category_Question.php:91
+msgid "Hide Empty Categories/Tags"
+msgstr ""
+
+#: inc/widgets/Category_Question.php:97
+msgid "Display as dropdown"
+msgstr ""
 
 #: inc/widgets/Closed_Question.php:11
 msgid "Show a list of questions marked as closed."
 msgstr ""
 
 #: inc/widgets/Closed_Question.php:12
-#, fuzzy
 msgid "DWQA Closed Questions"
-msgstr "DWQA الأسئلة المرتبطة"
+msgstr "الأسئلة المغلقة"
 
 #: inc/widgets/Closed_Question.php:18
-#, fuzzy
 msgid "Closed Questions"
-msgstr "جميع الأسئلة"
+msgstr "الأسئلة المغلقة"
 
-#: inc/widgets/Closed_Question.php:72 inc/widgets/Latest_Question.php:71
+#: inc/widgets/Closed_Question.php:72 inc/widgets/Latest_Question.php:63
 #: inc/widgets/Popular_Question.php:66 inc/widgets/Related_Question.php:48
 msgid "Widget title"
-msgstr "عنوان المربع الجانبي"
+msgstr ""
 
-#: inc/widgets/Closed_Question.php:75 inc/widgets/Latest_Question.php:74
+#: inc/widgets/Closed_Question.php:75 inc/widgets/Latest_Question.php:66
 #: inc/widgets/Popular_Question.php:69 inc/widgets/Related_Question.php:51
 msgid "Number of posts"
-msgstr "عدد المنشورات"
+msgstr ""
 
 #: inc/widgets/Latest_Question.php:10
 msgid "Show a list of latest questions."
 msgstr ""
 
 #: inc/widgets/Latest_Question.php:11
-#, fuzzy
 msgid "DWQA Latest Questions"
-msgstr "DWQA الأسئلة المرتبطة"
+msgstr ""
 
 #: inc/widgets/Latest_Question.php:17
-#, fuzzy
 msgid "Latest Questions"
-msgstr "سؤال خاص"
-
-#: inc/widgets/Latest_Question.php:44
-msgid "ago"
 msgstr ""
 
-#: inc/widgets/Latest_Question.php:79
-msgid "Show question date"
+#: inc/widgets/Leaderboard.php:9
+msgid "DWQA Leaderboard"
 msgstr ""
+
+#: inc/widgets/Leaderboard.php:15 inc/widgets/Leaderboard.php:52
+msgid "Leaderboard"
+msgstr ""
+
+#: inc/widgets/Leaderboard.php:38
+msgid "questions"
+msgstr "الأسئلة"
+
+#: inc/widgets/Leaderboard.php:39
+msgid "answers"
+msgstr "الأجوبة."
+
+#: inc/widgets/Leaderboard.php:65
+msgid "Number of top users/members"
+msgstr "عدد الأعضاء الأكثر مشاركة"
+
+#: inc/widgets/Leaderboard.php:72
+msgid "Time"
+msgstr "الوقت"
+
+#: inc/widgets/Leaderboard.php:74
+msgid "All the time"
+msgstr "كل الوقت"
+
+#: inc/widgets/Leaderboard.php:75
+msgid "This month"
+msgstr "هذا الشهر"
+
+#: inc/widgets/Leaderboard.php:76
+msgid "Last month"
+msgstr "الشهر الماضي"
+
+#: inc/widgets/Leaderboard.php:77
+msgid "This week"
+msgstr "هذا الأسبوع"
+
+#: inc/widgets/Leaderboard.php:78
+msgid "Last week"
+msgstr "الأسبوع الماضي"
 
 #: inc/widgets/Popular_Question.php:13
 msgid "Show a list of popular questions."
-msgstr ""
+msgstr "إظهار لائحة الأسئلة الأكثر شعبية"
 
 #: inc/widgets/Popular_Question.php:15
 msgid "DWQA Popular Questions"
-msgstr "DWQA الاسئلة الشائعة"
+msgstr "الأسئلة الأكثر شعبية"
 
 #: inc/widgets/Related_Question.php:11
 msgid ""
 "Show a list of questions that related to a question. Just show in single "
 "question page"
-msgstr "اضافة الأسئلة المرتبطة . اضافة سؤال واحد"
+msgstr ""
 
 #: inc/widgets/Related_Question.php:12
 msgid "DWQA Related Questions"
-msgstr "DWQA الأسئلة المرتبطة"
-
-#: lib/easy-digital-downloads/EDD_SL_Plugin_Updater.php:181
-#, php-format
-msgid ""
-"There is a new version of %1$s available. <a target=\"_blank\" class="
-"\"thickbox\" href=\"%2$s\">View version %3$s details</a>."
-msgstr ""
-
-#: lib/easy-digital-downloads/EDD_SL_Plugin_Updater.php:188
-#, php-format
-msgid ""
-"There is a new version of %1$s available. <a target=\"_blank\" class="
-"\"thickbox\" href=\"%2$s\">View version %3$s details</a> or <a href=\"%4$s"
-"\">update now</a>."
-msgstr ""
-
-#: lib/easy-digital-downloads/EDD_SL_Plugin_Updater.php:326
-msgid "You do not have permission to install plugin updates"
-msgstr ""
-
-#: lib/easy-digital-downloads/EDD_SL_Plugin_Updater.php:326
-msgid "Error"
-msgstr ""
+msgstr "أسئلة ذات صلة"
 
 #: templates/answer-submit-form.php:12
 msgid "Your Answer"
-msgstr ""
+msgstr "إجابتك"
 
-#: templates/answer-submit-form.php:21 templates/question-submit-form.php:52
+#: templates/answer-submit-form.php:21 templates/question-submit-form.php:53
 msgid "Your Email"
-msgstr ""
+msgstr "برديك الإلكتروني"
 
-#: templates/answer-submit-form.php:26 templates/question-submit-form.php:57
+#: templates/answer-submit-form.php:26 templates/question-submit-form.php:58
 msgid "Your Name"
-msgstr ""
-
-#: templates/answer-submit-form.php:33 templates/question-submit-form.php:24
-msgid "Who can see this?"
-msgstr ""
+msgstr "إسمك الكريم"
 
 #: templates/answer-submit-form.php:34 templates/question-submit-form.php:25
-msgid "Public"
-msgstr "عمومي"
+msgid "Who can see this?"
+msgstr "من يمكنه مشاهدة هذا ؟"
 
 #: templates/answer-submit-form.php:35 templates/question-submit-form.php:26
-msgid "Only Me &amp; Admin"
-msgstr ""
+msgid "Public"
+msgstr "الجميع"
 
-#: templates/answer-submit-form.php:39 templates/question-submit-form.php:65
+#: templates/answer-submit-form.php:36 templates/question-submit-form.php:27
+msgid "Only Me &amp; Admin"
+msgstr "أنا فقط &amp; المدير"
+
+#: templates/answer-submit-form.php:41 templates/question-submit-form.php:65
 msgid "Submit"
-msgstr ""
+msgstr "حفظ"
 
 #: templates/answers.php:12
 #, php-format
 msgid "%s Answers"
-msgstr ""
+msgstr "%s الإجابات"
+
+#: templates/answers.php:48 templates/question-submit-form.php:73
+#, php-format
+msgid "Please login or %1$sRegister%2$s to submit your answer"
+msgstr "سجل دخول أو %1$sقم بالتسجيل%2$s ليتم طرح إجابتك"
 
 #: templates/archive-question-filter.php:14
 msgid "Filter:"
-msgstr ""
+msgstr "تصفية :"
 
 #: templates/archive-question-filter.php:16
 msgid "All"
-msgstr "كلها"
+msgstr "الكل"
 
 #: templates/archive-question-filter.php:22
 msgid "Unanswered"
-msgstr ""
+msgstr "غير مجابة"
 
 #: templates/archive-question-filter.php:24
 msgid "My questions"
-msgstr ""
+msgstr "أسئلتي"
 
 #: templates/archive-question-filter.php:25
 msgid "My subscribes"
-msgstr ""
+msgstr "إشتراكاتي"
 
 #: templates/archive-question-filter.php:29
 msgid "Subscribes"
-msgstr ""
+msgstr "الإشتراك"
 
 #: templates/archive-question-filter.php:32
 msgid "Sort by"
-msgstr ""
+msgstr "فرز حسب "
 
 #: templates/archive-question-filter.php:33
 msgid "Views"
-msgstr ""
+msgstr "الزيارات"
 
 #: templates/archive-question-filter.php:35
 msgid "Votes"
-msgstr ""
+msgstr "التصويتات"
 
 #: templates/archive-question.php:28
 msgid "Ask Question"
-msgstr "أضف سؤالك"
+msgstr "إطرح سؤالك"
 
-#: templates/captcha-form.php:20
+#: templates/captcha-form.php:21
 msgid "Enter the result"
-msgstr ""
+msgstr "أدخل النتيجة"
 
 #: templates/content-comment.php:16
 #, php-format
 msgctxt "%s = human-readable time difference"
-msgid "replied %s ago"
-msgstr ""
+msgid "replied %1$s ago"
+msgstr "تم الرد منذ %1$s الماضية"
 
-#: templates/content-edit.php:21 templates/question-submit-form.php:13
-msgid "Title"
-msgstr ""
-
-#: templates/content-edit.php:36 templates/question-submit-form.php:38
+#: templates/content-edit.php:38 templates/question-submit-form.php:39
 msgid "Select question category"
-msgstr "اختر تصنيف السؤال"
+msgstr "إدخال تصنيف السؤال"
 
-#: templates/content-edit.php:50
+#: templates/content-edit.php:52
 msgid "Save Changes"
-msgstr ""
+msgstr "حفظ التغييرات"
+
+#: templates/content-edit.php:56
+msgid "You don't have permission to do this action."
+msgstr "لا تملك الصلاحيات الكافية للقيام بهذه العملية ."
 
 #: templates/content-none.php:10
 msgid "You do not have permission to view questions"
-msgstr "ليس لديك صلاحيات لرؤية الاجابة"
+msgstr "لا تملك الصلاحيات الكافية لمعاينة الأسئلة ."
 
 #: templates/content-none.php:12
 msgid "Sorry, but nothing matched your filter"
-msgstr ""
+msgstr "آسفون ، لا يوجد ما يطابق لعملية الفرز التي قمت بها"
 
-#: templates/content-question.php:18
-msgid "asked"
-msgstr "أسئلة"
-
-#: templates/content-question.php:25
+#: templates/content-question.php:15
 #, php-format
-msgid "<span><a href=\"%s\">%s%s</a> %s %s ago</span>"
-msgstr ""
+msgid "<span><a href=\"%1$s\">%2$s%3$s</a> %4$s %5$s ago</span>"
+msgstr "<span><a href=\"%1$s\">%2$s%3$s</a> %4$s منذ %5$s </span>"
 
-#: templates/content-question.php:26 templates/content-single-answer.php:25
+#: templates/content-question.php:16 templates/content-single-answer.php:25
 msgid "&nbsp;&bull;&nbsp;"
 msgstr ""
 
-#: templates/content-question.php:31
+#: templates/content-question.php:21
 #, php-format
 msgid "<strong>%1$s</strong> views"
-msgstr ""
+msgstr "<strong>%1$s</strong> المشاهدات"
 
-#: templates/content-question.php:35
+#: templates/content-question.php:25
 #, php-format
 msgid "<strong>%1$s</strong> answers"
-msgstr ""
+msgstr "<strong>%1$s</strong> الإجابات"
 
-#: templates/content-question.php:39
+#: templates/content-question.php:29
 #, php-format
 msgid "<strong>%1$s</strong> votes"
-msgstr ""
+msgstr "<strong>%1$s</strong> التصويتات"
 
 #: templates/content-single-answer.php:12
 #: templates/content-single-question.php:14
 msgid "Vote Up"
-msgstr "تصويت ايجابي"
+msgstr "تصويت موجب"
 
 #: templates/content-single-answer.php:13
 #: templates/content-single-question.php:15
 msgid "Vote Down"
-msgstr "تصويت سلبي"
+msgstr "تصويت سالب"
 
 #: templates/content-single-answer.php:17
 #: templates/content-single-answer.php:19
 msgid "Best Answer"
-msgstr ""
+msgstr "أفضل إجابة"
 
 #: templates/content-single-answer.php:23
 #, php-format
-msgid "<span><a href=\"%s\">%s%s</a> %s answered %s ago</span>"
-msgstr ""
+msgid "<span><a href=\"%1$s\">%2$s%3$s</a> %4$s answered %5$s ago</span>"
+msgstr "<span><a href=\"%1$s\">%2$s%3$s</a> %4$s answered %5$s</span>"
 
 #: templates/content-single-answer.php:26
 msgid "Private"
@@ -1426,21 +1622,20 @@ msgstr "خاص"
 
 #: templates/content-single-question.php:19
 #, php-format
-msgid "<span><a href=\"%s\">%s%s</a> %s asked %s ago</span>"
-msgstr ""
+msgid "<span><a href=\"%1$s\">%2$s%3$s</a> %4$s asked %5$s ago</span>"
+msgstr "<span><a href=\"%1$s\">%2$s%3$s</a> %4$s طرحت منذ %5$s </span>"
 
 #: templates/content-single-question.php:25
 msgid "Question Tags: "
-msgstr ""
+msgstr "وسوم السؤال :"
 
 #: templates/content-single-question.php:29
 msgid "This question is:"
-msgstr ""
+msgstr "هذا السؤال :"
 
 #: templates/question-submit-form.php:69
-#, fuzzy
-msgid "You do not have permission to submit a question"
-msgstr "لا تملك صلاحيات لاضافة سؤال "
+msgid "You doesn't have permission to post a question"
+msgstr "لا تملك الصلاحيات الكافية لنشر سؤال ."
 
 #: upgrades/upgrades.php:25
 #, php-format
@@ -1453,37 +1648,31 @@ msgstr ""
 msgid "DWQA Upgrade"
 msgstr ""
 
-#: upgrades/upgrades.php:40
-msgid ""
-"The upgrade process has started, please be patient. This could take several "
-"minutes. You will be automatically redirected when the upgrade is finished..."
-msgstr ""
-
 #: upgrades/upgrades.php:130
 msgid "You do not have permission to do this task"
-msgstr ""
+msgstr "لا تملك الصلاحيات الكافية للقيام بهذه العملية ."
 
 #: upgrades/upgrades.php:147
 msgid "Just do it.."
-msgstr ""
+msgstr "فقط قم بفعلها ..."
 
 #: upgrades/upgrades.php:155
 #, php-format
 msgid "Move to next step %d"
-msgstr ""
+msgstr "إنتقل إلى الخطوة التالية %d"
 
 #: upgrades/upgrades.php:172
 msgid "Upgrade process is done"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-msgid "DW Question Answer"
+msgid "DW Question Answer Pro"
 msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"A WordPress plugin was make by DesignWall.com to build an Question Answer "
-"system for support, asking and comunitcate with your customer"
+"A WordPress plugin developed by DesignWall.com to build a complete Question "
+"& Answer system for your WordPress site like Quora, Stackoverflow, etc."
 msgstr ""
 
 #. Author of the plugin/theme
@@ -1494,700 +1683,11 @@ msgstr ""
 msgid "http://www.designwall.com"
 msgstr ""
 
-#~ msgid "Next"
-#~ msgstr "التالي"
+#~ msgid "User Registration was disabled."
+#~ msgstr "حالة التسجيل مغلقة حاليا"
 
-#~ msgid "Prev"
-#~ msgstr "السابق"
+#~ msgid "This email is already registered, please choose another one."
+#~ msgstr "هذا الإيميل مستخدم بالفعل , أدخل عنوان بريد آخر !"
 
-#~ msgid "Please enter your question"
-#~ msgstr "الرجاء ادخال سؤالك"
-
-#~ msgid "Your question must be at least 2 characters in length"
-#~ msgstr "طول السؤال على الأقل كلمتين"
-
-#~ msgid "Enter a valid email address"
-#~ msgstr "ادخل بريد الكتروني  فعال"
-
-#~ msgid "Enter a question title"
-#~ msgstr "أدخل السؤال"
-
-#~ msgid "Please add your name"
-#~ msgstr "الرجاء اضافة اسمك"
-
-#~ msgid "Please enter your answer"
-#~ msgstr "الرجاء ادخال اجابتك"
-
-#~ msgid "Comment must have more than 2 characters"
-#~ msgstr "التعليق على الأقل يحتوي على كلمتين"
-
-#~ msgid "Not found! Try another keyword."
-#~ msgstr "لم يتم العثور , جرب كلمة أخرى"
-
-#~ msgid "Or press <strong>ENTER</strong> to get more questions"
-#~ msgstr "أو اضغط على  \" ادخال \" للحصول على أسئلة اضافية"
-
-#~ msgid "Update"
-#~ msgstr "تحديث"
-
-#~ msgid "Cancel"
-#~ msgstr "الغاء"
-
-#~ msgid "Do you want to delete this comment?"
-#~ msgstr "تريد محو هذا التعليق ؟"
-
-#~ msgid "Do you want to delete this answer?"
-#~ msgstr "تريد محو الاجابة ؟"
-
-#, fuzzy
-#~ msgid "Do you want to update this answer?"
-#~ msgstr "تريد تحديث الاجابة ؟"
-
-#, fuzzy
-#~ msgid "Do you want to report this answer?"
-#~ msgstr "تريد ارسال تقرير عن الاجابة؟"
-
-#~ msgid "Report"
-#~ msgstr "تقرير"
-
-#~ msgid "Undo"
-#~ msgstr "التراجع"
-
-#~ msgid ""
-#~ "This answer will be marked as spam and hidden. Do you want to flag it?"
-#~ msgstr "هذه الاجابة تم اضافتها في قائمة السبام"
-
-#~ msgid "This answer was flagged as spam. Do you want to show it"
-#~ msgstr "الاجابة تم اضافتها في قائمة السبام , تريد رِؤيتها ؟"
-
-#~ msgid "This answer was flagged as spam"
-#~ msgstr "الاجابة تم اضافتها الى قائمة السبام"
-
-#~ msgid "hide"
-#~ msgstr "اخفاء"
-
-#~ msgid "show"
-#~ msgstr "اظهار"
-
-#~ msgid "Follow This Question"
-#~ msgstr "متابعة هذا السؤال"
-
-#~ msgid "Unfollow This Question"
-#~ msgstr "الغاء تتبع السؤال"
-
-#, fuzzy
-#~ msgid "Pin this question to top"
-#~ msgstr "تنثبيت الاجابة"
-
-#, fuzzy
-#~ msgid "Unpin this question from top"
-#~ msgstr "الغاء تثتبت الاجابة"
-
-#~ msgid "Do you want to delete this question?"
-#~ msgstr "هل تريد محو السؤال ؟"
-
-#~ msgid "Publish"
-#~ msgstr "نشر"
-
-#~ msgid "Everyone can see"
-#~ msgstr "الجميع يستطيع المشاهدة"
-
-#~ msgid "Only Author and Administrator can see"
-#~ msgstr "فقط الكتاب و المديرين يستطعون المشاهدة"
-
-#~ msgid "Sorry, but nothing matched your filter. "
-#~ msgstr "عفوا , لا شيء يتتطابق مع بحثك"
-
-#~ msgid "You can ask question"
-#~ msgstr "تستطيع اضافة سؤال"
-
-#~ msgid "here"
-#~ msgstr "هنا"
-
-#~ msgid "Please"
-#~ msgstr "الرجاء"
-
-#~ msgid "Login"
-#~ msgstr "الدخول"
-
-#~ msgid " or"
-#~ msgstr "أو"
-
-#~ msgid " to submit question."
-#~ msgstr "لاضافة سؤال"
-
-#, fuzzy
-#~ msgid "Search query is empty"
-#~ msgstr "مربع البحث فارغ "
-
-#~ msgid "A page where displays all questions"
-#~ msgstr "صفحة يظهر فيها جميع الأسئلة"
-
-#~ msgid "A page where users can submit questions."
-#~ msgstr "صفحة عبرها يستطيع اضافة سؤال"
-
-#~ msgid "Upload or choose a logo to be displayed at the top of the email"
-#~ msgstr "رفع أو اختار شعار يظهر في أعلى الايميل"
-
-#~ msgid "Enable notification for new question"
-#~ msgstr "تفعيل الاشعارات على الأسئلة الجديدة"
-
-#~ msgid "Enable notification for new answer"
-#~ msgstr "تفعيل الاشعار حو الأجوبة الجديدة"
-
-#, fuzzy
-#~ msgid "Enable notification for new answer (to Followers )"
-#~ msgstr "تفعيل الاشعار حو الأجوبة الجديدة للمتابعين"
-
-#~ msgid "Enable notification for new comment of question"
-#~ msgstr "تفعيل الاشعار حول تعليق على سؤال"
-
-#~ msgid "Enable notification for new comment of answer"
-#~ msgstr "تفعيل الاشعار حول تعليق على اجابة"
-
-#~ msgid "Comment"
-#~ msgstr "تعليق"
-
-#~ msgid "Enable/Disable captcha on submit question page"
-#~ msgstr "تفعيل/الغاء تفعيل رمز التحقق على صفحة اضاف سؤال"
-
-#~ msgid "Enable/Disable captcha on single question page"
-#~ msgstr "تفعيل/الغاء تفعيل رمز التحقق على صفحة سؤال"
-
-#~ msgid "questions"
-#~ msgstr "الأسئلة"
-
-#~ msgid "Allow members to post private question"
-#~ msgstr "تمكين الأعضاء من اضافة سؤال خاص"
-
-#~ msgid "New Question Notification"
-#~ msgstr "اشعار حول سؤال جديد"
-
-#~ msgid "New Answer Notification"
-#~ msgstr "اشعار حول اجابة جديدة"
-
-#, fuzzy
-#~ msgid "New Comment to Question Notification (to Followers )"
-#~ msgstr "اشعار حول تعليق جديد على السؤال -  للمتابعين"
-
-#~ msgid "New Comment to Answer Notification"
-#~ msgstr "اشعار حول تعليق جديد على الاجابة"
-
-#, fuzzy
-#~ msgid "New Answer Notification (to Followers )"
-#~ msgstr "اشعار حول اجابة جديدة - للمتابعين"
-
-#, fuzzy
-#~ msgid "New Comment to Answer Notification (to Followers )"
-#~ msgstr "اشعار حول تعليق جديد على الاجابة - للمتابعين"
-
-#~ msgid "Archive page show at most"
-#~ msgstr "اظهار صفحة الأرشيف أكثر"
-
-#~ msgid "Private Question"
-#~ msgstr "سؤال خاص"
-
-#, fuzzy
-#~ msgid "Review Question"
-#~ msgstr "مشاهدة الأسئلة"
-
-#~ msgid "Time settings"
-#~ msgstr "اعدادات الوقت"
-
-#~ msgid "New Question Time Frame"
-#~ msgstr "السؤال الجديد - الإطار الزمني"
-
-#~ msgid "Question Overdue - Time Frame"
-#~ msgstr "السؤال المتأخر - الإطار الزمني"
-
-#~ msgid "Captcha settings"
-#~ msgstr "اعدادات كود التحقق"
-
-#, fuzzy
-#~ msgid "Captcha on Submit Question Page"
-#~ msgstr "كود التحقق في صفحة اضافة سؤال"
-
-#, fuzzy
-#~ msgid "Captcha on Single Question Page"
-#~ msgstr "كود التحقق في صفة السؤال"
-
-#~ msgid "Single Question"
-#~ msgstr "سؤال واحد"
-
-#~ msgid "Single Category"
-#~ msgstr "تصنيف واحد"
-
-#~ msgid "Single Tag"
-#~ msgstr "وسم واحد"
-
-#~ msgid "Notification"
-#~ msgstr "اشعارات"
-
-#~ msgid "Permission"
-#~ msgstr "صلاحيات"
-
-#~ msgid "Email setup"
-#~ msgstr "اعدادت البريد الالكتروني"
-
-#~ msgid "New Comment to Question Notification"
-#~ msgstr "اشعار حول تعليق جديد على السؤال"
-
-#~ msgid "Send to"
-#~ msgstr "ارسال لـ"
-
-#~ msgid "Send A Copy Of Every Email To Admin"
-#~ msgstr "ارسل أي نسخة من البريد للمدير"
-
-#~ msgid "You need an account to submit question and get answers. Create one:"
-#~ msgstr "يجب أن تكون مسجل لاضافة سؤال و الحصول على اجابة . سجل الآن :"
-
-#~ msgid "Type your email"
-#~ msgstr "البريد الالكتروني"
-
-#~ msgid "Already a member?"
-#~ msgstr "أنت عضو ؟"
-
-#~ msgid "Log In"
-#~ msgstr "تسجيل الدخول"
-
-#~ msgid "Login to submit your question"
-#~ msgstr "يجب عليك الاتصال لاضافة سؤالك"
-
-#, fuzzy
-#~ msgid "Type your username"
-#~ msgstr "البريد الالكتروني"
-
-#, fuzzy
-#~ msgid "Type your password"
-#~ msgstr "البريد الالكتروني"
-
-#~ msgid "Not yet a member?"
-#~ msgstr "لست عضو الى حد الآن"
-
-#~ msgid "Register"
-#~ msgstr "التسجيل"
-
-#, fuzzy
-#~ msgid "Your email *"
-#~ msgstr "البريد الالكتروني"
-
-#~ msgid "Private: %s"
-#~ msgstr "خاص : %s"
-
-#~ msgctxt "noun"
-#~ msgid "Comment"
-#~ msgstr "تعليق"
-
-#~ msgid ""
-#~ "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out "
-#~ "of this account\">Log out?</a>"
-#~ msgstr ""
-#~ "متصل <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"قطع الاتصال"
-#~ "\">الخروج ؟</a>"
-
-#~ msgid "Your email address will not be published."
-#~ msgstr "نحترم حقوقك , البريد الالكتروني لن يتم نشره"
-
-#~ msgid "Add New Question"
-#~ msgstr "أضف سؤال جديد"
-
-#~ msgid "Edit Question"
-#~ msgstr "تعديل السؤال"
-
-#~ msgid "New Question"
-#~ msgstr "سؤال جديد"
-
-#~ msgid "All Questions"
-#~ msgstr "جميع الأسئلة"
-
-#~ msgid "View Question"
-#~ msgstr "مشاهدة الأسئلة"
-
-#~ msgid "Search Question"
-#~ msgstr "ابحث عن سؤال"
-
-#~ msgid "No questions found"
-#~ msgstr "لم يتم العثور على أي سؤال"
-
-#~ msgid "No questions found in Trash"
-#~ msgstr "لا يوجد أي سؤال في سلة المهملات"
-
-#~ msgid "DW Q&A"
-#~ msgstr "DW Q&A"
-
-#~ msgid "Add new answer"
-#~ msgstr "اضف اجابة جديدة"
-
-#~ msgid "Edit answer"
-#~ msgstr "تعديل الاجابة"
-
-#~ msgid "New Answer"
-#~ msgstr "اجابة جديدة"
-
-#~ msgid "All Answers"
-#~ msgstr "جميع الأجوبة"
-
-#~ msgid "View Answer"
-#~ msgstr "مشاهدة الجواب"
-
-#~ msgid "Search Answer"
-#~ msgstr "البحث عن جواب"
-
-#~ msgid "No Answers found"
-#~ msgstr "لم يتم العثور على اي اجابة"
-
-#~ msgid "No Answers found in Trash"
-#~ msgstr "ليس هناك اي جابة في سلة المهملات"
-
-#~ msgctxt "taxonomy general name"
-#~ msgid "Categories"
-#~ msgstr "التصنيفات"
-
-#~ msgctxt "taxonomy singular name"
-#~ msgid "Category"
-#~ msgstr "تصنيف"
-
-#~ msgid "Search Categories"
-#~ msgstr "البحث عن تنصنيف"
-
-#~ msgid "All Categories"
-#~ msgstr "جميع التصنيفات"
-
-#~ msgid "Parent Category"
-#~ msgstr "التصنيف الأب"
-
-#~ msgid "Parent Category:"
-#~ msgstr "التصنيف الأب :"
-
-#~ msgid "Edit Category"
-#~ msgstr "تعديل التصنيف"
-
-#~ msgid "Update Category"
-#~ msgstr "تحديث التصنيف"
-
-#~ msgid "Add New Category"
-#~ msgstr "اضافة تصنيف جديد"
-
-#~ msgid "New Category Name"
-#~ msgstr "اسم التصنيف الجديد"
-
-#~ msgid "Question Categories"
-#~ msgstr "تصنيفات الأسئلة"
-
-#~ msgctxt "taxonomy general name"
-#~ msgid "Tags"
-#~ msgstr "الوسوم"
-
-#~ msgctxt "taxonomy singular name"
-#~ msgid "Tag"
-#~ msgstr "وسم"
-
-#~ msgid "Search Tags"
-#~ msgstr "البحث عن وسوم"
-
-#~ msgid "Popular Tags"
-#~ msgstr "الوسوم الأكثر استعمالا"
-
-#~ msgid "All Tags"
-#~ msgstr "جميع الوسوم"
-
-#~ msgid "Edit Tag"
-#~ msgstr "تعديل الوسم"
-
-#~ msgid "Update Tag"
-#~ msgstr "تحديث الوسم"
-
-#~ msgid "Add New Tag"
-#~ msgstr "أضف وسم جديد"
-
-#~ msgid "New Tag Name"
-#~ msgstr "اسم الوسم الجديد"
-
-#~ msgid "Separate tags with commas"
-#~ msgstr "التفرقة بين الوسوم باستعمال فاصلة"
-
-#~ msgid "Add or remove tags"
-#~ msgstr "اضافة أو ازالة وسوم"
-
-#~ msgid "Choose from the most used tags"
-#~ msgstr "الاختيار من بين أكثر الوسوم استعمالا"
-
-#~ msgid "%s second"
-#~ msgid_plural "%s seconds"
-#~ msgstr[0] "%s ثانية"
-#~ msgstr[1] "%s ثانية"
-
-#~ msgid "about %s min"
-#~ msgid_plural "%s mins"
-#~ msgstr[0] "%s دقائق"
-#~ msgstr[1] "%s دقائق"
-
-#~ msgid "about %s hour"
-#~ msgid_plural "%s hours"
-#~ msgstr[0] "%s ساعة"
-#~ msgstr[1] "%s ساعات"
-
-#~ msgid "%s day"
-#~ msgid_plural "%s days"
-#~ msgstr[0] "%s يوم"
-#~ msgstr[1] "%s أيام"
-
-#~ msgid "%1$s ago"
-#~ msgstr "منذ %1$s"
-
-#~ msgid "Flag"
-#~ msgstr "اشارة بعلم"
-
-#~ msgid "Unflag"
-#~ msgstr "الغاء الاشارة"
-
-#, fuzzy
-#~ msgid ""
-#~ "This answer will be hidden when flagged. Are you sure you want to flag it?"
-#~ msgstr "هذاالجواب سيتم  اخفاءه عند الاشارة بعلم , هل أنت متأكد ؟"
-
-#, fuzzy
-#~ msgid "This answer was flagged as spam. Do you want to show it?"
-#~ msgstr "الاجابة تم اضافتها في قائمة السبام , تريد رِؤيتها ؟"
-
-#, fuzzy
-#~ msgid "Reset all changes to default"
-#~ msgstr "اعادة جميع الاعدادات الى الافتراضي"
-
-#~ msgid "Save draft"
-#~ msgstr "حفظ المسودة"
-
-#, fuzzy
-#~ msgid "Answer is missing"
-#~ msgstr "الاجابة عن هذا السؤال"
-
-#, fuzzy
-#~ msgid "You do not have permission to edit this post"
-#~ msgstr "لا تملك صلاحيات لمحو هذا السؤال"
-
-#, fuzzy
-#~ msgid "This post is not an answer"
-#~ msgstr "أفضل اجابة"
-
-#~ msgid "Missing answer ID"
-#~ msgstr "أين رقم الاجابة "
-
-#, fuzzy
-#~ msgid "Single Question Template"
-#~ msgstr "سؤال واحد"
-
-#~ msgid "Google Captcha Public Key"
-#~ msgstr "المفتاح العمومي  لكود التحقق - جوجل"
-
-#~ msgid "Google Captcha Private Key"
-#~ msgstr "المفتاح الخاص  لكود التحقق - جوجل"
-
-#~ msgid "New Comment to Question"
-#~ msgstr "تعليق جديد للسؤال"
-
-#~ msgid "New Comment to Answer"
-#~ msgstr "تعليق جديد للاجابة"
-
-#, fuzzy
-#~ msgid "New Answer (to Followers )"
-#~ msgstr "اجابة جديدة - للمتابعين"
-
-#, fuzzy
-#~ msgid "New Comment to Question (to Followers )"
-#~ msgstr "تعليق جديد للسؤال - للمتابعين"
-
-#, fuzzy
-#~ msgid "New Comment to Answer (to Followers )"
-#~ msgstr "تعليق جديد على الاجابة - للمتابعين"
-
-#, fuzzy
-#~ msgid "% person who is following this question"
-#~ msgid_plural "% people who are following this question"
-#~ msgstr[0] "أشخاص يتابعون هذا السؤال "
-#~ msgstr[1] "أشخاص يتابعون هذا السؤال "
-
-#~ msgid "Answer this Question"
-#~ msgstr "الاجابة عن هذا السؤال"
-
-#~ msgid "Add answer"
-#~ msgstr "اضافة جواب"
-
-#~ msgid "All questions from"
-#~ msgstr "جميع الأسئلة من "
-
-#, fuzzy
-#~ msgid "Unpin this Question from the top"
-#~ msgstr "الغاء تثتبت الاجابة"
-
-#, fuzzy
-#~ msgid "Pin this Question to top"
-#~ msgstr "تنثبيت الاجابة"
-
-#~ msgid "answer"
-#~ msgid_plural "answers"
-#~ msgstr[0] "اجابة"
-#~ msgstr[1] "اجابات"
-
-#~ msgid "You do not have permission to view answers"
-#~ msgstr "ليس لديك صلاحيات لمشاهدة الأجوبة"
-
-#, fuzzy
-#~ msgid "This question is now closed"
-#~ msgstr "هذا السؤال تم غلقه"
-
-#~ msgid "You do not have permission to submit answer."
-#~ msgstr "ليس لديك صلاحيات لاضافة اجابة ,"
-
-#~ msgid "Please login or"
-#~ msgstr "الرجاء الاتصال أو "
-
-#~ msgid "to Submit Answer"
-#~ msgstr "لاضافة اجابة"
-
-#~ msgid "Sorry, but nothing matched your filter."
-#~ msgstr "عفوا لاشيء يطابق بحثك"
-
-#~ msgid "View previous comments"
-#~ msgstr "مشاهدة التعاليق السابقة"
-
-#~ msgid "of"
-#~ msgstr "من"
-
-#~ msgid "Write a reply..."
-#~ msgstr "اكتب تعليقك ..."
-
-#~ msgid "Link to answer"
-#~ msgstr "رابط لاجابة"
-
-#~ msgid "Draft"
-#~ msgstr "مسودة"
-
-#~ msgid "This answer was flagged as spam."
-#~ msgstr "هذه الاجابة سبام"
-
-#~ msgid "This is the best answer"
-#~ msgstr "أفضل اجابة"
-
-#~ msgid "The answer link"
-#~ msgstr "رابط الاجابة"
-
-#~ msgid "Post by"
-#~ msgstr "أضيف عبر"
-
-#~ msgid "Link to comment"
-#~ msgstr "رابط لتعليق"
-
-#~ msgid "Permalink to %s"
-#~ msgstr "%s رابط ثابت لـ"
-
-#~ msgid "view"
-#~ msgid_plural "views"
-#~ msgstr[0] "مشاهدة"
-#~ msgstr[1] "مشاهدات"
-
-#~ msgid "vote"
-#~ msgid_plural "votes"
-#~ msgstr[0] "تصويت"
-#~ msgstr[1] "تصويت"
-
-#~ msgid "Status:"
-#~ msgstr "الحالة :"
-
-#~ msgid "Need Answer"
-#~ msgstr "يحتاج اجابة"
-
-#~ msgid "Overdue"
-#~ msgstr "قديم"
-
-#~ msgid "Queue"
-#~ msgstr "في الطابور"
-
-#~ msgid "Select a category"
-#~ msgstr "اختر تصنيف"
-
-#~ msgid "Empty"
-#~ msgstr "فارغ"
-
-#~ msgid "Vote"
-#~ msgstr "تصويت"
-
-#~ msgid "tag 1, tag 2,..."
-#~ msgstr "وسم 1 , وسم 2 "
-
-#~ msgid "Your question"
-#~ msgstr "سؤالك "
-
-#~ msgid "How to..."
-#~ msgstr "كيف ..."
-
-#~ msgid "Question details"
-#~ msgstr "معلومات عن السؤال"
-
-#~ msgid "Post this Question as Private."
-#~ msgstr "اضافة السؤال كخاص "
-
-#~ msgid "Only you as Author and Admin can see the question"
-#~ msgstr "أنت فقط و المديرين تستطيعون مشاهدة هذا السؤال"
-
-#~ msgid "Search"
-#~ msgstr "بحث"
-
-#~ msgid "Posts by"
-#~ msgstr "مشاركات عبر"
-
-#~ msgid "Show a list of questions that was ordered by views."
-#~ msgstr "اضهار قائمة الأسئلة عبر مرات المشاهدة"
-
-#, fuzzy
-#~ msgid "Show a list of questions that ordered by views."
-#~ msgstr "اضهار قائمة الأسئلة عبر مرات المشاهدة"
-
-#~ msgctxt "post type general name"
-#~ msgid "Question"
-#~ msgstr "السؤال"
-
-#~ msgctxt "post type singular name"
-#~ msgid "Question"
-#~ msgstr "السؤال"
-
-#~ msgctxt "post type general name"
-#~ msgid "Answer"
-#~ msgstr "الجواب"
-
-#~ msgctxt "post type singular name"
-#~ msgid "Answer"
-#~ msgstr "الجواب"
-
-#~ msgid "Stick This Question on Frontpage"
-#~ msgstr "تنثبيت  هذا السؤال في الصفحة الأولى"
-
-#~ msgid "Untick This Question on Frontpage"
-#~ msgstr "الغاء التثبيت"
-
-#~ msgid "Website"
-#~ msgstr "الموقع الالكتروني "
-
-#~ msgid "by"
-#~ msgstr "عبر"
-
-#~ msgid "DW Q&A Box"
-#~ msgstr "DW Q&A المربع"
-
-#~ msgid "Container Padding"
-#~ msgstr "الحشو "
-
-#~ msgid "Container padding size"
-#~ msgstr "حجم الحشو"
-
-#~ msgid ""
-#~ "By default,The container is not have gutter. You can set padding width to "
-#~ "make a gutter. You make it by update setting here."
-#~ msgstr ""
-#~ "افتراضيا، المربعات  ليست لديهم الحضيض. يمكنك تعيين عرض الحشو لجعل الحضيض. "
-#~ "كنت جعله من وضع التحديث هنا."
-
-#~ msgid "You can ask question <a href=\""
-#~ msgstr " <a href=\" تستطيع اضافة سؤالك"
-
-#~ msgid "Please <a href=\""
-#~ msgstr "<a href=\" الرجاء"
+#~ msgid "This username is already registered. Please use another one."
+#~ msgstr "إسم المستخدم هذا مسجل بالفعل , أدخل إسم مستخدم آخر !"

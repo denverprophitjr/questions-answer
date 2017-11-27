@@ -2,26 +2,33 @@
 
 class DWQA_Widgets_Popular_Question extends WP_Widget {
 
+
+	private $default_args = array();
 	/**
 	 * Constructor
 	 *
 	 * @return void
 	 **/
 	function __construct() {
+
+		$this->default_args = array(
+			'title'     => __( 'Popular Questions', 'dwqa' ),
+			'number'    => 5,
+			'hide_date' => 0,
+			'hide_user' => 0,
+		);
+
 		$widget_ops = array(
 			'classname'   => 'dwqa-widget dwqa-popular-question',
-			'description' => __( 'Show a list of popular questions.', 'dwqa' )
+			'description' => __( 'Show a list of popular questions.', 'dwqa' ) 
 		);
 		parent::__construct( 'dwqa-popular-question', __( 'DWQA Popular Questions', 'dwqa' ), $widget_ops );
 	}
 
 	function widget( $args, $instance ) {
 		extract( $args, EXTR_SKIP );
-		$instance = wp_parse_args( $instance, array(
-			'title'  => __( 'Popular Questions', 'dwqa' ),
-			'number' => 5,
-		) );
-
+		$instance = wp_parse_args( $instance, $this->default_args );
+		
 		echo $before_widget;
 		echo $before_title;
 		echo $instance['title'];
@@ -41,8 +48,15 @@ class DWQA_Widgets_Popular_Question extends WP_Widget {
 			echo '<ul>';
 			while ( $questions->have_posts() ) {
 				$questions->the_post();
-				echo '<li><a href="' . get_permalink() . '" class="question-title">' . get_the_title() . '</a> ' . __( 'asked by', 'dwqa' ) . ' ' . get_the_author_link() . '</li>';
-			}
+				echo '<li><a href="' . get_permalink() . '" class="question-title">' . get_the_title() . '</a>';
+				if ( ! $instance['hide_user'] ) {
+					echo __( ' asked by', 'dwqa' ) . ' ' . get_the_author_posts_link();
+				}
+				if ( ! $instance['hide_date'] ) {
+					echo ', ' . human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) . __( ' ago', 'dwqa' );
+				}
+				echo '</li>';
+			}   
 			echo '</ul>';
 			echo '</div>';
 		}
@@ -55,15 +69,12 @@ class DWQA_Widgets_Popular_Question extends WP_Widget {
 
 		// update logic goes here
 		$updated_instance = $new_instance;
-
 		return $updated_instance;
 	}
 
 	function form( $instance ) {
-		$instance = wp_parse_args( $instance, array(
-			'title'  => '',
-			'number' => 5,
-		) );
+		$instance = wp_parse_args( $instance, $this->default_args );
+		
 		?>
         <p><label for="<?php echo $this->get_field_id( 'title' ) ?>"><?php _e( 'Widget title', 'dwqa' ) ?></label>
             <input type="text" name="<?php echo $this->get_field_name( 'title' ) ?>"
@@ -74,6 +85,18 @@ class DWQA_Widgets_Popular_Question extends WP_Widget {
             <input type="text" name="<?php echo $this->get_field_name( 'number' ) ?>"
                    id="<?php echo $this->get_field_id( 'number' ) ?>" value="<?php echo $instance['number'] ?>"
                    class="widefat">
+        </p>
+        <p>
+            <input id="<?php echo $this->get_field_id( 'hide_user' ) ?>"
+                   name="<?php echo $this->get_field_name( 'hide_user' ) ?>"
+                   type="checkbox" <?php echo $instance['hide_user'] ? 'checked' : ''; ?>>&nbsp;<label
+                    for="<?php echo $this->get_field_id( 'hide_user' ) ?>"><?php _e( 'Hide author', 'dwqa' ) ?></label>
+        </p>
+        <p>
+            <input id="<?php echo $this->get_field_id( 'hide_date' ) ?>"
+                   name="<?php echo $this->get_field_name( 'hide_date' ) ?>"
+                   type="checkbox" <?php echo $instance['hide_date'] ? 'checked' : ''; ?>>&nbsp;<label
+                    for="<?php echo $this->get_field_id( 'hide_date' ) ?>"><?php _e( 'Hide date', 'dwqa' ) ?></label>
         </p>
 		<?php
 	}

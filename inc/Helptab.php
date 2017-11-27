@@ -1,10 +1,9 @@
-<?php
-
+<?php 
 /**
  * Plugin Name: Help Tab Test Case
  * Plugin URI:  http://unserkaiser.com
  * Description: Add Help Tab test case
- * @since 1.3.5
+ * @since 1.3.5 
  */
 class DWQA_Helptab {
 	public $tabs;
@@ -20,23 +19,20 @@ class DWQA_Helptab {
 		global $post, $typenow, $current_screen;
 
 		//we have a post so we can just get the post type from that
-		if ( $post && $post->post_type ) {
+		if ( $post && $post->post_type )
 			return $post->post_type;
-		} //check the global $typenow - set in admin.php
-        elseif ( $typenow ) {
-			return $typenow;
-		} //check the global $current_screen object - set in sceen.php
-        elseif ( $current_screen && $current_screen->post_type ) {
-			return $current_screen->post_type;
-		} //lastly check the post_type querystring
-        elseif ( isset( $_REQUEST['post_type'] ) ) {
-			//Some plugins set post_type to an array
-			if ( is_array( $_REQUEST['post_type'] ) ) {
-				return null;
-			}
 
+		//check the global $typenow - set in admin.php
+        elseif ( $typenow )
+			return $typenow;
+
+		//check the global $current_screen object - set in sceen.php
+        elseif ( $current_screen && $current_screen->post_type )
+			return $current_screen->post_type;
+
+		//lastly check the post_type querystring
+        elseif ( isset( $_REQUEST['post_type'] ) )
 			return sanitize_key( $_REQUEST['post_type'] );
-		}
 	}
 
 	private function create_tabs() {
@@ -76,7 +72,6 @@ class DWQA_Helptab {
 		<?php
 		$content = ob_get_contents();
 		ob_end_clean();
-
 		return $content;
 	}
 
@@ -116,7 +111,6 @@ class DWQA_Helptab {
 		<?php
 		$html = ob_get_contents();
 		ob_end_clean();
-
 		return apply_filters( 'the_content', $html );
 	}
 
@@ -159,7 +153,6 @@ class DWQA_Helptab {
 		<?php
 		$html = ob_get_contents();
 		ob_end_clean();
-
 		return apply_filters( 'the_content', $html );
 	}
 
@@ -178,7 +171,6 @@ class DWQA_Helptab {
 		<?php
 		$html = ob_get_contents();
 		ob_end_clean();
-
 		return apply_filters( 'the_content', $html );
 	}
 
@@ -192,7 +184,6 @@ class DWQA_Helptab {
 		<?php
 		$html = ob_get_contents();
 		ob_end_clean();
-
 		return apply_filters( 'the_content', $html );
 	}
 

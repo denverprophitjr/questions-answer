@@ -2,6 +2,7 @@
 // Mixins
 // --------------------------------------------------
 
+
 // Utilities
 // -------------------------
 
@@ -47,7 +48,6 @@
   width: @width;
   height: @height;
 }
-
 .square(@size) {
   .size(@size; @size);
 }
@@ -98,17 +98,14 @@
   border-top-right-radius: @radius;
   border-top-left-radius: @radius;
 }
-
 .border-right-radius(@radius) {
   border-bottom-right-radius: @radius;
   border-top-right-radius: @radius;
 }
-
 .border-bottom-radius(@radius) {
   border-bottom-right-radius: @radius;
   border-bottom-left-radius: @radius;
 }
-
 .border-left-radius(@radius) {
   border-bottom-left-radius: @radius;
   border-top-left-radius: @radius;
@@ -125,17 +122,14 @@
   -webkit-transition: @transition;
   transition: @transition;
 }
-
 .transition-delay(@transition-delay) {
   -webkit-transition-delay: @transition-delay;
   transition-delay: @transition-delay;
 }
-
 .transition-duration(@transition-duration) {
   -webkit-transition-duration: @transition-duration;
   transition-duration: @transition-duration;
 }
-
 .transition-transform(@transition) {
   -webkit-transition: -webkit-transform @transition;
   -moz-transition: -moz-transform @transition;
@@ -149,25 +143,21 @@
   -ms-transform: rotate(@degrees); // IE9+
   transform: rotate(@degrees);
 }
-
 .scale(@ratio) {
   -webkit-transform: scale(@ratio);
   -ms-transform: scale(@ratio); // IE9+
   transform: scale(@ratio);
 }
-
 .translate(@x; @y) {
   -webkit-transform: translate(@x, @y);
   -ms-transform: translate(@x, @y); // IE9+
   transform: translate(@x, @y);
 }
-
 .skew(@x; @y) {
   -webkit-transform: skew(@x, @y);
   -ms-transform: skewX(@x) skewY(@y); // See https://github.com/twbs/bootstrap/issues/4885; IE9+
   transform: skew(@x, @y);
 }
-
 .translate3d(@x; @y; @z) {
   -webkit-transform: translate3d(@x, @y, @z);
   transform: translate3d(@x, @y, @z);
@@ -323,6 +313,7 @@
   }
 }
 
+
 // Responsive image
 //
 // Keep images from scaling beyond the width of their parents.
@@ -332,6 +323,7 @@
   max-width: 100%; // Part 1: Set a maximum relative to the parent
   height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
 }
+
 
 // COMPONENT MIXINS
 // --------------------------------------------------
@@ -686,13 +678,11 @@
     margin-left: percentage((@columns / @grid-columns));
   }
 }
-
 .make-sm-column-push(@columns) {
   @media (min-width: @screen-sm) {
     left: percentage((@columns / @grid-columns));
   }
 }
-
 .make-sm-column-pull(@columns) {
   @media (min-width: @screen-sm) {
     right: percentage((@columns / @grid-columns));
@@ -721,13 +711,11 @@
     margin-left: percentage((@columns / @grid-columns));
   }
 }
-
 .make-md-column-push(@columns) {
   @media (min-width: @screen-md) {
     left: percentage((@columns / @grid-columns));
   }
 }
-
 .make-md-column-pull(@columns) {
   @media (min-width: @screen-md) {
     right: percentage((@columns / @grid-columns));
@@ -756,13 +744,11 @@
     margin-left: percentage((@columns / @grid-columns));
   }
 }
-
 .make-lg-column-push(@columns) {
   @media (min-width: @screen-lg) {
     left: percentage((@columns / @grid-columns));
   }
 }
-
 .make-lg-column-pull(@columns) {
   @media (min-width: @screen-lg) {
     right: percentage((@columns / @grid-columns));

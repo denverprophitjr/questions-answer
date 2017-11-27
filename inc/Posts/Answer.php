@@ -4,9 +4,7 @@
  */
 /**
  * Return number of answer for a question
- *
  * @param  int $question_id Question ID ( if null get ID of current post )
- *
  * @return int      Number of answer
  */
 function dwqa_question_answers_count( $question_id = null ) {
@@ -17,18 +15,18 @@ function dwqa_question_answers_count( $question_id = null ) {
 		$question_id = $post->ID;
 	}
 
-	$answer_count = get_transient( 'dwqa_answer_count_for_' . $question_id );
+	$answer_count = wp_cache_get( 'dwqa_answer_count_for_' . $question_id );
 
-	if ( false === $answer_count ) {
+	if ( ! $answer_count ) {
 		$sql = "SELECT COUNT( DISTINCT `P`.ID ) FROM {$wpdb->postmeta} PM JOIN {$wpdb->posts} P ON `PM`.post_id = `P`.ID WHERE `PM`.meta_key = '_question' AND meta_value = {$question_id} AND `P`.post_type = 'dwqa-answer' AND `P`.post_status = 'publish'";
 		$sql .= " AND ( `P`.post_status = 'publish' ";
-		if ( dwqa_current_user_can( 'edit_question', $question_id ) ) {
+		if ( dwqa_current_user_can( 'edit_question', $question_id ) || dwqa_current_user_can( 'manage_question' ) ) {
 			$sql .= " OR `P`.post_status = 'private'";
 		}
 		$sql          .= " )";
 		$answer_count = $wpdb->get_var( $sql );
 
-		set_transient( 'dwqa_answer_count_for_' . $question_id, $answer_count, 15 * 60 );
+		wp_cache_set( 'dwqa_answer_count_for_' . $question_id, $answer_count, '', 15 * 60 );
 	}
 
 	return $answer_count;
@@ -48,7 +46,6 @@ function dwqa_is_answer_flag( $post_id ) {
 			return true;
 		}
 	}
-
 	return false; //showing
 }
 
@@ -61,7 +58,6 @@ function dwqa_is_the_best_answer( $answer_id = false ) {
 	if ( $best_answer && $best_answer == $answer_id ) {
 		return true;
 	}
-
 	return false;
 }
 
@@ -105,7 +101,6 @@ function dwqa_get_the_best_answer( $question_id = false ) {
 	if ( $answer_id && ( int ) dwqa_vote_count( $answer_id ) > 2 ) {
 		return $answer_id;
 	}
-
 	return false;
 }
 
@@ -147,7 +142,6 @@ function dwqa_user_get_draft( $question_id = false ) {
 	if ( ! empty( $answers ) ) {
 		return $answers;
 	}
-
 	return false;
 }
 
@@ -182,7 +176,6 @@ function dwqa_get_drafts( $question_id = false ) {
 	if ( ! empty( $answers ) ) {
 		return $answers;
 	}
-
 	return false;
 }
 
@@ -208,7 +201,6 @@ function dwqa_question_answer_count_by_status( $question_id, $status = 'publish'
 		),
 		'fields'      => 'ids'
 	) );
-
 	return $query->found_posts;
 }
 
@@ -219,7 +211,7 @@ function dwqa_question_answer_count_by_status( $question_id, $status = 'publish'
  *
  * @return int
  * @since 1.4.0
- */
+*/
 function dwqa_get_question_from_answer_id( $answer_id = false ) {
 	if ( ! $answer_id ) {
 		$answer_id = get_the_ID();
@@ -242,7 +234,7 @@ class DWQA_Posts_Answer extends DWQA_Posts_Base {
 		add_action( 'post_row_actions', array( $this, 'unset_old_actions' ) );
 		add_action( 'add_meta_boxes', array( $this, 'question_metabox' ) );
 		add_action( 'save_post', array( $this, 'save_metabox' ), 10, 2 );
-
+		
 		//Cache
 		add_action( 'dwqa_add_answer', array( $this, 'update_transient_when_add_answer' ), 10, 2 );
 		add_action( 'dwqa_delete_answer', array( $this, 'update_transient_when_remove_answer' ), 10, 2 );
@@ -254,12 +246,51 @@ class DWQA_Posts_Answer extends DWQA_Posts_Base {
 		// prepare edit content
 		add_filter( 'dwqa_prepare_edit_answer_content', array( $this, 'pre_content_kses' ), 10 );
 		add_filter( 'dwqa_prepare_edit_answer_content', array( $this, 'pre_content_filter' ), 20 );
+
+		// approve answer
+		add_action( 'init', array( $this, 'approve_answer' ) );
 	}
+
+	public function approve_answer() {
+		if ( is_admin()
+		     && isset( $_GET['post_type'] ) && $_GET['post_type'] == 'dwqa-answer'
+		     && isset( $_GET['action'] )
+		     && isset( $_GET['id'] ) && is_numeric( $_GET['id'] ) && $_GET['id'] > 0
+		     && isset( $_GET['parent'] ) && is_numeric( $_GET['parent'] ) && $_GET['parent'] > 0
+		     && isset( $_GET['_wpnonce'] ) ) {
+			if ( wp_verify_nonce( $_GET['_wpnonce'], $_GET['action'] . '-' . $_GET['id'] ) ) {
+				if ( $_GET['action'] == 'answer-approve' ) {
+					$post_status = 'publish';
+					$add_count   = 1;
+				}
+				if ( $_GET['action'] == 'answer-unapprove' ) {
+					$post_status = 'pending';
+					$add_count   = - 1;
+				}
+
+				$args = array(
+					'ID'          => $_GET['id'],
+					'post_status' => $post_status
+				);
+
+				// Update the post into the database
+				wp_update_post( $args );
+
+				$answer_count = get_post_meta( $_GET['parent'], '_dwqa_answers_count', true );
+				update_post_meta( $_GET['parent'], '_dwqa_answers_count', (int) $answer_count + $add_count );
+
+				wp_safe_redirect( admin_url( 'edit.php?post_type=dwqa-answer' ) );
+				exit;
+			}
+
+		}
+
+	}
+	
 
 	// Remove default menu and change it to submenu of questions
 	public function set_show_in_menu() {
 		global $dwqa;
-
 		return 'edit.php?post_type=' . $dwqa->question->get_slug();
 	}
 
@@ -279,7 +310,7 @@ class DWQA_Posts_Answer extends DWQA_Posts_Base {
 	}
 
 	public function columns_head( $defaults ) {
-		if ( isset( $_GET['post_type'] ) && sanitize_text_field( $_GET['post_type'] ) == $this->get_slug() ) {
+		if ( isset( $_GET['post_type'] ) && $_GET['post_type'] == $this->get_slug() ) {
 			$defaults = array(
 				'cb'            => '<input type="checkbox">',
 				'info'          => __( 'Answer', 'dwqa' ),
@@ -288,7 +319,6 @@ class DWQA_Posts_Answer extends DWQA_Posts_Base {
 				'dwqa-question' => __( 'In Response To', 'dwqa' ),
 			);
 		}
-
 		return $defaults;
 	}
 
@@ -306,13 +336,12 @@ class DWQA_Posts_Answer extends DWQA_Posts_Base {
 		$action_count = count( $actions );
 		$i            = 0;
 
-		if ( ! $action_count ) {
+		if ( ! $action_count )
 			return '';
-		}
 
 		$out = '<div class="' . ( $always_visible ? 'row-actions visible' : 'row-actions' ) . '">';
 		foreach ( $actions as $action => $link ) {
-			++ $i;
+			++$i;
 			( $i == $action_count ) ? $sep = '' : $sep = ' | ';
 			$out .= "<span class='$action'>$link$sep</span>";
 		}
@@ -323,6 +352,7 @@ class DWQA_Posts_Answer extends DWQA_Posts_Base {
 
 	public function columns_content( $column_name, $post_ID ) {
 		$answer = get_post( $post_ID );
+
 		switch ( $column_name ) {
 			case 'comment' :
 				$comment_count = get_comment_count( $post_ID );
@@ -331,17 +361,38 @@ class DWQA_Posts_Answer extends DWQA_Posts_Base {
 			case 'info':
 				//Build row actions
 				$actions = array(
-					'edit'   => sprintf( '<a href="%s">%s</a>', get_edit_post_link( $post_ID ), __( 'Edit', 'edd-dw-membersip' ) ),
-					'delete' => sprintf( '<a href="%s">%s</a>', get_delete_post_link( $post_ID ), __( 'Delete', 'edd-dw-membersip' ) ),
-					'view'   => sprintf( '<a href="%s">%s</a>', get_permalink( $post_ID ), __( 'View', 'edd-dw-membersip' ) )
+					'edit'   => sprintf( '<a href="%s">%s</a>', get_edit_post_link( $post_ID ), __( 'Edit', 'dwqa' ) ),
+					'delete' => sprintf( '<a href="%s">%s</a>', get_delete_post_link( $post_ID ), __( 'Delete', 'dwqa' ) ),
+					'view'   => sprintf( '<a href="%s">%s</a>', get_permalink( $post_ID ), __( 'View', 'dwqa' ) )
 				);
+
+				global $dwqa_general_settings;
+				if ( isset( $dwqa_general_settings['answer-approve'] ) && $dwqa_general_settings['answer-approve'] ) {
+
+					//add approve answer
+					$action = 'answer-approve';
+					$title  = 'Approve';
+					if ( $answer->post_status == 'publish' ) {
+						$action = 'answer-unapprove';
+						$title  = 'Unapprove';
+					}
+
+					$approve                 = add_query_arg( array(
+						'action'   => $action,
+						'id'       => $post_ID,
+						'parent'   => $answer->post_parent,
+						'_wpnonce' => wp_create_nonce( $action . '-' . $post_ID )
+					), admin_url( 'edit.php?post_type=dwqa-answer' ) );
+					$actions['dwqa-approve'] = sprintf( '<a href="%s">%s</a>', $approve, __( $title, 'dwqa' ) );
+				}
+				
 				printf(
 					'%s %s <a href="%s">%s %s</a> <br /> %s %s',
 					__( 'Submitted', 'dwqa' ),
 					__( 'on', 'dwqa' ),
 					get_permalink(),
-					date( 'M d Y', get_post_time( 'U', true, $answer ) ),
-					( time() - get_post_time( 'U', true, $answer ) ) > 60 * 60 * 24 * 2 ? '' : ' at ' . human_time_diff( get_post_time( 'U', true, $answer ) ) . ' ago',
+					date( 'M d Y', get_post_time( 'U', false, $answer ) ),
+					( time() - get_post_time( 'U', false, $answer ) ) > 60 * 60 * 24 * 2 ? '' : ' at ' . human_time_diff( get_post_time( 'U', false, $answer ) ) . ' ago',
 					substr( get_the_content(), 0, 140 ) . ' ...',
 					$this->row_actions( $actions )
 				);
@@ -360,7 +411,7 @@ class DWQA_Posts_Answer extends DWQA_Posts_Base {
 	public function update_transient_when_add_answer( $answer_id, $question_id ) {
 		// Update cache for latest answer of this question
 		$answer = get_post( $answer_id );
-		set_transient( 'dwqa_latest_answer_for_' . $question_id, $answer, 15 * 60 );
+		set_transient( 'dwqa_latest_answer_for_' . $question_id, $answer, 15 *60 );
 		delete_transient( 'dwqa_answer_count_for_' . $question_id );
 	}
 
@@ -406,7 +457,7 @@ class DWQA_Posts_Answer extends DWQA_Posts_Base {
 			return false;
 		}
 
-		update_post_meta( $id, '_question', sanitize_text_field( $_POST['_question'] ) );
+		update_post_meta( $id, '_question', $_POST['_question'] );
 	}
 }
 

@@ -28,7 +28,7 @@
 		<?php printf( __( '<span><a href="%s"><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">%s%s</span></span></a> %s %s ago</span>', 'dwqa' ), dwqa_get_author_link( $user_id ), get_avatar( $user_id, 48 ), get_the_author(), $text, $time ) ?>
 		<?php echo get_the_term_list( get_the_ID(), 'dwqa-question_category', '<span class="dwqa-question-category">' . __( '&nbsp;&bull;&nbsp;', 'dwqa' ), ', ', '</span>' ); ?>
     </div>
-    <div class="dwqa-question-stats">
+    <aside class="dwqa-question-stats">
 		<span class="dwqa-views-count" itemprop="interactionStatistic" itemscope
               itemtype="https://schema.org/InteractionCounter">
 			<?php $views_count = dwqa_question_views_count() ?>
@@ -43,6 +43,6 @@
 			<?php $vote_count = dwqa_vote_count() ?>
 			<?php printf( __( '<span style="border: none;" itemprop="upvoteCount"><strong>%1$s</strong></span> votes', 'dwqa' ), $vote_count ); ?>
 		</span>
-    </div>
+    </aside>
     <meta itemprop="url" content="<?php the_permalink(); ?>"/>
 </div>
