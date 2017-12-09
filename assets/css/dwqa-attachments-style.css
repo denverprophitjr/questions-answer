@@ -1,0 +1,31 @@
+#dwqa-attachments-wrap-button-upload {
+    clear: both;
+    text-align: left;
+}
+
+.dwqa-attachments-button-upload {
+    margin-top: 10px;
+}
+
+.dwqa-attachments-description {
+    text-align: left;
+    font-size: 13px;
+    color: #888;
+    margin-top: 10px;
+}
+
+#dwqa-attachments-add-button-upload {
+    font-weight: 700;
+    color: #000;
+    cursor: pointer;
+}
+
+#dwqa-attachments-add-button-upload:hover {
+    text-decoration: underline;
+}
+
+.dwqa-attachments-remove-item {
+    margin-left: 10px;
+    font-size: 12px;
+    cursor: pointer;
+}

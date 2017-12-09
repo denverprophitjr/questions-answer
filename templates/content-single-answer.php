@@ -26,12 +26,14 @@
 			), admin_url( 'admin-ajax.php' ) ), '_dwqa_vote_best_answer' ) ) ?>"><?php _e( 'Best Answer', 'dwqa' ) ?></a>
         </aside>
 	<?php elseif ( dwqa_is_the_best_answer() ) : ?>
-        <aside><span class="dwqa-pick-best-answer"><?php _e( 'Best Answer', 'dwqa' ) ?></span></aside>
+        <aside>
+            <span class="dwqa-pick-best-answer"><?php _e( 'Best Answer', 'dwqa' ) ?></span>
+        </aside>
 
 	<?php endif; ?>
     <aside class="dwqa-answer-meta">
 		<?php $user_id = get_post_field( 'post_author', get_the_ID() ) ? get_post_field( 'post_author', get_the_ID() ) : 0 ?>
-		<?php printf( __( '<span><a href="%s"><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">%s%s</span></span></a> %s answered %s ago</span>', 'dwqa' ), dwqa_get_author_link( $user_id ), get_avatar( $user_id, 48 ), get_the_author(), dwqa_print_user_badge( $user_id ), human_time_diff( get_post_time( 'U', true ) ) ) ?>
+	    <?php printf( __( '<span><a href="%s"><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">%s%s</span></span></a> %s answered %s ago</span>', 'dwqa' ), dwqa_get_author_link( $user_id ), get_avatar( $user_id, 48 ), get_the_author(), dwqa_print_user_badge( $user_id ), human_time_diff( get_post_time( 'U', false ), current_time( 'timestamp' ) ) ) ?>
 		<?php if ( 'private' == get_post_status() ) : ?>
             <span><?php _e( '&nbsp;&bull;&nbsp;', 'dwqa' ); ?></span>
             <span><?php _e( 'Private', 'dwqa' ) ?></span>
@@ -44,6 +46,7 @@
 <?php do_action( 'dwqa_after_show_content_answer', get_the_ID() ); ?>
 <?php comments_template(); ?>
 </div>
+</article
 <div class="well">
 	<?php echo do_shortcode( '[bookly-form category_id="3" service_id="11" staff_member_id="1" hide="categories,services,quantity,staff_members"]' ); ?>
 </div>

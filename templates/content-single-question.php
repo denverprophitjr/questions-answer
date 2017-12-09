@@ -13,7 +13,8 @@
     <link itemprop="agent" href="#agent"/>
     <meta itemprop="inLanguage" content="<?php bloginfo( 'language' ); ?>"/>
     <div itemprop="recipient" itemscope itemtype="http://schema.org/Audience">
-        <meta itemprop="audienceType" content="<?php echo single_cat_title( "", false ); ?>"/>
+        <meta itemprop="audienceType"
+              content="<?php echo wp_get_post_terms( $question_id, 'dwqa-question_category' ); ?>"/>
     </div>
 </div>
 <article itemid="#dwqa-question-item" id="dwqa-question-item" class="dwqa-question-item" itemscope
@@ -28,7 +29,7 @@
     </aside>
     <aside class="dwqa-question-meta">
 		<?php $user_id = get_post_field( 'post_author', get_the_ID() ) ? get_post_field( 'post_author', get_the_ID() ) : false ?>
-		<?php printf( __( '<span><a href="%s"><span itemid="#agent" itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">%s%s</span></span></a> %s asked %s ago</span>', 'dwqa' ), dwqa_get_author_link( $user_id ), get_avatar( $user_id, 48 ), get_the_author(), dwqa_print_user_badge( $user_id ), human_time_diff( get_post_time( 'U', true ) ) ) ?>
+	    <?php printf( __( '<span><a href="%s"><span itemid="#agent" itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">%s%s</span></span></a> %s asked %s ago</span>', 'dwqa' ), dwqa_get_author_link( $user_id ), get_avatar( $user_id, 48 ), get_the_author(), dwqa_print_user_badge( $user_id ), human_time_diff( get_post_time( 'U', false ), current_time( 'timestamp' ) ) ) ?>
         <span class="dwqa-question-actions"><?php dwqa_question_button_action() ?></span>
     </aside>
     <div class="dwqa-question-content" itemprop="text"><?php the_content(); ?></div>

@@ -1,0 +1,21 @@
+.widget_dwqa_leaderboard ul.dwqa-leaderboard {
+    list-style: none;
+}
+
+.widget_dwqa_leaderboard ul.dwqa-leaderboard > li {
+    list-style-type: none;
+    padding-bottom: 15px;
+}
+
+.widget_dwqa_leaderboard ul.dwqa-leaderboard .dwqa-user-avatar {
+    float: left;
+    padding-right: 15px;
+}
+
+.widget_dwqa_leaderboard ul.dwqa-leaderboard .dwqa-user-content {
+    display: table-cell;
+}
+
+.widget_dwqa_leaderboard ul.dwqa-leaderboard .dwqa-user-content > span {
+    display: block;
+}
